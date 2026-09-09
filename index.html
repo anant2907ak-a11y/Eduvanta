@@ -3,338 +3,758 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eduvanta | Online Education Guidance</title>
+
+<title>DegreeChoice4u | Choose Right. Study Smart.</title>
+
+<meta name="description" content="DegreeChoice4u helps students explore, compare and understand online universities, courses, fees and admission options.">
 
 <style>
 :root{
-  --saffron:#ff7a00;
-  --saffron2:#ff9d2e;
-  --navy:#0b1b33;
-  --text:#182235;
-  --muted:#667085;
-  --light:#fff7ef;
-  --line:#e7ebf2;
-  --white:#fff;
+  --dark:#0B1026;
+  --dark2:#151A3A;
+  --purple:#7C3AED;
+  --purple2:#A855F7;
+  --mint:#22D3B6;
+  --white:#ffffff;
+  --bg:#F7F7FC;
+  --text:#17172A;
+  --muted:#687085;
+  --border:#E7E7F0;
+  --gold:#F59E0B;
+  --shadow:0 15px 45px rgba(11,16,38,.10);
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Inter,Arial,sans-serif;
+  background:var(--white);
   color:var(--text);
-  background:#fff;
 }
 
-a{text-decoration:none;color:inherit}
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,input,select{
+  font-family:inherit;
+}
 
 header{
   position:sticky;
   top:0;
   z-index:100;
-  background:#fff;
-  border-bottom:1px solid var(--line);
+  background:rgba(11,16,38,.96);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .nav{
-  max-width:1200px;
+  max-width:1250px;
   margin:auto;
-  height:74px;
+  min-height:76px;
+  padding:0 20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 20px;
+  gap:25px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:white;
 }
 
 .logo{
-  font-size:27px;
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
   font-weight:900;
-  color:var(--navy);
+  font-size:17px;
+  background:linear-gradient(135deg,var(--purple),var(--mint));
+  box-shadow:0 8px 25px rgba(124,58,237,.35);
 }
 
-.logo span{color:var(--saffron)}
+.brand-name{
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:-.5px;
+}
+
+.brand-name span{
+  color:var(--mint);
+}
 
 .menu{
   display:flex;
-  gap:30px;
+  gap:25px;
+  color:#D8DCEF;
+  font-size:14px;
   font-weight:700;
 }
 
-.menu a:hover{color:var(--saffron)}
+.menu a:hover{
+  color:var(--mint);
+}
 
-.expert{
-  background:var(--saffron);
-  color:white;
-  padding:13px 20px;
-  border-radius:9px;
+.btn{
+  border:none;
+  border-radius:11px;
+  padding:12px 19px;
   font-weight:800;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.primary{
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  color:white;
+}
+
+.mint{
+  background:var(--mint);
+  color:var(--dark);
+}
+
+.light{
+  background:#F0EDFF;
+  color:var(--purple);
 }
 
 .hero{
   background:
-    radial-gradient(circle at 85% 20%,#ffd9b0 0,transparent 25%),
-    linear-gradient(135deg,#fff7ef,#fff);
-  padding:80px 20px 70px;
+    radial-gradient(circle at 80% 20%,rgba(168,85,247,.22),transparent 30%),
+    radial-gradient(circle at 90% 80%,rgba(34,211,182,.15),transparent 30%),
+    var(--dark);
+  color:white;
+  padding:85px 20px 70px;
 }
 
 .hero-inner{
-  max-width:1200px;
+  max-width:1250px;
   margin:auto;
   display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:50px;
+  grid-template-columns:1.1fr .9fr;
+  gap:55px;
   align-items:center;
 }
 
 .badge{
   display:inline-block;
-  background:#fff0df;
-  color:#d85f00;
   padding:8px 14px;
+  border:1px solid rgba(34,211,182,.35);
+  background:rgba(34,211,182,.10);
+  color:var(--mint);
   border-radius:30px;
-  font-size:14px;
+  font-size:13px;
   font-weight:800;
 }
 
-h1{
-  font-size:52px;
-  line-height:1.08;
-  margin:18px 0;
+.hero h1{
+  font-size:55px;
+  line-height:1.04;
+  margin:20px 0;
+  letter-spacing:-2.5px;
 }
 
-h1 span{color:var(--saffron)}
+.hero h1 span{
+  background:linear-gradient(90deg,var(--mint),#B794F4);
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
 .hero p{
-  font-size:19px;
-  line-height:1.6;
-  color:var(--muted);
-  max-width:650px;
+  color:#C8CEE2;
+  font-size:18px;
+  line-height:1.7;
+  max-width:680px;
 }
 
 .hero-buttons{
-  margin-top:28px;
   display:flex;
-  gap:14px;
+  gap:12px;
+  margin-top:27px;
   flex-wrap:wrap;
 }
 
-.btn{
-  padding:15px 23px;
-  border-radius:9px;
-  font-weight:800;
-  display:inline-block;
-}
-
-.btn-primary{
-  background:var(--saffron);
-  color:#fff;
-}
-
-.btn-secondary{
-  border:1px solid #ddd;
-  background:#fff;
-}
-
 .hero-card{
-  background:var(--navy);
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
   border-radius:28px;
-  padding:30px;
-  color:white;
-  box-shadow:0 25px 60px rgba(11,27,51,.2);
+  padding:28px;
+  box-shadow:0 25px 60px rgba(0,0,0,.25);
 }
 
-.hero-card h2{font-size:27px;margin-top:0}
+.hero-card h3{
+  font-size:21px;
+  margin-bottom:20px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
 
 .stat{
-  display:flex;
-  justify-content:space-between;
-  padding:17px 0;
-  border-bottom:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:20px;
 }
 
-.stat:last-child{border:0}
+.stat strong{
+  display:block;
+  font-size:28px;
+  color:white;
+}
 
-section{
+.stat small{
+  color:#BFC6DC;
+  display:block;
+  margin-top:5px;
+}
+
+.search{
+  margin-top:30px;
+  background:white;
+  border-radius:17px;
+  padding:9px;
+  display:flex;
+  gap:8px;
+  box-shadow:var(--shadow);
+}
+
+.search input,
+.search select{
+  border:none;
+  outline:none;
+  padding:13px;
+  flex:1;
+  min-width:0;
+}
+
+.section{
+  max-width:1250px;
+  margin:auto;
   padding:70px 20px;
 }
 
-.container{
-  max-width:1200px;
-  margin:auto;
+.center{
+  text-align:center;
 }
 
-.section-title{
-  text-align:center;
-  font-size:36px;
-  margin:0 0 12px;
+.center h2{
+  color:var(--dark);
+  font-size:35px;
+  margin-bottom:10px;
 }
 
-.section-sub{
-  text-align:center;
+.center p{
   color:var(--muted);
-  margin:0 auto 40px;
-  max-width:700px;
+  line-height:1.6;
 }
 
-.cards{
+.course-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:35px;
+}
+
+.course{
+  border:1px solid var(--border);
+  border-radius:19px;
+  padding:24px;
+  background:white;
+  box-shadow:0 6px 22px rgba(11,16,38,.05);
+  transition:.2s;
+}
+
+.course:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+
+.course-icon{
+  width:50px;
+  height:50px;
+  border-radius:14px;
+  background:#F0EDFF;
+  display:grid;
+  place-items:center;
+  font-size:23px;
+}
+
+.course h3{
+  margin:17px 0 8px;
+}
+
+.course p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+  margin-bottom:17px;
+}
+
+.university-section{
+  background:var(--bg);
+}
+
+.filters{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:28px 0;
+}
+
+.filter{
+  border:1px solid var(--border);
+  background:white;
+  padding:10px 16px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.filter.active{
+  background:var(--dark);
+  color:white;
+}
+
+.university-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
 
-.card{
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:25px;
+.university{
   background:white;
-  transition:.25s;
+  border:1px solid var(--border);
+  border-radius:21px;
+  padding:21px;
+  box-shadow:0 6px 22px rgba(11,16,38,.05);
 }
 
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 35px rgba(0,0,0,.08);
+.uni-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .uni-logo{
-  width:58px;
-  height:58px;
-  border-radius:14px;
-  background:var(--light);
-  color:var(--saffron);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width:62px;
+  height:62px;
+  border-radius:17px;
+  background:#F3F4F8;
+  border:1px solid var(--border);
+  display:grid;
+  place-items:center;
   font-weight:900;
-  font-size:18px;
-  margin-bottom:18px;
+  color:var(--dark);
+  font-size:17px;
 }
 
-.card h3{margin:8px 0}
-.card p{color:var(--muted);line-height:1.5}
+.rating{
+  color:var(--gold);
+  font-weight:900;
+}
 
-.tag{
+.university h3{
+  margin:17px 0 8px;
+  font-size:18px;
+}
+
+.verified{
   display:inline-block;
-  padding:6px 10px;
-  border-radius:20px;
-  background:#fff1df;
-  color:#d85f00;
-  font-size:12px;
+  background:#E8FBF6;
+  color:#087F68;
+  padding:6px 9px;
+  border-radius:8px;
+  font-size:11px;
   font-weight:800;
 }
 
-.form-section{
-  background:var(--light);
+.uni-location{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:8px;
+}
+
+.fee{
+  font-size:23px;
+  font-weight:900;
+  color:var(--dark);
+  margin-top:15px;
+}
+
+.fee-note{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:13px;
+}
+
+.tag{
+  background:#F4F5F9;
+  padding:6px 8px;
+  border-radius:7px;
+  font-size:11px;
+  font-weight:700;
+  color:#50576B;
+}
+
+.uni-buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:17px;
+}
+
+.uni-buttons button{
+  padding:10px 7px;
+  font-size:13px;
+}
+
+.compare-bar{
+  display:none;
+  position:sticky;
+  bottom:15px;
+  z-index:20;
+  background:var(--dark);
+  color:white;
+  border-radius:16px;
+  padding:13px 17px;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:var(--shadow);
+  margin-top:20px;
+}
+
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:35px;
+}
+
+.blog{
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  background:white;
+}
+
+.blog-image{
+  height:155px;
+  display:grid;
+  place-items:center;
+  font-size:52px;
+  background:linear-gradient(135deg,#EEE9FF,#DDFBF5);
+}
+
+.blog-body{
+  padding:21px;
+}
+
+.stars{
+  color:var(--gold);
+  font-weight:900;
+}
+
+.blog h3{
+  margin:9px 0;
+}
+
+.blog p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:15px;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
+  margin-top:30px;
+}
+
+.feature{
+  padding:22px;
+  background:#FAFAFD;
+  border:1px solid var(--border);
+  border-radius:17px;
+}
+
+.feature h3{
+  margin:10px 0;
+}
+
+.feature p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+}
+
+.cta{
+  background:linear-gradient(135deg,var(--dark),#21164D);
+  color:white;
+  border-radius:28px;
+  padding:45px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+
+.cta h2{
+  color:white;
+  font-size:33px;
+}
+
+.cta p{
+  color:#C7CCE0;
+  margin-top:8px;
 }
 
 .form-box{
-  max-width:950px;
-  margin:auto;
-  background:white;
-  border-radius:24px;
-  padding:35px;
-  box-shadow:0 15px 50px rgba(11,27,51,.08);
+  max-width:900px;
+  margin:30px auto 0;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:26px;
+  box-shadow:var(--shadow);
 }
 
 .form-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:16px;
+  gap:13px;
 }
 
-input,select{
+.input{
   width:100%;
-  padding:15px;
-  border:1px solid #d9dee8;
-  border-radius:9px;
-  font-size:15px;
+  padding:14px;
+  border:1px solid #DDE1EA;
+  border-radius:10px;
   outline:none;
 }
 
-input:focus,select:focus{
-  border-color:var(--saffron);
+.input:focus{
+  border-color:var(--purple);
 }
 
-.full{grid-column:1/-1}
-
-.submit{
-  width:100%;
-  border:0;
-  padding:16px;
-  border-radius:9px;
-  background:var(--saffron);
-  color:white;
-  font-size:16px;
-  font-weight:800;
-  cursor:pointer;
+.full{
+  grid-column:1/-1;
 }
 
-.compare{
-  overflow-x:auto;
+.consent{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.5;
 }
 
-table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:700px;
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:30px;
 }
 
-th,td{
-  padding:18px;
-  border-bottom:1px solid var(--line);
-  text-align:left;
+.contact-card{
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:27px;
 }
 
-th{
-  background:var(--navy);
-  color:white;
+.contact-card h3{
+  margin-bottom:12px;
 }
 
-.call{
-  background:var(--navy);
-  color:white;
-  padding:60px 20px;
-  text-align:center;
-}
-
-.call h2{font-size:38px}
-
-.phone{
-  color:#ffad61;
-  font-size:25px;
-  font-weight:900;
+.contact-card p{
+  color:var(--muted);
+  line-height:1.7;
 }
 
 footer{
-  background:#071426;
-  color:white;
-  padding:50px 20px;
+  background:var(--dark);
+  color:#C8CDDF;
+  padding:50px 20px 25px;
 }
 
 .footer-grid{
-  max-width:1200px;
+  max-width:1250px;
   margin:auto;
   display:grid;
   grid-template-columns:2fr 1fr 1fr;
   gap:40px;
 }
 
-footer p{color:#b8c2d1;line-height:1.6}
-footer h3{margin-top:0}
+footer h3{
+  color:white;
+  margin-bottom:12px;
+}
 
-iframe{display:none}
+footer p{
+  font-size:14px;
+  line-height:1.7;
+}
+
+.copyright{
+  max-width:1250px;
+  margin:30px auto 0;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  font-size:12px;
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(4,8,25,.75);
+}
+
+.modal-box{
+  background:white;
+  width:100%;
+  max-width:900px;
+  max-height:90vh;
+  overflow:auto;
+  border-radius:24px;
+  padding:30px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:16px;
+  top:15px;
+  width:38px;
+  height:38px;
+  border:0;
+  border-radius:50%;
+  background:#F0F1F5;
+  cursor:pointer;
+  font-size:20px;
+}
+
+.detail-head{
+  display:flex;
+  gap:17px;
+  align-items:center;
+  padding-right:45px;
+}
+
+.detail-logo{
+  width:75px;
+  height:75px;
+  border-radius:18px;
+  background:#F2F3F7;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:21px;
+}
+
+.detail-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:22px 0;
+}
+
+.detail-item{
+  padding:15px;
+  background:#F7F8FB;
+  border-radius:12px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.detail-item b{
+  display:block;
+  color:var(--dark);
+  margin-top:5px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+}
+
+th,td{
+  border:1px solid var(--border);
+  padding:12px;
+  text-align:left;
+  font-size:13px;
+}
+
+th{
+  background:#F7F8FB;
+}
+
+.toast{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:var(--dark);
+  color:white;
+  padding:14px 18px;
+  border-radius:12px;
+  display:none;
+  z-index:300;
+}
 
 @media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr}
-  .cards{grid-template-columns:1fr 1fr}
   .menu{display:none}
+  .hero-inner{grid-template-columns:1fr}
+  .hero h1{font-size:43px}
+  .course-grid{grid-template-columns:1fr 1fr}
+  .university-grid{grid-template-columns:1fr 1fr}
+  .blog-grid{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
 }
 
 @media(max-width:600px){
-  h1{font-size:38px}
-  .cards{grid-template-columns:1fr}
-  .form-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
+  .nav>.primary{display:none}
+  .hero{padding-top:55px}
+  .hero h1{font-size:38px}
+  .search{flex-direction:column}
+  .course-grid,.university-grid,.feature-grid{grid-template-columns:1fr}
+  .form-grid,.contact-grid,.detail-grid{grid-template-columns:1fr}
+  .cta{display:block;padding:30px}
+  .cta .btn{margin-top:18px}
 }
 </style>
 </head>
@@ -342,340 +762,1138 @@ iframe{display:none}
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">Edu<span>vanta</span></div>
+<nav class="nav">
 
-    <div class="menu">
-      <a href="#universities">Universities</a>
-      <a href="#courses">Courses</a>
-      <a href="#compare">Compare</a>
-      <a href="#about">About</a>
-    </div>
+<a href="#" class="brand">
+  <div class="logo">DC</div>
+  <div class="brand-name">Degree<span>Choice4u</span></div>
+</a>
 
-    <a class="expert" href="#enquiry">Talk to Expert</a>
-  </div>
+<div class="menu">
+  <a href="#universities">Universities</a>
+  <a href="#courses">Courses</a>
+  <a href="#compare">Compare</a>
+  <a href="#blogs">Blogs</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<button class="btn primary"
+onclick="document.getElementById('lead').scrollIntoView({behavior:'smooth'})">
+Talk to Expert
+</button>
+
+</nav>
 </header>
 
+
 <section class="hero">
-  <div class="hero-inner">
 
-    <div>
-      <span class="badge">India's Online Education Guidance Platform</span>
+<div class="hero-inner">
 
-      <h1>
-        Find the right
-        <span>University & Course</span>
-        for your future.
-      </h1>
+<div>
 
-      <p>
-        Explore leading universities, compare online degree programmes,
-        understand fees and get personalised guidance from our education experts.
-      </p>
+<span class="badge">✓ Smart Education Guidance</span>
 
-      <div class="hero-buttons">
-        <a href="#enquiry" class="btn btn-primary">Get Free Counselling</a>
-        <a href="tel:9899491735" class="btn btn-secondary">📞 9899491735</a>
-      </div>
-    </div>
+<h1>
+Choose the right
+<span>degree.</span><br>
+Study smarter.
+</h1>
 
-    <div class="hero-card">
-      <h2>Why students choose Eduvanta</h2>
+<p>
+Explore universities, compare courses and fees,
+understand eligibility and recognition, and make
+a more informed education decision with DegreeChoice4u.
+</p>
 
-      <div class="stat">
-        <span>🎓 Universities</span>
-        <strong>Top Universities</strong>
-      </div>
+<div class="hero-buttons">
+<a href="#universities" class="btn primary">Explore Universities</a>
+<a href="#compare" class="btn mint">Compare Universities</a>
+</div>
 
-      <div class="stat">
-        <span>📚 Programmes</span>
-        <strong>UG & PG</strong>
-      </div>
+<div class="search">
 
-      <div class="stat">
-        <span>💬 Guidance</span>
-        <strong>Personalised</strong>
-      </div>
+<input id="searchInput"
+placeholder="Search university, MBA, MCA, BBA...">
 
-      <div class="stat">
-        <span>☎ Expert Support</span>
-        <strong>Free</strong>
-      </div>
-    </div>
+<select id="courseFilter">
+<option value="all">All Courses</option>
+<option value="MBA">MBA</option>
+<option value="MCA">MCA</option>
+<option value="BBA">BBA</option>
+<option value="BCA">BCA</option>
+<option value="B.Com">B.Com</option>
+</select>
 
-  </div>
+<button class="btn primary" onclick="searchUniversities()">Search</button>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<h3>Why students use DegreeChoice4u</h3>
+
+<div class="stats">
+
+<div class="stat">
+<strong>20+</strong>
+<small>Universities to explore</small>
+</div>
+
+<div class="stat">
+<strong>50+</strong>
+<small>Programs & specialisations</small>
+</div>
+
+<div class="stat">
+<strong>1 Place</strong>
+<small>To compare options</small>
+</div>
+
+<div class="stat">
+<strong>Free</strong>
+<small>Initial guidance</small>
+</div>
+
+</div>
+
+</div>
+
+</div>
 </section>
 
-<section id="universities">
-  <div class="container">
-    <h2 class="section-title">Top Universities</h2>
-    <p class="section-sub">
-      Explore popular universities offering online and distance learning programmes.
-    </p>
 
-    <div class="cards">
+<section class="section" id="courses">
 
-      <div class="card">
-        <div class="uni-logo">AM</div>
-        <span class="tag">Popular</span>
-        <h3>Amity University</h3>
-        <p>Online undergraduate and postgraduate programmes.</p>
-      </div>
+<div class="center">
+<h2>Explore Popular Courses</h2>
+<p>Find a program that matches your career goals.</p>
+</div>
 
-      <div class="card">
-        <div class="uni-logo">MU</div>
-        <span class="tag">Popular</span>
-        <h3>Manipal University</h3>
-        <p>Online degree programmes for working professionals and students.</p>
-      </div>
+<div class="course-grid">
 
-      <div class="card">
-        <div class="uni-logo">NM</div>
-        <span class="tag">Premium</span>
-        <h3>NMIMS</h3>
-        <p>Management and professional online programmes.</p>
-      </div>
+<div class="course">
+<div class="course-icon">🎓</div>
+<h3>Online MBA</h3>
+<p>Compare management programs, specialisations, fees and duration.</p>
+<button class="btn light" onclick="chooseCourse('MBA')">Explore MBA</button>
+</div>
 
-      <div class="card">
-        <div class="uni-logo">JG</div>
-        <span class="tag">Premium</span>
-        <h3>Jain University</h3>
-        <p>Flexible online learning programmes across multiple fields.</p>
-      </div>
+<div class="course">
+<div class="course-icon">💻</div>
+<h3>Online MCA</h3>
+<p>Explore technology-focused postgraduate degree options.</p>
+<button class="btn light" onclick="chooseCourse('MCA')">Explore MCA</button>
+</div>
 
-      <div class="card">
-        <div class="uni-logo">CU</div>
-        <span class="tag">Popular</span>
-        <h3>Chandigarh University</h3>
-        <p>Online UG and PG programmes with flexible learning.</p>
-      </div>
+<div class="course">
+<div class="course-icon">📚</div>
+<h3>Online BBA</h3>
+<p>Build your foundation for business and management careers.</p>
+<button class="btn light" onclick="chooseCourse('BBA')">Explore BBA</button>
+</div>
 
-      <div class="card">
-        <div class="uni-logo">LPU</div>
-        <span class="tag">Popular</span>
-        <h3>Lovely Professional University</h3>
-        <p>Online programmes across business, IT and other disciplines.</p>
-      </div>
+<div class="course">
+<div class="course-icon">📈</div>
+<h3>Online B.Com</h3>
+<p>Compare flexible commerce degree programs and options.</p>
+<button class="btn light" onclick="chooseCourse('B.Com')">Explore B.Com</button>
+</div>
 
-      <div class="card">
-        <div class="uni-logo">UP</div>
-        <span class="tag">Popular</span>
-        <h3>UPES</h3>
-        <p>Specialised programmes focused on modern career opportunities.</p>
-      </div>
-
-      <div class="card">
-        <div class="uni-logo">OPJ</div>
-        <span class="tag">Premium</span>
-        <h3>O.P. Jindal Global University</h3>
-        <p>Premium programmes with a strong academic focus.</p>
-      </div>
-
-    </div>
-  </div>
+</div>
 </section>
 
-<section id="courses" style="background:#fafbfc">
-  <div class="container">
-    <h2 class="section-title">Popular Programmes</h2>
-    <p class="section-sub">Choose a programme according to your career goals.</p>
 
-    <div class="cards">
+<section class="university-section" id="universities">
 
-      <div class="card">
-        <div class="uni-logo">BBA</div>
-        <h3>Bachelor of Business Administration</h3>
-        <p>Build a strong foundation in management and business.</p>
-      </div>
+<div class="section">
 
-      <div class="card">
-        <div class="uni-logo">MBA</div>
-        <h3>Master of Business Administration</h3>
-        <p>Advance your management and leadership career.</p>
-      </div>
+<div class="center">
+<h2>Top Online Universities</h2>
+<p>Explore universities and compare your options.</p>
+</div>
 
-      <div class="card">
-        <div class="uni-logo">BCA</div>
-        <h3>Bachelor of Computer Applications</h3>
-        <p>Start your career in IT, software and technology.</p>
-      </div>
+<div class="filters">
 
-      <div class="card">
-        <div class="uni-logo">MCA</div>
-        <h3>Master of Computer Applications</h3>
-        <p>Develop advanced technology and software skills.</p>
-      </div>
+<button class="filter active" onclick="filterCourse('all',this)">All</button>
+<button class="filter" onclick="filterCourse('MBA',this)">MBA</button>
+<button class="filter" onclick="filterCourse('MCA',this)">MCA</button>
+<button class="filter" onclick="filterCourse('BBA',this)">BBA</button>
+<button class="filter" onclick="filterCourse('BCA',this)">BCA</button>
+<button class="filter" onclick="filterCourse('B.Com',this)">B.Com</button>
 
-    </div>
-  </div>
+</div>
+
+<div class="university-grid" id="universityGrid"></div>
+
+<div class="compare-bar" id="compareBar">
+
+<span>
+<b id="compareCount">0</b> universities selected
+</span>
+
+<button class="btn mint" onclick="openCompare()">
+Compare Now
+</button>
+
+</div>
+
+</div>
 </section>
 
-<section id="compare">
-  <div class="container">
-    <h2 class="section-title">Compare Universities</h2>
-    <p class="section-sub">Get a quick overview before choosing your university.</p>
 
-    <div class="compare">
-      <table>
-        <tr>
-          <th>University</th>
-          <th>Popular Programmes</th>
-          <th>Learning Mode</th>
-          <th>Guidance</th>
-        </tr>
+<section class="section" id="compare">
 
-        <tr>
-          <td>Amity University</td>
-          <td>MBA, BBA, MCA</td>
-          <td>Online</td>
-          <td>Available</td>
-        </tr>
+<div class="cta">
 
-        <tr>
-          <td>Manipal University</td>
-          <td>MBA, BCA, MCA</td>
-          <td>Online</td>
-          <td>Available</td>
-        </tr>
+<div>
+<h2>Can't decide between universities?</h2>
+<p>Select universities and compare fees, courses, duration and other factors.</p>
+</div>
 
-        <tr>
-          <td>NMIMS</td>
-          <td>MBA, BBA</td>
-          <td>Online</td>
-          <td>Available</td>
-        </tr>
+<a href="#universities" class="btn mint">Start Comparing</a>
 
-        <tr>
-          <td>Jain University</td>
-          <td>MBA, BBA, MCA</td>
-          <td>Online</td>
-          <td>Available</td>
-        </tr>
-      </table>
-    </div>
-  </div>
+</div>
+
 </section>
 
-<section id="enquiry" class="form-section">
-  <div class="container">
 
-    <h2 class="section-title">Get Personalised Guidance</h2>
-    <p class="section-sub">
-      Fill in your details and our education team will contact you.
-    </p>
+<section class="section" id="blogs">
 
-    <div class="form-box">
+<div class="center">
+<h2>Education Blogs & Guides</h2>
+<p>Useful information before choosing your degree.</p>
+</div>
 
-      <!-- IMPORTANT: Replace this URL if your Apps Script URL changes -->
-      <form
-        action="https://script.google.com/macros/s/AKfycbwuYt62_BPvvRR8J1_L6ppXpXHjROeF434985BUOutoOB_u-M9SntrS0PQkvw_toktOvg/exec"
-        method="POST"
-        target="hiddenFrame"
-        onsubmit="submitted()">
+<div class="blog-grid">
 
-        <div class="form-grid">
+<article class="blog">
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            required>
+<div class="blog-image">🎓</div>
 
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number"
-            required>
+<div class="blog-body">
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address">
+<span class="stars">★★★★★</span>
 
-          <input
-            type="text"
-            name="state"
-            placeholder="State">
+<h3>How to choose the right online university?</h3>
 
-          <select name="program" required>
-            <option value="">Select Programme</option>
-            <option>BBA</option>
-            <option>MBA</option>
-            <option>BCA</option>
-            <option>MCA</option>
-            <option>BA</option>
-            <option>MA</option>
-            <option>Other</option>
-          </select>
+<p>
+Check recognition, program eligibility, fees,
+curriculum, student support and your career goals.
+</p>
 
-          <select name="university">
-            <option value="">Preferred University</option>
-            <option>Amity University</option>
-            <option>Manipal University</option>
-            <option>NMIMS</option>
-            <option>Jain University</option>
-            <option>Chandigarh University</option>
-            <option>Lovely Professional University</option>
-            <option>UPES</option>
-            <option>O.P. Jindal Global University</option>
-          </select>
+<button class="btn light"
+onclick="openBlog('How to Choose the Right Online University')">
+Read Guide
+</button>
 
-          <button class="submit full" type="submit">
-            Request a Call from Expert
-          </button>
+</div>
+</article>
 
-        </div>
-      </form>
 
-      <iframe name="hiddenFrame"></iframe>
+<article class="blog">
 
-      <div id="success"
-           style="display:none;text-align:center;margin-top:20px;color:#16803c;font-weight:800">
-        ✅ Thank you! Our education expert will contact you shortly.
-      </div>
+<div class="blog-image">💰</div>
 
-    </div>
-  </div>
+<div class="blog-body">
+
+<span class="stars">★★★★★</span>
+
+<h3>What should you compare in online MBA fees?</h3>
+
+<p>
+Understand total program fees, payment schedules,
+scholarships and other applicable charges.
+</p>
+
+<button class="btn light"
+onclick="openBlog('Online MBA Fees Guide')">
+Read Guide
+</button>
+
+</div>
+</article>
+
+
+<article class="blog">
+
+<div class="blog-image">🔎</div>
+
+<div class="blog-body">
+
+<span class="stars">★★★★☆</span>
+
+<h3>How to check online degree recognition?</h3>
+
+<p>
+Learn why students should verify recognition for
+the exact university, program and academic session.
+</p>
+
+<button class="btn light"
+onclick="openBlog('Online Degree Recognition Guide')">
+Read Guide
+</button>
+
+</div>
+</article>
+
+</div>
 </section>
 
-<section class="call">
-  <h2>Need help choosing your course?</h2>
-  <p>Talk to an Eduvanta education expert today.</p>
-  <a class="phone" href="tel:9899491735">📞 9899491735</a>
+
+<section class="section">
+
+<div class="center">
+<h2>What Should You Compare?</h2>
+<p>Don't choose a university only because of its fee.</p>
+</div>
+
+<div class="feature-grid">
+
+<div class="feature">
+<div>🏅</div>
+<h3>Recognition</h3>
+<p>Verify the relevant recognition status for the exact program and session.</p>
+</div>
+
+<div class="feature">
+<div>💰</div>
+<h3>Total Cost</h3>
+<p>Compare complete program fees and applicable additional charges.</p>
+</div>
+
+<div class="feature">
+<div>📖</div>
+<h3>Course Fit</h3>
+<p>Compare specialisations, eligibility, duration and curriculum.</p>
+</div>
+
+<div class="feature">
+<div>🤝</div>
+<h3>Student Support</h3>
+<p>Consider academic support, learning platform and career services.</p>
+</div>
+
+</div>
+
 </section>
 
-<footer id="about">
-  <div class="footer-grid">
 
-    <div>
-      <h2>Eduvanta</h2>
-      <p>
-        Education guidance made simpler. Explore, compare and choose
-        your university and programme with clarity.
-      </p>
-    </div>
+<section class="section" id="lead">
 
-    <div>
-      <h3>Quick Links</h3>
-      <p>Universities</p>
-      <p>Courses</p>
-      <p>Compare</p>
-      <p>About Us</p>
-    </div>
+<div class="center">
+<h2>Get Personalised Guidance</h2>
+<p>Tell us what you want to study and our team can contact you.</p>
+</div>
 
-    <div>
-      <h3>Contact</h3>
-      <p>📞 9899491735</p>
-      <p>India</p>
-    </div>
+<div class="form-box">
 
-  </div>
+<form onsubmit="submitEnquiry(event)">
+
+<div class="form-grid">
+
+<input class="input"
+id="name"
+placeholder="Full Name"
+required>
+
+<input class="input"
+id="phone"
+placeholder="Mobile Number"
+maxlength="10"
+required>
+
+<input class="input"
+id="email"
+type="email"
+placeholder="Email Address">
+
+<select class="input" id="state">
+<option value="">Select State</option>
+<option>Delhi</option>
+<option>Uttar Pradesh</option>
+<option>Haryana</option>
+<option>Rajasthan</option>
+<option>Maharashtra</option>
+<option>Other</option>
+</select>
+
+<select class="input" id="course" required>
+<option value="">Select Course</option>
+<option>MBA</option>
+<option>MCA</option>
+<option>BBA</option>
+<option>BCA</option>
+<option>B.Com</option>
+<option>Other</option>
+</select>
+
+<select class="input" id="preferredUniversity">
+<option value="">Preferred University</option>
+</select>
+
+<p class="consent full">
+By submitting this enquiry, you agree to be contacted by DegreeChoice4u
+regarding your education enquiry.
+</p>
+
+<button class="btn primary full" type="submit">
+Request a Call
+</button>
+
+</div>
+
+</form>
+
+</div>
+</section>
+
+
+<section class="section" id="contact">
+
+<div class="center">
+<h2>Contact Us</h2>
+<p>Have questions? Talk to DegreeChoice4u.</p>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>📞 Talk to an Expert</h3>
+
+<p>
+Our education guidance team can help you
+understand courses and university options.
+</p>
+
+<br>
+
+<a href="tel:9899491735"
+class="btn primary">
+Call 9899491735
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>📍 Office Address</h3>
+
+<p>
+<b>DegreeChoice4u</b><br>
+Rajender Nagar,<br>
+Ghaziabad, Uttar Pradesh,<br>
+India
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>DegreeChoice4u</h3>
+<p>
+Choose Right. Study Smart.<br>
+Explore universities, compare programs
+and make an informed education decision.
+</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<p>
+<a href="#universities">Universities</a><br>
+<a href="#courses">Courses</a><br>
+<a href="#compare">Compare</a><br>
+<a href="#blogs">Blogs</a>
+</p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>
+📞 9899491735<br>
+📍 Rajender Nagar, Ghaziabad<br>
+India
+</p>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 DegreeChoice4u. All rights reserved.
+<br><br>
+Fees, ratings and program details should be verified against
+official university sources before admission.
+</div>
+
 </footer>
 
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal()">×</button>
+
+<div id="modalContent"></div>
+
+</div>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+
 <script>
-function submitted(){
-  document.getElementById("success").style.display="block";
+
+const universities = [
+
+{
+id:"amity",
+name:"Amity University Online",
+short:"AU",
+rating:"4.6",
+location:"Noida, Uttar Pradesh",
+recognition:"Verify current UGC/DEB status for the selected program and session.",
+courses:["MBA","MCA","BBA","BCA","B.Com"],
+fees:{
+MBA:"₹2,25,000*",
+MCA:"₹1,95,000*",
+BBA:"₹1,65,000*",
+BCA:"₹1,50,000*",
+"B.Com":"₹1,35,000*"
+},
+duration:"Program dependent",
+about:"Explore online programs across management, technology and commerce, with multiple program options and specialisations."
+},
+
+{
+id:"muj",
+name:"Manipal University Jaipur",
+short:"MUJ",
+rating:"4.9",
+location:"Jaipur, Rajasthan",
+recognition:"Verify current UGC/DEB status for the selected program and session.",
+courses:["MBA","MCA","BBA","BCA","B.Com"],
+fees:{
+MBA:"₹1,80,000*",
+MCA:"₹1,58,000*",
+BBA:"₹1,39,500*",
+BCA:"Check latest",
+"B.Com":"Check latest"
+},
+duration:"Program dependent",
+about:"Explore online degree programs across management, IT, commerce and other disciplines."
+},
+
+{
+id:"cu",
+name:"Chandigarh University Online",
+short:"CU",
+rating:"4.5",
+location:"Mohali, Punjab",
+recognition:"Verify current UGC/DEB status for the selected program and session.",
+courses:["MBA","MCA","BBA","BCA"],
+fees:{
+MBA:"₹2,20,000*",
+MCA:"₹1,65,000*",
+BBA:"Check latest",
+BCA:"Check latest"
+},
+duration:"Program dependent",
+about:"Explore flexible online programs with management, technology and business options."
+},
+
+{
+id:"jain",
+name:"JAIN (Deemed-to-be University) Online",
+short:"JAIN",
+rating:"4.5",
+location:"Bengaluru, Karnataka",
+recognition:"Verify current UGC/DEB status for the selected program and session.",
+courses:["MBA","MCA","BBA","BCA","B.Com"],
+fees:{
+MBA:"Check latest",
+MCA:"Check latest",
+BBA:"Check latest",
+BCA:"Check latest",
+"B.Com":"Check latest"
+},
+duration:"Program dependent",
+about:"Online higher education programs across management, technology, commerce and related disciplines."
+},
+
+{
+id:"lpu",
+name:"Lovely Professional University Online",
+short:"LPU",
+rating:"4.4",
+location:"Punjab",
+recognition:"Verify current UGC/DEB status for the selected program and session.",
+courses:["MBA","MCA","BBA","BCA","B.Com"],
+fees:{
+MBA:"Check latest",
+MCA:"Check latest",
+BBA:"Check latest",
+BCA:"Check latest",
+"B.Com":"Check latest"
+},
+duration:"Program dependent",
+about:"Explore online degree programs across management, technology, commerce and other fields."
+},
+
+{
+id:"nmims",
+name:"NMIMS CDOE",
+short:"NM",
+rating:"4.6",
+location:"Mumbai, Maharashtra",
+recognition:"Verify current UGC/DEB status for the selected program and session.",
+courses:["MBA","BBA","B.Com"],
+fees:{
+MBA:"Check latest",
+BBA:"Check latest",
+"B.Com":"Check latest"
+},
+duration:"Program dependent",
+about:"Explore online programs offered through the university's Centre for Distance and Online Education."
+},
+
+{
+id:"upes",
+name:"UPES Online",
+short:"UPES",
+rating:"4.4",
+location:"Dehradun, Uttarakhand",
+recognition:"Verify current UGC/DEB status for the selected program and session.",
+courses:["MBA","BBA","BCA"],
+fees:{
+MBA:"Check latest",
+BBA:"Check latest",
+BCA:"Check latest"
+},
+duration:"Program dependent",
+about:"Explore online programs across management, technology and related disciplines."
+},
+
+{
+id:"jgu",
+name:"O.P. Jindal Global University Online",
+short:"JGU",
+rating:"4.5",
+location:"Sonipat, Haryana",
+recognition:"Verify current UGC/DEB status for the selected program and session.",
+courses:["MBA","BBA"],
+fees:{
+MBA:"Check latest",
+BBA:"Check latest"
+},
+duration:"Program dependent",
+about:"Explore online learning opportunities from a multidisciplinary university."
 }
+
+];
+
+
+let selected = [];
+
+
+function renderUniversities(list=universities){
+
+const grid=document.getElementById("universityGrid");
+
+grid.innerHTML=list.map(u=>`
+
+<div class="university">
+
+<div class="uni-top">
+
+<div class="uni-logo">
+${u.short}
+</div>
+
+<div class="rating">
+★ ${u.rating}
+</div>
+
+</div>
+
+<h3>${u.name}</h3>
+
+<span class="verified">
+✓ Recognition check
+</span>
+
+<div class="uni-location">
+📍 ${u.location}
+</div>
+
+<div class="fee">
+${u.fees.MBA || Object.values(u.fees)[0]}
+</div>
+
+<div class="fee-note">
+Indicative program fee*
+</div>
+
+<div class="tags">
+
+${u.courses.map(c=>`
+<span class="tag">${c}</span>
+`).join("")}
+
+</div>
+
+<div class="uni-buttons">
+
+<button class="btn light"
+onclick="openUniversity('${u.id}')">
+View Details
+</button>
+
+<button class="btn primary"
+onclick="toggleCompare('${u.id}')">
+${selected.includes(u.id) ? "✓ Added" : "Compare"}
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+function filterCourse(course,button){
+
+document.querySelectorAll(".filter")
+.forEach(x=>x.classList.remove("active"));
+
+button.classList.add("active");
+
+if(course==="all"){
+renderUniversities();
+}else{
+renderUniversities(
+universities.filter(u=>u.courses.includes(course))
+);
+}
+
+}
+
+
+function chooseCourse(course){
+
+document.getElementById("courseFilter").value=course;
+
+document.getElementById("searchInput").value=course;
+
+document.getElementById("universities")
+.scrollIntoView({behavior:"smooth"});
+
+renderUniversities(
+universities.filter(u=>u.courses.includes(course))
+);
+
+}
+
+
+function searchUniversities(){
+
+const q=document.getElementById("searchInput")
+.value.toLowerCase()
+.trim();
+
+const course=document.getElementById("courseFilter").value;
+
+const result=universities.filter(u=>{
+
+const matchCourse=
+course==="all" ||
+u.courses.includes(course);
+
+const matchText=
+!q ||
+u.name.toLowerCase().includes(q) ||
+u.courses.some(c=>
+c.toLowerCase().includes(q)
+);
+
+return matchCourse && matchText;
+
+});
+
+renderUniversities(result);
+
+document.getElementById("universities")
+.scrollIntoView({behavior:"smooth"});
+
+}
+
+
+function toggleCompare(id){
+
+if(selected.includes(id)){
+
+selected=selected.filter(x=>x!==id);
+
+}else{
+
+if(selected.length>=4){
+
+showToast("You can compare up to 4 universities.");
+
+return;
+
+}
+
+selected.push(id);
+
+}
+
+document.getElementById("compareCount")
+.textContent=selected.length;
+
+document.getElementById("compareBar")
+.style.display=selected.length ? "flex" : "none";
+
+renderUniversities();
+
+}
+
+
+function openCompare(){
+
+if(selected.length<2){
+
+showToast("Select at least 2 universities.");
+
+return;
+
+}
+
+const list=selected.map(
+id=>universities.find(u=>u.id===id)
+);
+
+let html=`
+
+<h2>University Comparison</h2>
+
+<p style="color:#687085;margin-top:8px">
+Compare your selected universities side-by-side.
+</p>
+
+<table>
+
+<tr>
+<th>Factor</th>
+${list.map(u=>`<th>${u.name}</th>`).join("")}
+</tr>
+
+<tr>
+<td>Rating</td>
+${list.map(u=>`<td>★ ${u.rating}</td>`).join("")}
+</tr>
+
+<tr>
+<td>Courses</td>
+${list.map(u=>`<td>${u.courses.join(", ")}</td>`).join("")}
+</tr>
+
+<tr>
+<td>MBA Fee</td>
+${list.map(u=>`<td>${u.fees.MBA || "—"}</td>`).join("")}
+</tr>
+
+<tr>
+<td>Duration</td>
+${list.map(u=>`<td>${u.duration}</td>`).join("")}
+</tr>
+
+<tr>
+<td>Recognition</td>
+${list.map(u=>`<td>Verify current status</td>`).join("")}
+</tr>
+
+<tr>
+<td>Location</td>
+${list.map(u=>`<td>${u.location}</td>`).join("")}
+</tr>
+
+</table>
+
+<br>
+
+<p style="font-size:12px;color:#687085">
+*Fees and recognition information should be verified from official
+university/UGC-DEB sources before admission.
+</p>
+`;
+
+document.getElementById("modalContent").innerHTML=html;
+
+openModal();
+
+}
+
+
+function openUniversity(id){
+
+const u=universities.find(x=>x.id===id);
+
+const rows=u.courses.map(c=>`
+
+<tr>
+<td><b>${c}</b></td>
+<td>${u.fees[c] || "Check latest official fee"}</td>
+</tr>
+
+`).join("");
+
+document.getElementById("modalContent").innerHTML=`
+
+<div class="detail-head">
+
+<div class="detail-logo">
+${u.short}
+</div>
+
+<div>
+
+<h2>${u.name}</h2>
+
+<div class="rating">
+★ ${u.rating}
+</div>
+
+</div>
+
+</div>
+
+<br>
+
+<span class="verified">
+✓ Verify current recognition
+</span>
+
+<p style="margin-top:18px;line-height:1.7;color:#687085">
+${u.about}
+</p>
+
+<div class="detail-grid">
+
+<div class="detail-item">
+Location
+<b>${u.location}</b>
+</div>
+
+<div class="detail-item">
+Duration
+<b>${u.duration}</b>
+</div>
+
+<div class="detail-item">
+Recognition
+<b>Check current status</b>
+</div>
+
+</div>
+
+<h3>Accreditation & Recognition</h3>
+
+<p style="margin-top:8px;color:#687085;line-height:1.6">
+${u.recognition}
+</p>
+
+<h3 style="margin-top:24px">
+Programs & Fees
+</h3>
+
+<table>
+
+<tr>
+<th>Program</th>
+<th>Indicative Fee</th>
+</tr>
+
+${rows}
+
+</table>
+
+<p style="font-size:12px;color:#687085;margin-top:15px;line-height:1.6">
+*Fees may change. Confirm the final fee, admission requirements
+and recognition from the official university source before admission.
+</p>
+
+<br>
+
+<button class="btn primary"
+onclick="enquireUniversity('${u.id}')">
+Enquire About This University
+</button>
+
+`;
+
+openModal();
+
+}
+
+
+function enquireUniversity(id){
+
+const u=universities.find(x=>x.id===id);
+
+document.getElementById("preferredUniversity").value=u.name;
+
+closeModal();
+
+document.getElementById("lead")
+.scrollIntoView({behavior:"smooth"});
+
+}
+
+
+function openBlog(title){
+
+document.getElementById("modalContent").innerHTML=`
+
+<h2>${title}</h2>
+
+<div class="stars" style="margin-top:10px">
+★★★★★
+</div>
+
+<p style="margin-top:20px;line-height:1.8;color:#687085">
+
+Choosing an online degree requires more than comparing
+one fee number. Students should consider the university,
+the exact program, recognition for the relevant academic
+session, eligibility, duration, curriculum, learning support
+and total cost.
+
+</p>
+
+<p style="margin-top:15px;line-height:1.8;color:#687085">
+
+Always verify the latest information using official university
+and relevant regulatory sources before making an admission decision.
+
+</p>
+
+<br>
+
+<button class="btn primary"
+onclick="closeModal();document.getElementById('lead').scrollIntoView({behavior:'smooth'})">
+Talk to an Expert
+</button>
+
+`;
+
+openModal();
+
+}
+
+
+function openModal(){
+
+document.getElementById("modal")
+.style.display="flex";
+
+}
+
+
+function closeModal(){
+
+document.getElementById("modal")
+.style.display="none";
+
+}
+
+
+function showToast(message){
+
+const toast=document.getElementById("toast");
+
+toast.textContent=message;
+
+toast.style.display="block";
+
+setTimeout(()=>{
+toast.style.display="none";
+},2500);
+
+}
+
+
+function submitEnquiry(event){
+
+event.preventDefault();
+
+const name=document.getElementById("name").value.trim();
+
+const phone=document.getElementById("phone").value.trim();
+
+if(!/^[6-9][0-9]{9}$/.test(phone)){
+
+showToast("Please enter a valid 10-digit mobile number.");
+
+return;
+
+}
+
+/*
+Google Sheet connection will be added in the next step.
+For now this only confirms the enquiry form works.
+*/
+
+showToast(
+"Thanks "+name+"! Your enquiry has been received."
+);
+
+event.target.reset();
+
+}
+
+
+document.getElementById("preferredUniversity").innerHTML=
+
+'<option value="">Preferred University</option>'+
+
+universities.map(u=>
+`<option>${u.name}</option>`
+).join("");
+
+
+renderUniversities();
+
+
+window.onclick=function(event){
+
+const modal=document.getElementById("modal");
+
+if(event.target===modal){
+closeModal();
+}
+
+};
+
 </script>
 
 </body>
