@@ -1842,8 +1842,59 @@ toast.style.display="none";
 }
 
 
-function submitEnquiry(event){
+async function submitEnquiry(event){
 
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const state = document.getElementById("state").value;
+  const course = document.getElementById("course").value;
+  const university = document.getElementById("preferredUniversity").value;
+
+  if(!/^[6-9][0-9]{9}$/.test(phone)){
+    showToast("Please enter a valid 10-digit mobile number.");
+    return;
+  }
+
+  const GOOGLE_SHEET_URL =
+  "https://script.google.com/macros/s/AKfycbzR1-vHzUWPRPXqns_PMUii4n8lRwuVk3E0JU2lJmLP7e5gFL8r2UphSnuj1SICclX1yg/exec";
+
+  const leadData = {
+    name: name,
+    phone: phone,
+    email: email,
+    state: state,
+    course: course,
+    university: university
+  };
+
+  try {
+
+    await fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(leadData)
+    });
+
+    showToast("✅ Enquiry submitted successfully!");
+
+    event.target.reset();
+
+  } catch(error) {
+
+    console.error(error);
+
+    showToast(
+      "Something went wrong. Please try again."
+    );
+
+  }
+}
 event.preventDefault();
 
 const name=document.getElementById("name").value.trim();
