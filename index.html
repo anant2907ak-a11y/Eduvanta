@@ -69,21 +69,6 @@ h1{font-size:42px;line-height:1.15;margin:15px 0;color:var(--navy)}.badge{backgr
 .author-box{display:flex;align-items:center;gap:10px;margin-top:15px;padding-top:12px;border-top:1px solid var(--line)}
 .author-img{width:32px;height:32px;border-radius:50%;object-fit:cover}
 
-/* FAQ STYLES */
-.faq-item{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;background:#fff;overflow:hidden}
-.faq-question{padding:16px 20px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:#fff}
-.faq-answer{padding:0 20px 16px 20px;color:var(--muted);font-size:14px;display:none;line-height:1.6}
-.faq-item.active .faq-answer{display:block}
-.faq-item.active .faq-question{background:var(--badami)}
-
-/* FOOTER DARK STYLES */
-footer{background-color:#0f1115;color:#ffffff;padding:60px 20px 20px 20px;font-size:14px;border-top:1px solid #1f2937}
-.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;align-items:start}
-.footer-col h4{color:#ffffff;margin-top:0;margin-bottom:15px;font-size:15px;font-weight:700}
-.footer-col ul{list-style:none;padding:0;margin:0;color:#9ca3af;line-height:2.2}
-.footer-col ul a{color:inherit;transition:0.2s}.footer-col ul a:hover{color:#3b82f6}
-.badge-box{background:#ffffff;color:#000;border-radius:10px;padding:10px 15px;margin-top:15px;display:flex;justify-content:space-between;align-items:center;max-width:200px}
-
 .page-view{display:none}.page-view.active{display:block}
 .breadcrumb{margin-bottom:20px;font-size:14px;color:var(--muted)}.breadcrumb a{color:var(--pista-btn);cursor:pointer;font-weight:600}
 
@@ -105,9 +90,7 @@ footer{background-color:#0f1115;color:#ffffff;padding:60px 20px 20px 20px;font-s
       <a onclick="showCourse('MBA')">Online MBA</a>
       <a onclick="showCourse('MCA')">Online MCA</a>
       <a onclick="showCourse('BBA')">Online BBA</a>
-      <a onclick="scrollToSection('blogs-sec')">Blogs</a>
-      <a onclick="scrollToSection('faq-sec')">FAQs</a>
-      <a onclick="scrollToSection('contact-sec')">Contact Us</a>
+      <a onclick="document.getElementById('blogs-sec').scrollIntoView({behavior:'smooth'})">Blogs</a>
     </div>
     <button class="btn primary" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">Get Free Counseling</button>
   </nav>
@@ -257,61 +240,6 @@ footer{background-color:#0f1115;color:#ffffff;padding:60px 20px 20px 20px;font-s
       </div>
     </div>
   </section>
-
-  <!-- DETAILED FAQ SECTION -->
-  <section class="section" id="faq-sec" style="background:#fafafa;border-radius:24px;margin-bottom:40px;">
-    <div class="center">
-      <h2>Frequently Asked Questions (FAQs)</h2>
-      <p style="color:var(--muted)">Get detailed clarity on UGC rules, exam process, EMI options & job validity.</p>
-    </div>
-    <div style="max-width:800px;margin:30px auto 0 auto;">
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">Are online degrees fully valid for Government Jobs & Higher Studies in India? <span>+</span></div>
-        <div class="faq-answer">Yes, absolutely. As per the official UGC (Universities Grant Commission) notification, online degrees awarded by UGC-DEB approved universities are treated at par with traditional on-campus regular degrees for government job examinations (UPSC, Banking, SSC), private jobs, and higher studies in India or abroad.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">How are semester examinations conducted in online courses? <span>+</span></div>
-        <div class="faq-answer">Exams are conducted digitally through AI-proctored online test software. You can safely give exams from your home/office using a standard web browser and webcam. Some universities also give flexible time slots on weekends to fit working professionals' routines.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">Can I pay my course fees in monthly EMI instalments? <span>+</span></div>
-        <div class="faq-answer">Yes, most top online universities provide easy 0% interest monthly EMI options starting as low as ₹5,000/month. You can choose to pay per semester or through monthly banking EMI arrangements.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">Do online universities provide campus placements or career assistance? <span>+</span></div>
-        <div class="faq-answer">Yes! Universities organize virtual placement drives, resume building workshops, mock interview sessions, and job fair portals with 300+ hiring partners like TCS, Infosys, Wipro, ICICI Bank, and Amazon.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">What is the eligibility criteria for Online MBA and MCA admission? <span>+</span></div>
-        <div class="faq-answer">For Online MBA, a Bachelor's degree (any stream) with a minimum 40%-50% aggregate score is required. For Online MCA, a graduation degree (BCA, B.Sc, B.Com, or B.A.) with Mathematics at 10+2 or Graduation level is generally required.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT US SECTION WITH EXACT DETAILS -->
-  <section class="section" id="contact-sec">
-    <div class="center">
-      <h2>Contact Us</h2>
-      <p style="color:var(--muted)">Reach out directly to our expert career team or visit our office.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;">
-      <div style="background:var(--badami);padding:25px;border-radius:16px;border:1px solid var(--line);">
-        <h3 style="margin-top:0;color:var(--pista-dark);">📞 Direct Call / Helpline</h3>
-        <p style="color:var(--muted);font-size:14px;margin-bottom:8px;">Speak with our senior admission counsellor:</p>
-        <p style="font-weight:700;font-size:20px;margin:0;color:var(--navy);">+91 9899491735</p>
-      </div>
-      <div style="background:var(--badami);padding:25px;border-radius:16px;border:1px solid var(--line);">
-        <h3 style="margin-top:0;color:var(--pista-dark);">📍 Office Address</h3>
-        <p style="color:var(--muted);font-size:14px;margin-bottom:8px;">Visit us for in-person counseling:</p>
-        <p style="font-weight:700;font-size:15px;margin:0;line-height:1.5;">Rajender Nagar, Ghaziabad,<br>Uttar Pradesh, India</p>
-      </div>
-      <div style="background:var(--badami);padding:25px;border-radius:16px;border:1px solid var(--line);">
-        <h3 style="margin-top:0;color:var(--pista-dark);">✉️ Email Inquiry</h3>
-        <p style="color:var(--muted);font-size:14px;margin-bottom:8px;">Send us your query via email:</p>
-        <p style="font-weight:700;font-size:15px;margin:0;">info@degreechoice4u.com</p>
-      </div>
-    </div>
-  </section>
 </main>
 
 <main id="view-course" class="page-view">
@@ -363,103 +291,6 @@ footer{background-color:#0f1115;color:#ffffff;padding:60px 20px 20px 20px;font-s
     <div id="modal-content-area"></div>
   </div>
 </div>
-
-<!-- DARK FOOTER SECTION -->
-<footer>
-  <div class="footer-grid">
-    
-    <!-- Column 1: Brand & Contact -->
-    <div class="footer-col">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-        <span style="font-size:24px;font-weight:900;color:#3b82f6;">DegreeChoice<span style="color:#22c55e;">4U</span></span>
-        <span style="background:#eab308;color:#000;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:4px;">#1 Choice</span>
-      </div>
-      <p style="color:#3b82f6;font-size:15px;margin-top:0;font-weight:600;">Get the right <span style="color:#60a5fa;">guidance with us</span></p>
-      
-      <p style="margin-top:15px;font-weight:bold;color:#d1d5db;">Download the app</p>
-      <div style="display:flex;gap:8px;margin-bottom:15px;">
-        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:35px;"></a>
-        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" style="height:35px;"></a>
-      </div>
-
-      <p style="font-weight:bold;margin-bottom:5px;color:#d1d5db;">Contact Us:</p>
-      <p style="color:#9ca3af;margin:0 0 5px 0;">📍 Rajender Nagar, Ghaziabad</p>
-      <p style="color:#9ca3af;margin:0 0 5px 0;">📞 +91 9899491735</p>
-      <p style="color:#9ca3af;margin:0 0 15px 0;">✉️ info@degreechoice4u.com</p>
-
-      <div style="background:#1f2937;border:1px solid #374151;padding:8px 12px;border-radius:8px;max-width:180px;">
-        <span style="background:#22c55e;color:#fff;font-size:9px;padding:2px 5px;border-radius:3px;text-transform:uppercase;">WhatsApp Support</span>
-        <div style="font-weight:bold;margin-top:3px;">+91 9899491735</div>
-      </div>
-    </div>
-
-    <!-- Column 2: MBA & Verifications -->
-    <div class="footer-col">
-      <h4>Online & Distance MBA</h4>
-      <ul>
-        <li><a href="#">Finance Management</a></li>
-        <li><a href="#">Marketing Management</a></li>
-        <li><a href="#">HR Management</a></li>
-        <li><a href="#" style="color:#3b82f6;font-weight:bold;">View All Specialisations +</a></li>
-      </ul>
-
-      <h4 style="margin-top:25px;">Top Universities</h4>
-      <ul>
-        <li><a href="#">Amity University Online</a></li>
-        <li><a href="#">Chandigarh University</a></li>
-        <li><a href="#">Manipal University Jaipur</a></li>
-        <li><a href="#">Jain University Online</a></li>
-      </ul>
-
-      <div style="background:#ffffff;color:#000;border-radius:12px;padding:12px;margin-top:20px;text-align:center;max-width:150px;">
-        <div style="font-weight:900;font-size:14px;color:#0284c7;">DUN & BRADSTREET</div>
-        <div style="font-size:9px;font-weight:bold;color:#0284c7;">REGISTERED</div>
-      </div>
-    </div>
-
-    <!-- Column 3: Courses & Ratings -->
-    <div class="footer-col">
-      <h4>Online UG & PG Degrees</h4>
-      <ul>
-        <li><a href="#">Online BCA + MCA</a></li>
-        <li><a href="#">Online BBA + MBA</a></li>
-        <li><a href="#">Online B.Com</a></li>
-        <li><a href="#">Online M.Com</a></li>
-      </ul>
-
-      <div class="badge-box">
-        <span style="font-size:11px;font-weight:bold;color:#374151;">Great Place To Work</span>
-      </div>
-      <div class="badge-box">
-        <span style="font-size:12px;font-weight:bold;">Career Karma</span>
-        <span style="background:#2563eb;color:#fff;padding:2px 6px;border-radius:10px;font-size:10px;font-weight:bold;">★ 4.7</span>
-      </div>
-    </div>
-
-    <!-- Column 4: Quick Links -->
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#" onclick="showView('home')">Home</a></li>
-        <li><a href="#" onclick="scrollToSection('blogs-sec')">Blogs & Guides</a></li>
-        <li><a href="#" onclick="scrollToSection('faq-sec')">FAQs</a></li>
-        <li><a href="#" onclick="scrollToSection('contact-sec')">Contact Us</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Use</a></li>
-      </ul>
-
-      <div class="badge-box" style="margin-top:20px;">
-        <span style="font-size:12px;font-weight:bold;color:#059669;">★ Trustpilot</span>
-        <span style="background:#2563eb;color:#fff;padding:2px 6px;border-radius:10px;font-size:10px;font-weight:bold;">★ 4.7</span>
-      </div>
-    </div>
-
-  </div>
-
-  <div style="max-width:1200px;margin:30px auto 0 auto;border-top:1px solid #1f2937;padding-top:20px;text-align:center;color:#6b7280;font-size:12px;">
-    © 2026 DegreeChoice4U. All Rights Reserved. Rajender Nagar, Ghaziabad.
-  </div>
-</footer>
 
 <script>
 const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
@@ -563,18 +394,6 @@ function showView(viewId) {
   document.querySelectorAll('.page-view').forEach(e => e.classList.remove('active'));
   document.getElementById('view-' + viewId).classList.add('active');
   window.scrollTo({top:0, behavior:'smooth'});
-}
-
-function scrollToSection(id) {
-  showView('home');
-  setTimeout(() => {
-    document.getElementById(id).scrollIntoView({behavior:'smooth'});
-  }, 100);
-}
-
-function toggleFaq(el) {
-  const item = el.parentElement;
-  item.classList.toggle('active');
 }
 
 function renderUnis(list, targetId) {
