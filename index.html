@@ -185,83 +185,65 @@ header{
   font-size:18px;
   line-height:1.7;
   max-width:680px;
-}
+async function submitLead(){
 
-.hero-buttons{
-  display:flex;
-  gap:12px;
-  margin-top:27px;
-  flex-wrap:wrap;
-}
+  const n = document.getElementById('name').value.trim();
+  const p = document.getElementById('phone').value.trim();
+  const course = document.getElementById('course').value;
 
-.hero-card{
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:28px;
-  padding:28px;
-  box-shadow:0 25px 60px rgba(0,0,0,.25);
-}
+  const btn = document.querySelector('#lead .btn.primary');
 
-.hero-card h3{
-  font-size:21px;
-  margin-bottom:20px;
-}
+  if(!n || !p || course === 'Select course'){
+    alert('Please enter your name, phone number and select a course.');
+    return;
+  }
 
-.stats{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:13px;
-}
+  const WEB_APP_URL =
+  'https://script.google.com/macros/s/AKfycbzR1-vHzUWPRPXqns_PMUii4n8lRwuVk3E0JU2lJmLP7e5gFL8r2UphSnuj1SICclX1yg/exec';
 
-.stat{
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:16px;
-  padding:20px;
-}
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
 
-.stat strong{
-  display:block;
-  font-size:28px;
-  color:white;
-}
+  try {
 
-.stat small{
-  color:#BFC6DC;
-  display:block;
-  margin-top:5px;
-}
+    await fetch(WEB_APP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify({
+        name: n,
+        phone: p,
+        course: course,
+        email: '',
+        state: '',
+        university: ''
+      })
+    });
 
-.search{
-  margin-top:30px;
-  background:white;
-  border-radius:17px;
-  padding:9px;
-  display:flex;
-  gap:8px;
-  box-shadow:var(--shadow);
-}
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('course').selectedIndex = 0;
 
-.search input,
-.search select{
-  border:none;
-  outline:none;
-  padding:13px;
-  flex:1;
-  min-width:0;
-}
+    alert(
+      'Thanks, ' + n +
+      '! Your enquiry has been submitted successfully.'
+    );
 
-.section{
-  max-width:1250px;
-  margin:auto;
-  padding:70px 20px;
-}
+  } catch(error) {
 
-.center{
-  text-align:center;
-}
+    console.error(error);
 
-.center h2{
+    alert('Something went wrong. Please try again.');
+
+  } finally {
+
+    btn.disabled = false;
+    btn.textContent = 'Request Call';
+
+  }
+}
   color:var(--dark);
   font-size:35px;
   margin-bottom:10px;
