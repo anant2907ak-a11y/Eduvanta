@@ -4,50 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Eduvanta — Compare Online Universities & Courses</title>
-<meta name="description" content="Eduvanta helps learners discover and compare online degree programs, universities, fees, rankings, and accreditation details.">
 <style>
-:root{--navy:#10233f;--blue:#246bfe;--sky:#eef5ff;--text:#182235;--muted:#667085;--line:#e7ebf2;--green:#19a974;--gold:#f59e0b}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);background:#fff}a{text-decoration:none;color:inherit}
+:root{--navy:#0f172a;--blue:#4f46e5;--sky:#eeefbe;--purple:#7c3aed;--text:#1e293b;--muted:#64748b;--line:#e2e8f0;--green:#10b981;--gold:#f59e0b;--bg:#f8fafc}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;color:var(--text);background:#fff}a{text-decoration:none;color:inherit}
 header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line)}
-.nav{max-width:1180px;margin:auto;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 22px}
-.logo{font-size:25px;font-weight:800;color:var(--blue);cursor:pointer}.logo span{color:var(--navy)}
-.menu{display:flex;gap:27px;font-size:14px;font-weight:600}.menu a{cursor:pointer}.menu a:hover{color:var(--blue)}
-.btn{border:0;border-radius:9px;padding:12px 19px;font-weight:700;cursor:pointer;display:inline-block;text-align:center}.primary{background:var(--blue);color:#fff}.light{background:#edf3ff;color:var(--blue)}.outline{border:1px solid var(--blue);color:var(--blue);background:transparent}
-.hero{background:linear-gradient(135deg,#f3f7ff,#fff);padding:64px 22px 48px}.hero-in{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
-.badge{display:inline-block;background:#e8f0ff;color:var(--blue);padding:8px 13px;border-radius:30px;font-size:13px;font-weight:700}
-h1{font-size:48px;line-height:1.08;margin:17px 0 16px;letter-spacing:-1.6px}.hero p{font-size:18px;color:var(--muted);line-height:1.6;max-width:650px}
-.searchbox{background:#fff;border:1px solid #dce4f2;border-radius:16px;padding:12px;display:flex;gap:8px;box-shadow:0 12px 35px #16356b12;margin-top:25px}.searchbox input,.searchbox select{flex:1;border:0;outline:0;padding:12px;font-size:14px;background:#fff}
-.visual{background:var(--navy);border-radius:26px;padding:25px;color:white;box-shadow:0 20px 50px #10233f25}.visual h3{margin:0 0 18px;font-size:21px}.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{background:#ffffff12;border:1px solid #ffffff18;padding:18px;border-radius:15px}.stat b{font-size:25px}.stat small{display:block;color:#c8d4e8;margin-top:5px}
-.section{max-width:1180px;margin:auto;padding:58px 22px}.center{text-align:center}.center p{color:var(--muted)}h2{font-size:32px;margin:0 0 10px}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}.card{border:1px solid var(--line);border-radius:17px;padding:22px;background:#fff;transition:transform 0.2s, box-shadow 0.2s;cursor:pointer}.card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,0.05)}.icon{width:44px;height:44px;border-radius:12px;background:#edf3ff;color:var(--blue);display:grid;place-items:center;font-size:21px}.card h3{font-size:17px;margin:16px 0 8px}.card p{color:var(--muted);font-size:14px;line-height:1.5}
-.compare{background:#f7f9fc}.uni-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
-.uni{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;transition:box-shadow 0.2s}.uni:hover{box-shadow:0 8px 20px rgba(0,0,0,0.06)}
-.uni-top{display:flex;justify-content:space-between;align-items:center}.uni-logo{width:46px;height:46px;border-radius:12px;background:#eef2f7;display:grid;place-items:center;font-weight:800;color:var(--navy)}.rating{font-weight:700;color:var(--gold)}
-.tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.tag{background:#f0f4f9;color:var(--navy);font-size:11px;padding:4px 8px;border-radius:6px;font-weight:600}
-.price{font-size:21px;font-weight:800;margin:13px 0 4px}.muted{color:var(--muted);font-size:13px}.uni .btn-group{display:flex;gap:8px;margin-top:15px}.uni .btn-group .btn{flex:1}
-.cta{background:var(--blue);color:#fff;border-radius:24px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:25px}.cta p{color:#dce7ff}.cta .btn{background:#fff;color:var(--blue)}
-footer{background:#0d1b2e;color:#c7d1df;padding:45px 22px}.foot{max-width:1180px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}.foot h3{color:#fff}.foot p{line-height:1.6;font-size:14px}.copy{border-top:1px solid #ffffff18;margin-top:30px;padding-top:20px;font-size:13px}
+.nav{max-width:1200px;margin:auto;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+.logo{font-size:26px;font-weight:900;color:var(--purple);cursor:pointer}.logo span{color:var(--navy)}
+.menu{display:flex;gap:24px;font-size:14px;font-weight:600}.menu a{cursor:pointer}.menu a:hover{color:var(--purple)}
+.btn{border:0;border-radius:10px;padding:12px 20px;font-weight:700;cursor:pointer;display:inline-block;text-align:center;transition:0.2s}
+.primary{background:var(--purple);color:#fff}.primary:hover{opacity:0.9}.light{background:#f3e8ff;color:var(--purple)}.outline{border:1px solid var(--purple);color:var(--purple);background:transparent}
 
-/* Dynamic Page Views */
+.hero{background:linear-gradient(135deg,#faf5ff 0%,#f3e8ff 100%);padding:50px 20px}.hero-in{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:center}
+h1{font-size:42px;line-height:1.15;margin:15px 0;color:var(--navy)}.badge{background:#e9d5ff;color:var(--purple);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700}
+
+/* Form Styles */
+.form-card{background:#fff;border-radius:20px;padding:25px;box-shadow:0 10px 30px rgba(124,58,237,0.1);border:1px solid var(--line)}
+.form-card h3{margin:0 0 5px;font-size:20px}.form-card p{color:var(--muted);font-size:13px;margin-bottom:18px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.input-field, .select-field{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;outline:0;font-size:14px}
+.input-field:focus,.select-field:focus{border-color:var(--purple)}
+
+/* Section & Cards */
+.section{max-width:1200px;margin:auto;padding:50px 20px}
+.center{text-align:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:25px}
+.card{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff;cursor:pointer;transition:0.3s}.card:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.05)}
+.icon{width:48px;height:48px;border-radius:12px;background:#f3e8ff;color:var(--purple);display:grid;place-items:center;font-size:22px;margin-bottom:12px}
+
+/* University Grid */
+.uni-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:20px;margin-top:25px}
+.uni-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;justify-style:space-between;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
+.uni-head{display:flex;gap:15px;align-items:center;margin-bottom:12px}
+.uni-logo{width:54px;height:54px;border-radius:12px;background:var(--purple);color:#fff;display:grid;place-items:center;font-weight:900;font-size:20px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.tag{background:#f1f5f9;color:var(--navy);font-size:11px;padding:4px 8px;border-radius:6px;font-weight:700}
+.tag.green{background:#dcfce7;color:#166534}
+
+.details-table{width:100%;font-size:13px;margin:12px 0;border-collapse:collapse}
+.details-table td{padding:6px 0;border-bottom:1px dashed var(--line)}
+.details-table td:last-child{text-align:right;font-weight:700}
+
+/* Page Dynamic Views */
 .page-view{display:none}.page-view.active{display:block}
-.breadcrumb{margin-bottom:20px;font-size:14px;color:var(--muted)}.breadcrumb a{color:var(--blue);cursor:pointer;font-weight:600}
-.detail-header{background:#f8fafc;border:1px solid var(--line);border-radius:20px;padding:30px;margin-bottom:30px}
-.detail-header h1{margin:10px 0}.meta-bar{display:flex;gap:20px;flex-wrap:wrap;margin-top:15px;padding-top:15px;border-top:1px solid var(--line);font-size:14px}
-.meta-item b{color:var(--navy);display:block}.meta-item span{color:var(--muted)}
-.detail-grid{display:grid;grid-template-columns:2fr 1fr;gap:30px}
-.detail-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:24px}
-.detail-box h3{margin-top:0;font-size:20px;border-bottom:2px solid var(--sky);padding-bottom:10px;color:var(--navy)}
-.acc-badge{display:inline-flex;align-items:center;gap:6px;background:#eef6ff;border:1px solid #cce0ff;color:var(--blue);padding:6px 12px;border-radius:8px;font-weight:700;font-size:13px;margin:4px}
-.list-item{padding:10px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;align-items:center}
+.breadcrumb{margin-bottom:20px;font-size:14px;color:var(--muted)}.breadcrumb a{color:var(--purple);cursor:pointer;font-weight:600}
 
-/* Modal UI */
-.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(16,35,63,0.6);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+/* Modal */
+.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
 .modal-overlay.active{display:flex}
-.modal-content{background:#fff;border-radius:20px;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;padding:30px;position:relative}
-.close-modal{position:absolute;top:20px;right:20px;background:#f0f2f5;border:0;width:32px;height:32px;border-radius:50%;cursor:pointer;font-weight:bold}
+.modal-body{background:#fff;padding:30px;border-radius:20px;max-width:600px;width:100%;position:relative}
+.close-btn{position:absolute;top:15px;right:15px;background:#f1f5f9;border:0;width:30px;height:30px;border-radius:50%;cursor:pointer;font-weight:bold}
 
-@media(max-width:800px){.menu{display:none}.hero-in{grid-template-columns:1fr}h1{font-size:38px}.cards{grid-template-columns:1fr 1fr}.uni-grid{grid-template-columns:1fr}.searchbox{flex-direction:column}.foot{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr}}
-</media>
+@media(max-width:768px){.hero-in{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.menu{display:none}}
 </style>
 </head>
 <body>
@@ -56,494 +63,342 @@ footer{background:#0d1b2e;color:#c7d1df;padding:45px 22px}.foot{max-width:1180px
   <nav class="nav">
     <div class="logo" onclick="showView('home')">Edu<span>vanta</span></div>
     <div class="menu">
-      <a onclick="showView('home'); scrollToSec('universities')">Universities</a>
-      <a onclick="showCoursePage('MBA')">MBA</a>
-      <a onclick="showCoursePage('MCA')">MCA</a>
-      <a onclick="showCoursePage('BBA')">BBA</a>
-      <a onclick="showView('home'); scrollToSec('about')">About</a>
+      <a onclick="showView('home')">Home</a>
+      <a onclick="showCourse('MBA')">Online MBA</a>
+      <a onclick="showCourse('MCA')">Online MCA</a>
+      <a onclick="showCourse('BBA')">Online BBA</a>
     </div>
-    <button class="btn primary" onclick="scrollToSec('lead')">Talk to an Expert</button>
+    <button class="btn primary" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">Get Free Counseling</button>
   </nav>
 </header>
 
-<!-- HOME VIEW -->
+<!-- HOME PAGE VIEW -->
 <main id="view-home" class="page-view active">
   <section class="hero">
     <div class="hero-in">
       <div>
-        <span class="badge">Smart education guidance</span>
-        <h1>Find the right online degree for your career.</h1>
-        <p>Explore top UGC-approved universities, compare course rankings, accreditation details, and fees instantly.</p>
-        <div class="searchbox">
-          <input id="q" placeholder="Search MBA, MCA, Amity, Manipal...">
-          <select id="level">
-            <option value="ALL">All Courses</option>
-            <option value="PG">PG Courses</option>
-            <option value="UG">UG Courses</option>
-          </select>
-          <button class="btn primary" onclick="handleSearch()">Search</button>
-        </div>
+        <span class="badge">#1 Online Education Portal</span>
+        <h1>Compare UGC Approved Online Universities</h1>
+        <p>Get real NIRF rankings, NAAC grades, fee breakup, EMI options & placement statistics like College Vidya.</p>
       </div>
-      <div class="visual">
-        <h3>Why learners choose Eduvanta</h3>
-        <div class="statgrid">
-          <div class="stat"><b>100+</b><small>Approved Universities</small></div>
-          <div class="stat"><b>1,000+</b><small>Specialisations</small></div>
-          <div class="stat"><b>100%</b><small>Verified Accreditations</small></div>
-          <div class="stat"><b>Free</b><small>Expert Counselling</small></div>
-        </div>
+      
+      <!-- GOOGLE SHEET CONNECTED FORM -->
+      <div class="form-card" id="lead-form">
+        <h3>Get Personalised Guidance</h3>
+        <p>Tell us your preference and receive unbiased counsel & syllabus.</p>
+        <form id="google-sheet-form">
+          <div class="grid-2">
+            <input type="text" name="FullName" class="input-field" placeholder="Full Name *" required>
+            <input type="tel" name="Mobile" class="input-field" placeholder="Mobile Number *" required>
+          </div>
+          <div class="grid-2">
+            <input type="email" name="Email" class="input-field" placeholder="Email Address *" required>
+            <select name="State" class="select-field" required>
+              <option value="">Select State</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="grid-2">
+            <select name="Course" class="select-field" required>
+              <option value="">Select Course</option>
+              <option value="MBA">Online MBA</option>
+              <option value="MCA">Online MCA</option>
+              <option value="BBA">Online BBA</option>
+              <option value="B.Com">Online B.Com</option>
+            </select>
+            <select name="University" class="select-field">
+              <option value="Any">Preferred University</option>
+              <option value="Amity University">Amity University</option>
+              <option value="Chandigarh University">Chandigarh University</option>
+              <option value="Manipal University">Manipal University</option>
+              <option value="Jain University">Jain University</option>
+            </select>
+          </div>
+          <button type="submit" class="btn primary" style="width:100%;margin-top:10px;" id="submit-btn">Request a Call Back</button>
+          <div id="form-msg" style="margin-top:10px;font-size:13px;text-align:center;"></div>
+        </form>
       </div>
     </div>
   </section>
 
-  <section class="section" id="courses">
+  <!-- COURSES SECTION -->
+  <section class="section">
     <div class="center">
-      <h2>Explore Online Degree Programs</h2>
-      <p>Click on any program to view top universities, ranking, fees & eligibility.</p>
+      <h2>Explore Degrees & Compare</h2>
+      <p style="color:var(--muted)">Select a course to view all approved universities and fee structures</p>
     </div>
     <div class="cards">
-      <div class="card" onclick="showCoursePage('MBA')">
+      <div class="card" onclick="showCourse('MBA')">
         <div class="icon">🎓</div>
         <h3>Online MBA</h3>
-        <p>Compare NIRF ranked universities, fees, 20+ specialisations & career support.</p>
-        <button class="btn light" style="margin-top:10px;width:100%;">Explore MBA Page →</button>
+        <p style="color:var(--muted);font-size:13px;">20+ Specialisations • UGC & AICTE Approved • Top NIRF Colleges</p>
       </div>
-      <div class="card" onclick="showCoursePage('MCA')">
+      <div class="card" onclick="showCourse('MCA')">
         <div class="icon">💻</div>
         <h3>Online MCA</h3>
-        <p>Explore software, cloud computing & AI focused MCA programs.</p>
-        <button class="btn light" style="margin-top:10px;width:100%;">Explore MCA Page →</button>
+        <p style="color:var(--muted);font-size:13px;">Software Dev, Cloud, AI Specialisations • Placement Support</p>
       </div>
-      <div class="card" onclick="showCoursePage('BBA')">
+      <div class="card" onclick="showCourse('BBA')">
         <div class="icon">📚</div>
         <h3>Online BBA</h3>
-        <p>Build management foundation with flexible UGC-entitled BBA degrees.</p>
-        <button class="btn light" style="margin-top:10px;width:100%;">Explore BBA Page →</button>
+        <p style="color:var(--muted);font-size:13px;">Management Fundamentals • Flexible Learning for Class 12 Passed</p>
       </div>
-      <div class="card" onclick="showCoursePage('B.Com')">
+      <div class="card" onclick="showCourse('B.Com')">
         <div class="icon">📈</div>
         <h3>Online B.Com</h3>
-        <p>Compare commerce & finance online degrees for working professionals.</p>
-        <button class="btn light" style="margin-top:10px;width:100%;">Explore B.Com Page →</button>
+        <p style="color:var(--muted);font-size:13px;">Finance, CA Preparation & Accounting focused online degree</p>
       </div>
     </div>
   </section>
 
-  <section class="compare" id="universities">
-    <div class="section">
-      <div class="center">
-        <h2>Top Accredited Universities</h2>
-        <p>Real-time approvals, rankings, and affordable fee breakdown.</p>
-      </div>
-      <div class="uni-grid" id="home-uni-grid">
-        <!-- Rendered dynamically -->
-      </div>
+  <!-- UNIVERSITIES SECTION -->
+  <section class="section" style="background:#f8fafc">
+    <div class="center">
+      <h2>Top UGC-DEB Approved Universities</h2>
+      <p style="color:var(--muted)">Transparent University info with verified accreditation details</p>
     </div>
+    <div class="uni-grid" id="home-uni-grid"></div>
   </section>
 </main>
 
 <!-- COURSE DYNAMIC PAGE VIEW -->
 <main id="view-course" class="page-view">
   <div class="section">
-    <div class="breadcrumb"><a onclick="showView('home')">Home</a> / <span id="course-breadcrumb-title">Course Details</span></div>
-    <div class="detail-header">
-      <span class="badge" id="course-badge">Postgraduate Degree</span>
-      <h1 id="course-title">Online MBA Programs</h1>
-      <p id="course-desc">Compare top-rated universities offering UGC & AICTE approved online programs.</p>
-      <div class="meta-bar">
-        <div class="meta-item"><span>Duration</span><b id="course-duration">2 Years (4 Semesters)</b></div>
-        <div class="meta-item"><span>Average Fee Range</span><b id="course-fee">₹1,20,000 - ₹2,50,000</b></div>
-        <div class="meta-item"><span>Eligibility</span><b id="course-eligibility">Graduation with 50% marks</b></div>
-      </div>
-    </div>
-
-    <h2>Top Universities Offering <span class="c-name">this Course</span></h2>
-    <div class="uni-grid" id="course-uni-grid">
-      <!-- Dynamic course universities list -->
-    </div>
+    <div class="breadcrumb"><a onclick="showView('home')">Home</a> / <span id="c-bread">Course</span></div>
+    <h1 id="c-title">Online MBA Universities</h1>
+    <p id="c-desc" style="color:var(--muted)">Compare fees, NAAC grades, and eligibility criteria for all universities.</p>
+    <div class="uni-grid" id="course-uni-grid"></div>
   </div>
 </main>
 
-<!-- UNIVERSITY DYNAMIC PAGE VIEW -->
+<!-- UNIVERSITY DYNAMIC DETAILS PAGE VIEW -->
 <main id="view-university" class="page-view">
   <div class="section">
-    <div class="breadcrumb"><a onclick="showView('home')">Home</a> / <a onclick="showView('home'); scrollToSec('universities')">Universities</a> / <span id="uni-breadcrumb-name">University Name</span></div>
-    <div class="detail-header">
-      <div style="display:flex;align-items:center;gap:15px;margin-bottom:10px;">
-        <div class="uni-logo" id="u-logo-box" style="width:60px;height:60px;font-size:22px;">AU</div>
-        <div>
-          <h1 id="u-title" style="margin:0;">Amity University Online</h1>
-          <div id="u-location" class="muted">Noida, Uttar Pradesh • Established 2005</div>
-        </div>
-      </div>
-      <div class="meta-bar">
-        <div class="meta-item"><span>NIRF Ranking</span><b id="u-ranking">#35 in India</b></div>
-        <div class="meta-item"><span>NAAC Grade</span><b id="u-naac">A+ Grade</b></div>
-        <div class="meta-item"><span>User Rating</span><b id="u-rating">★ 4.6 / 5</b></div>
-      </div>
+    <div class="breadcrumb"><a onclick="showView('home')">Home</a> / <span id="u-bread">University</span></div>
+    <div style="background:#faf5ff;padding:30px;border-radius:20px;border:1px solid var(--line);margin-bottom:20px;">
+      <h1 id="u-name" style="margin:0;">Amity University Online</h1>
+      <p id="u-loc" style="color:var(--muted)">Noida, Uttar Pradesh</p>
+      <div class="tags" id="u-tags"></div>
     </div>
-
-    <div class="detail-grid">
+    
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:20px;">
       <div>
-        <div class="detail-box">
-          <h3>Accreditations & Recognition</h3>
-          <div id="u-accreditations">
-            <!-- Badges -->
-          </div>
-        </div>
+        <h3>University Overview</h3>
+        <p id="u-overview" style="line-height:1.6;color:var(--muted)"></p>
+        
+        <h3>Accreditations & Approvals</h3>
+        <div id="u-acc-list" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;"></div>
 
-        <div class="detail-box">
-          <h3>Offered Online Programs</h3>
-          <div id="u-courses-list">
-            <!-- List of courses -->
-          </div>
-        </div>
-
-        <div class="detail-box">
-          <h3>Key Highlights</h3>
-          <ul id="u-highlights" style="line-height:1.8;color:var(--muted);padding-left:20px;">
-          </ul>
-        </div>
+        <h3>Programs Offered</h3>
+        <table class="details-table" id="u-prog-table"></table>
       </div>
-
       <div>
-        <div class="detail-box" style="position:sticky;top:90px;">
-          <h3>Get Official Brochure</h3>
-          <p class="muted">Receive full syllabus, fee waiver details & admission procedure directly.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:15px;">
-            <input type="text" id="u-lead-name" placeholder="Full Name" style="padding:10px;border:1px solid var(--line);border-radius:8px;">
-            <input type="tel" id="u-lead-phone" placeholder="Phone Number" style="padding:10px;border:1px solid var(--line);border-radius:8px;">
-            <button class="btn primary" onclick="submitBrochureRequest()">Download Brochure</button>
-          </div>
+        <div class="form-card">
+          <h3>Apply / Get Syllabus</h3>
+          <p>Get official brochure and fee discount link.</p>
+          <button class="btn primary" style="width:100%;" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'}); showView('home')">Request Call Back</button>
         </div>
       </div>
     </div>
   </div>
 </main>
-
-<!-- LEAD CAPTURE SECTION -->
-<section class="section" id="lead">
-  <div class="center">
-    <h2>Get Personalised Expert Guidance</h2>
-    <p>Confused between options? Talk to our education advisor for unbiased advice.</p>
-  </div>
-  <div class="searchbox" style="max-width:800px;margin:25px auto">
-    <input id="name" placeholder="Full name">
-    <input id="phone" placeholder="Phone number">
-    <select id="course">
-      <option value="">Select target course</option>
-      <option value="MBA">Online MBA</option>
-      <option value="MCA">Online MCA</option>
-      <option value="BBA">Online BBA</option>
-      <option value="B.Com">Online B.Com</option>
-    </select>
-    <button class="btn primary" onclick="submitLead()">Request Call</button>
-  </div>
-</section>
 
 <!-- MODAL QUICK VIEW -->
 <div class="modal-overlay" id="uniModal">
-  <div class="modal-content">
-    <button class="close-modal" onclick="closeModal()">✕</button>
-    <div id="modal-body"></div>
+  <div class="modal-body">
+    <button class="close-btn" onclick="closeModal()">✕</button>
+    <div id="modal-content-area"></div>
   </div>
 </div>
 
-<footer>
-  <div class="foot" id="about">
-    <div>
-      <h3>Eduvanta</h3>
-      <p>Transparent education portal providing verified details about online degrees, accreditations, and university rankings.</p>
-    </div>
-    <div>
-      <h3>Quick Links</h3>
-      <p><a onclick="showView('home')">Home</a><br>
-         <a onclick="showCoursePage('MBA')">Online MBA</a><br>
-         <a onclick="showCoursePage('MCA')">Online MCA</a><br>
-         <a onclick="showCoursePage('BBA')">Online BBA</a></p>
-    </div>
-    <div>
-      <h3>Contact</h3>
-      <p>support@eduvanta.in<br>+91 1800-123-4567<br>India</p>
-    </div>
-  </div>
-  <div class="foot copy">© 2026 Eduvanta. All rights reserved. • Accreditation and NIRF details gathered from official UGC/NAAC data.</div>
-</footer>
-
 <script>
-// DATA STORE: Universities & Accreditation Details
-const DATA = {
-  universities: [
-    {
-      id: "amity",
-      short: "AU",
-      name: "Amity University Online",
-      location: "Noida, Uttar Pradesh",
-      rating: "4.6",
-      nirf: "#35 (Overall)",
-      naac: "A+ Grade",
-      accreditations: ["UGC Entitled", "DEB Approved", "AICTE", "WSCUC (USA)", "QS Ranked"],
-      fee: "₹1,75,000",
-      courses: ["MBA", "MCA", "BBA", "B.Com", "BCA"],
-      highlights: [
-        "Global faculty with live interactive sessions",
-        "Robust career service & 300+ hiring partners",
-        "WSCUC Accreditation makes degree recognized in US/Canada",
-        "Dedicated student relationship manager"
-      ]
-    },
-    {
-      id: "chandigarh",
-      short: "CU",
-      name: "Chandigarh University Online",
-      location: "Mohali, Punjab",
-      rating: "4.5",
-      nirf: "#27 (Overall)",
-      naac: "A+ Grade",
-      accreditations: ["UGC-DEB", "AICTE Approved", "AIU Member"],
-      fee: "₹1,20,000",
-      courses: ["MBA", "MCA", "BBA", "B.Com"],
-      highlights: [
-        "Highly affordable fee structure with EMI options",
-        "Harvard Business Publishing course integrations",
-        "Advanced LMS with mobile app access",
-        "Placement assistance cell"
-      ]
-    },
-    {
-      id: "manipal",
-      short: "MU",
-      name: "Manipal University Jaipur (MUJ)",
-      location: "Jaipur, Rajasthan",
-      rating: "4.7",
-      nirf: "#64 (University)",
-      naac: "A+ Grade",
-      accreditations: ["UGC Entitled", "AICTE", "ACCA (UK) Accredited"],
-      fee: "₹1,50,000",
-      courses: ["MBA", "MCA", "BBA", "B.Com"],
-      highlights: [
-        "Free access to Coursera for 10,000+ certifications",
-        "E-learning platform designed by top tech team",
-        "Strong alumni network across Fortune 500 companies",
-        "Scholarships for defence & meritorious students"
-      ]
-    },
-    {
-      id: "jain",
-      short: "JU",
-      name: "Jain University Online",
-      location: "Bengaluru, Karnataka",
-      rating: "4.4",
-      nirf: "#68 (University)",
-      naac: "A++ Grade",
-      accreditations: ["UGC Entitled", "AICTE Approved", "KSURF Ranked"],
-      fee: "₹1,40,000",
-      courses: ["MBA", "MCA", "BBA", "B.Com"],
-      highlights: [
-        "Electives in AI, Data Science & FinTech",
-        "Mentorship by industry leaders from Bengaluru tech hub",
-        "70+ Dual Specialisation choices in MBA",
-        "Comprehensive exam prep & project support"
-      ]
-    }
-  ],
-  courses: {
-    "MBA": {
-      title: "Online Master of Business Administration (MBA)",
-      type: "Postgraduate Degree (2 Years)",
-      badge: "Highest Career Growth",
-      feeRange: "₹1,20,000 - ₹2,20,000",
-      eligibility: "Bachelor's Degree (Min 50% marks) from recognized University",
-      desc: "An Online MBA is a flexible 2-year program designed for working professionals seeking leadership roles, salary hikes, or industry shifts without quitting their jobs."
-    },
-    "MCA": {
-      title: "Online Master of Computer Applications (MCA)",
-      type: "Postgraduate Degree (2 Years)",
-      badge: "High Tech Demand",
-      feeRange: "₹1,00,000 - ₹1,80,000",
-      eligibility: "BCA / BSc Computer Science or Mathematics in 12th/Graduation",
-      desc: "Prepare for Software Engineering, Cloud Architecture, and Data Science roles with industry-aligned online MCA degree programs."
-    },
-    "BBA": {
-      title: "Online Bachelor of Business Administration (BBA)",
-      type: "Undergraduate Degree (3 Years)",
-      badge: "Foundational Management",
-      feeRange: "₹90,000 - ₹1,50,000",
-      eligibility: "10+2 / Intermediate pass from any recognized board",
-      desc: "Build strong fundamentals in marketing, finance, and HR directly after class 12th with fully flexible online learning."
-    },
-    "B.Com": {
-      title: "Online Bachelor of Commerce (B.Com)",
-      type: "Undergraduate Degree (3 Years)",
-      badge: "Finance & Accounts",
-      feeRange: "₹60,000 - ₹1,10,000",
-      eligibility: "10+2 in Commerce/Science or equivalent stream",
-      desc: "Gain deep knowledge in accounting, taxation, auditing, and corporate finance at an affordable fee."
-    }
+// REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL (Step 2 guide below)
+const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+
+// DETAILED UNIVERSITY DATABASE (COLLEGE VIDYA STYLE)
+const UNIVERSITIES = [
+  {
+    id: "amity",
+    name: "Amity University Online",
+    location: "Noida, Uttar Pradesh",
+    naac: "A+ Grade",
+    nirf: "#35 (Overall)",
+    approvals: ["UGC-DEB", "AICTE", "WSCUC (USA)", "QS Ranked"],
+    fee: "₹1,75,000",
+    emi: "₹7,291/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Amity University Online is one of India's premier online learning universities with global WSCUC accreditation, offering degrees recognized worldwide with 300+ hiring partners."
+  },
+  {
+    id: "chandigarh",
+    name: "Chandigarh University Online",
+    location: "Mohali, Punjab",
+    naac: "A+ Grade",
+    nirf: "#27 (Overall)",
+    approvals: ["UGC-DEB", "AICTE", "AIU Member"],
+    fee: "₹1,20,000",
+    emi: "₹5,000/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Chandigarh University Online provides affordable UGC-entitled degrees with Harvard Business Publishing course integration and top placement support."
+  },
+  {
+    id: "manipal",
+    name: "Manipal University Jaipur (MUJ)",
+    location: "Jaipur, Rajasthan",
+    naac: "A+ Grade",
+    nirf: "#64 (University)",
+    approvals: ["UGC-DEB", "AICTE", "ACCA (UK)"],
+    fee: "₹1,50,000",
+    emi: "₹6,250/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Manipal Online offers industry-focused degree courses with free access to Coursera, paid internship support, and live interactive webinars."
+  },
+  {
+    id: "jain",
+    name: "Jain University Online",
+    location: "Bengaluru, Karnataka",
+    naac: "A++ Grade",
+    nirf: "#68 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,40,000",
+    emi: "₹5,833/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Jain Online offers cutting-edge specialisations in AI, FinTech, Data Science, and Marketing with 50+ dual specialization options in MBA."
   }
-};
+];
 
-// INITIALIZATION
-window.onload = function() {
-  renderHomeUniversities();
-};
+window.onload = function(){
+  renderUnis(UNIVERSITIES, 'home-uni-grid');
+}
 
-// VIEW SWITCHING ENGINE
 function showView(viewId) {
-  document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
-  const target = document.getElementById('view-' + viewId);
-  if(target) target.classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  document.querySelectorAll('.page-view').forEach(e => e.classList.remove('active'));
+  document.getElementById('view-' + viewId).classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
 }
 
-function scrollToSec(secId) {
-  const el = document.getElementById(secId);
-  if(el) el.scrollIntoView({behavior: 'smooth'});
-}
-
-// RENDER HOME UNIVERSITIES
-function renderHomeUniversities() {
-  const grid = document.getElementById('home-uni-grid');
-  grid.innerHTML = DATA.universities.map(u => createUniCardHTML(u)).join('');
-}
-
-function createUniCardHTML(u) {
-  return `
-    <div class="uni">
+function renderUnis(list, targetId) {
+  const container = document.getElementById(targetId);
+  container.innerHTML = list.map(u => `
+    <div class="uni-card">
       <div>
-        <div class="uni-top">
-          <div class="uni-logo">${u.short}</div>
-          <span class="rating">★ ${u.rating}</span>
+        <div class="uni-head">
+          <div class="uni-logo">${u.name.charAt(0)}</div>
+          <div>
+            <h3 style="margin:0;font-size:17px;">${u.name}</h3>
+            <span style="color:var(--muted);font-size:12px;">${u.location}</span>
+          </div>
         </div>
-        <h3 style="margin:12px 0 4px;">${u.name}</h3>
-        <div class="muted">${u.location}</div>
         <div class="tags">
-          <span class="tag">NAAC ${u.naac}</span>
+          <span class="tag green">NAAC ${u.naac}</span>
           <span class="tag">NIRF ${u.nirf}</span>
+          <span class="tag">UGC-DEB</span>
         </div>
-        <div class="price">${u.fee} <small style="font-size:12px;font-weight:normal;color:var(--muted)">/ total fee</small></div>
+        <table class="details-table">
+          <tr><td>Total Course Fee</td><td>${u.fee}</td></tr>
+          <tr><td>Easy Monthly EMI</td><td>${u.emi}</td></tr>
+          <tr><td>Exam Mode</td><td>${u.examMode}</td></tr>
+        </table>
       </div>
-      <div class="btn-group">
-        <button class="btn outline" onclick="openModal('${u.id}')">Quick View</button>
-        <button class="btn primary" onclick="showUniversityPage('${u.id}')">View Details</button>
+      <div style="display:flex;gap:8px;margin-top:10px;">
+        <button class="btn outline" style="flex:1" onclick="openModal('${u.id}')">Quick View</button>
+        <button class="btn primary" style="flex:1" onclick="showUniDetails('${u.id}')">Full Profile</button>
       </div>
     </div>
-  `;
+  `).join('');
 }
 
-// COURSE PAGE ROUTER
-function showCoursePage(courseKey) {
-  const cData = DATA.courses[courseKey] || DATA.courses["MBA"];
-  document.getElementById('course-breadcrumb-title').innerText = courseKey;
-  document.getElementById('course-title').innerText = cData.title;
-  document.getElementById('course-badge').innerText = cData.badge;
-  document.getElementById('course-desc').innerText = cData.desc;
-  document.getElementById('course-duration').innerText = cData.type;
-  document.getElementById('course-fee').innerText = cData.feeRange;
-  document.getElementById('course-eligibility').innerText = cData.eligibility;
-  
-  document.querySelectorAll('.c-name').forEach(e => e.innerText = courseKey);
-
-  // Filter Universities that offer this course
-  const filteredUnis = DATA.universities.filter(u => u.courses.includes(courseKey));
-  document.getElementById('course-uni-grid').innerHTML = filteredUnis.map(u => createUniCardHTML(u)).join('');
-
+function showCourse(cName) {
+  document.getElementById('c-bread').innerText = cName;
+  document.getElementById('c-title').innerText = "Online " + cName + " Universities";
+  const filtered = UNIVERSITIES.filter(u => u.courses.includes(cName));
+  renderUnis(filtered, 'course-uni-grid');
   showView('course');
 }
 
-// UNIVERSITY PAGE ROUTER
-function showUniversityPage(uniId) {
-  const u = DATA.universities.find(x => x.id === uniId);
+function showUniDetails(uId) {
+  const u = UNIVERSITIES.find(x => x.id === uId);
   if(!u) return;
-
-  document.getElementById('uni-breadcrumb-name').innerText = u.name;
-  document.getElementById('u-logo-box').innerText = u.short;
-  document.getElementById('u-title').innerText = u.name;
-  document.getElementById('u-location').innerText = u.location;
-  document.getElementById('u-ranking').innerText = u.nirf;
-  document.getElementById('u-naac').innerText = u.naac;
-  document.getElementById('u-rating').innerText = '★ ' + u.rating + ' / 5';
-
-  // Accreditations
-  document.getElementById('u-accreditations').innerHTML = u.accreditations.map(a => `<span class="acc-badge">✓ ${a}</span>`).join('');
-
-  // Programs
-  document.getElementById('u-courses-list').innerHTML = u.courses.map(c => `
-    <div class="list-item">
-      <div><b>Online ${c}</b><br><small class="muted">UGC Entitled Degree • 100% Online</small></div>
-      <button class="btn light" onclick="showCoursePage('${c}')">View ${c}</button>
-    </div>
+  document.getElementById('u-bread').innerText = u.name;
+  document.getElementById('u-name').innerText = u.name;
+  document.getElementById('u-loc').innerText = u.location;
+  document.getElementById('u-overview').innerText = u.overview;
+  
+  document.getElementById('u-tags').innerHTML = `
+    <span class="tag green">NAAC ${u.naac}</span>
+    <span class="tag">NIRF ${u.nirf}</span>
+  `;
+  document.getElementById('u-acc-list').innerHTML = u.approvals.map(a => `<span class="badge">${a}</span>`).join('');
+  document.getElementById('u-prog-table').innerHTML = u.courses.map(c => `
+    <tr><td>Online ${c}</td><td>Fee: ${u.fee}</td></tr>
   `).join('');
-
-  // Highlights
-  document.getElementById('u-highlights').innerHTML = u.highlights.map(h => `<li>${h}</li>`).join('');
-
+  
   showView('university');
 }
 
-// MODAL CONTROLLER
-function openModal(uniId) {
-  const u = DATA.universities.find(x => x.id === uniId);
+function openModal(uId) {
+  const u = UNIVERSITIES.find(x => x.id === uId);
   if(!u) return;
-
-  document.getElementById('modal-body').innerHTML = `
+  document.getElementById('modal-content-area').innerHTML = `
     <h2>${u.name}</h2>
-    <p class="muted">${u.location} • NAAC Grade: <b>${u.naac}</b> • NIRF: <b>${u.nirf}</b></p>
+    <p style="color:var(--muted)">${u.location}</p>
     <hr style="border:0;border-top:1px solid var(--line);margin:15px 0;">
-    <h4>Recognitions & Accreditations:</h4>
-    <div style="margin-bottom:15px;">
-      ${u.accreditations.map(a => `<span class="acc-badge">✓ ${a}</span>`).join('')}
-    </div>
-    <h4>Offered Programs:</h4>
-    <p>${u.courses.map(c => `<b>Online ${c}</b>`).join(' • ')}</p>
-    <h4 style="margin-top:15px;">Indicative Fee:</h4>
-    <p style="font-size:22px;font-weight:800;color:var(--blue);margin:0;">${u.fee}</p>
-    <br>
-    <button class="btn primary" style="width:100%;" onclick="closeModal(); showUniversityPage('${u.id}')">Full University Details Page →</button>
+    <p><b>Accreditations:</b> ${u.approvals.join(', ')}</p>
+    <p><b>Total Fee:</b> ${u.fee} (EMI starts at ${u.emi})</p>
+    <p><b>Examination Mode:</b> ${u.examMode}</p>
+    <button class="btn primary" style="width:100%;margin-top:15px;" onclick="closeModal(); showUniDetails('${u.id}')">View Full Details →</button>
   `;
   document.getElementById('uniModal').classList.add('active');
 }
 
-function closeModal() {
+function closeModal(){
   document.getElementById('uniModal').classList.remove('active');
 }
 
-// SEARCH FUNCTIONALITY
-function handleSearch() {
-  const query = document.getElementById('q').value.trim().toUpperCase();
-  if(!query) {
-    alert('Please enter a program (MBA, MCA) or University name.');
+// GOOGLE SHEET SUBMISSION SCRIPT
+document.getElementById('google-sheet-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const msg = document.getElementById('form-msg');
+  
+  btn.innerText = "Submitting...";
+  btn.disabled = true;
+
+  const formData = new FormData(this);
+
+  if(GOOGLE_SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL") {
+    setTimeout(() => {
+      btn.innerText = "Request a Call Back";
+      btn.disabled = false;
+      msg.style.color = "green";
+      msg.innerText = "Demo Submitted! (Please attach your Google Apps Script URL in code to sync Google Sheet).";
+    }, 1000);
     return;
   }
-  
-  if(query.includes('MBA')) showCoursePage('MBA');
-  else if(query.includes('MCA')) showCoursePage('MCA');
-  else if(query.includes('BBA')) showCoursePage('BBA');
-  else if(query.includes('B.COM') || query.includes('BCOM')) showCoursePage('B.Com');
-  else if(query.includes('AMITY')) showUniversityPage('amity');
-  else if(query.includes('CHANDIGARH')) showUniversityPage('chandigarh');
-  else if(query.includes('MANIPAL')) showUniversityPage('manipal');
-  else if(query.includes('JAIN')) showUniversityPage('jain');
-  else {
-    showView('home');
-    scrollToSec('universities');
-  }
-}
 
-// FORM SUBMISSIONS
-function submitLead() {
-  const n = document.getElementById('name').value.trim();
-  const p = document.getElementById('phone').value.trim();
-  if(!n || !p) { alert('Please enter both Name and Phone number.'); return; }
-  alert('Thank you ' + n + '! Our Senior Career Counselor will contact you shortly.');
-}
-
-function submitBrochureRequest() {
-  const n = document.getElementById('u-lead-name').value.trim();
-  const p = document.getElementById('u-lead-phone').value.trim();
-  if(!n || !p) { alert('Please enter both Name and Phone number.'); return; }
-  alert('Thank you! Detailed brochure and syllabus link sent to ' + p);
-}
+  fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: formData })
+    .then(res => {
+      btn.innerText = "Request a Call Back";
+      btn.disabled = false;
+      msg.style.color = "green";
+      msg.innerText = "Success! Your details have been recorded in Google Sheet.";
+      document.getElementById('google-sheet-form').reset();
+    })
+    .catch(err => {
+      btn.innerText = "Request a Call Back";
+      btn.disabled = false;
+      msg.style.color = "red";
+      msg.innerText = "Error sending data. Please try again.";
+    });
+});
 </script>
 </body>
 </html>
