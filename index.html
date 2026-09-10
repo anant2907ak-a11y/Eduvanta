@@ -147,6 +147,17 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
               <option value="Chandigarh University">Chandigarh University</option>
               <option value="Manipal University">Manipal University</option>
               <option value="Jain University">Jain University</option>
+              <option value="UPES Online">UPES Online</option>
+              <option value="LPU Online">LPU Online</option>
+              <option value="NMIMS Online">NMIMS Online</option>
+              <option value="D.Y. Patil Online">D.Y. Patil Online</option>
+              <option value="Symbiosis SCDL">Symbiosis SCDL</option>
+              <option value="GLA University">GLA University</option>
+              <option value="Sharda University">Sharda University</option>
+              <option value="Uttaranchal University">Uttaranchal University</option>
+              <option value="Shiv Nadar University">Shiv Nadar University</option>
+              <option value="Vignan University">Vignan University</option>
+              <option value="Shoolini University">Shoolini University</option>
             </select>
           </div>
           <button type="submit" class="btn primary" style="width:100%;margin-top:10px;" id="submit-btn">Get Expert Call Back</button>
@@ -366,9 +377,15 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
     <div class="footer-col">
       <h4>Top Universities</h4>
       <a onclick="showUniDetails('amity')">Amity University Online</a>
-      <a onclick="showUniDetails('chandigarh')">Chandigarh University Online</a>
+      <a onclick="showUniDetails('chandigarh')">Chandigarh University</a>
       <a onclick="showUniDetails('manipal')">Manipal University Jaipur</a>
       <a onclick="showUniDetails('jain')">Jain University Online</a>
+      <a onclick="showUniDetails('upes')">UPES Online</a>
+      <a onclick="showUniDetails('lpu')">LPU Online</a>
+      <a onclick="showUniDetails('nmims')">NMIMS Online</a>
+      <a onclick="showUniDetails('dypatil')">D.Y. Patil Online</a>
+      <a onclick="showUniDetails('scdl')">Symbiosis SCDL</a>
+      <a onclick="showUniDetails('gla')">GLA University</a>
     </div>
     <div class="footer-col">
       <h4>Contact Us</h4>
@@ -485,6 +502,270 @@ const UNIVERSITIES = [
     duration: "2 Years (PG) / 3 Years (UG)",
     eligibility: "Graduation completed from recognized university",
     placements: "HDFC Bank, Flipkart, Amazon, Reliance"
+  },
+  {
+    id: "upes",
+    name: "UPES Online",
+    logo: "https://api.dicebear.com/7.x/initials/svg?seed=UP&backgroundColor=0284c7&textColor=ffffff",
+    location: "Dehradun, Uttarakhand",
+    rating: "4.7",
+    reviewsCount: "650",
+    studentsCount: "6k+",
+    students: [
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop"
+    ],
+    naac: "A Grade",
+    nirf: "#54 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,60,000",
+    emi: "₹6,666/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA"],
+    overview: "UPES Online specializes in energy, logistics, supply chain, and tech management programs tailored for industry professionals seeking fast-track career growth.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "50% marks in Graduation / 10+2",
+    placements: "Shell, L&T, Tata Power, Adani, Reliance"
+  },
+  {
+    id: "lpu",
+    name: "Lovely Professional University (LPU Online)",
+    logo: "https://api.dicebear.com/7.x/initials/svg?seed=LP&backgroundColor=ea580c&textColor=ffffff",
+    location: "Phagwara, Punjab",
+    rating: "4.8",
+    reviewsCount: "1,100",
+    studentsCount: "14k+",
+    students: [
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop"
+    ],
+    naac: "A++ Grade",
+    nirf: "#38 (Overall)",
+    approvals: ["UGC-DEB", "AICTE", "WOSC"],
+    fee: "₹1,10,000",
+    emi: "₹4,583/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "LPU Online provides robust online learning platforms with flexible examination schedules, practical industry projects, and active career mentoring.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Graduation in relevant stream / 10+2",
+    placements: "Microsoft, Amazon, Cognizant, Infosys"
+  },
+  {
+    id: "nmims",
+    name: "NMIMS Global Access (CDOE)",
+    logo: "https://api.dicebear.com/7.x/initials/svg?seed=NM&backgroundColor=dc2626&textColor=ffffff",
+    location: "Mumbai, Maharashtra",
+    rating: "4.9",
+    reviewsCount: "2,100",
+    studentsCount: "20k+",
+    students: [
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop"
+    ],
+    naac: "A+ Grade",
+    nirf: "#21 (Management)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,96,000",
+    emi: "₹8,166/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "BBA", "B.Com"],
+    overview: "NMIMS Global Access is widely recognized as one of India's premier distance and online management institutions, known for excellent corporate recognition.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Bachelor's degree with 50% or work experience",
+    placements: "ICICI Bank, HDFC, Mahindra, TCS, PwC"
+  },
+  {
+    id: "dypatil",
+    name: "D.Y. Patil University Online",
+    logo: "https://api.dicebear.com/7.x/initials/svg?seed=DY&backgroundColor=7c3aed&textColor=ffffff",
+    location: "Navi Mumbai, Maharashtra",
+    rating: "4.6",
+    reviewsCount: "750",
+    studentsCount: "7k+",
+    students: [
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop"
+    ],
+    naac: "A++ Grade",
+    nirf: "#81 (Overall)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,30,000",
+    emi: "₹5,416/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "BBA"],
+    overview: "D.Y. Patil Online offers updated healthcare management, hospitality, and corporate MBA programs with flexible online learning modules.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Graduate degree in any discipline",
+    placements: "Apollo Healthcare, Taj Group, HSBC, Wipro"
+  },
+  {
+    id: "scdl",
+    name: "Symbiosis Centre for Distance Learning (SCDL)",
+    logo: "https://api.dicebear.com/7.x/initials/svg?seed=SC&backgroundColor=b91c1c&textColor=ffffff",
+    location: "Pune, Maharashtra",
+    rating: "4.8",
+    reviewsCount: "1,520",
+    studentsCount: "18k+",
+    students: [
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop"
+    ],
+    naac: "A++ Grade",
+    nirf: "#32 (Management)",
+    approvals: ["UGC-DEB", "AICTE Approved"],
+    fee: "₹1,15,000",
+    emi: "₹4,791/month",
+    examMode: "Online Computer Based",
+    courses: ["MBA", "BBA"],
+    overview: "SCDL Pune is an autonomous premier institute for corporate PG Diplomas and Distance Management degrees, extremely popular among working professionals.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Bachelor's degree from recognized university",
+    placements: "Capgemini, Bharti Airtel, Cognizant, Infosys"
+  },
+  {
+    id: "gla",
+    name: "GLA University Online",
+    logo: "https://api.dicebear.com/7.x/initials/svg?seed=GL&backgroundColor=15803d&textColor=ffffff",
+    location: "Mathura, Uttar Pradesh",
+    rating: "4.5",
+    reviewsCount: "540",
+    studentsCount: "5k+",
+    students: [
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop"
+    ],
+    naac: "A+ Grade",
+    nirf: "#85 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹95,000",
+    emi: "₹3,958/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "GLA University Online provides highly affordable degree programs with flexible learning tools, live interactive masterclasses, and dedicated student support.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Graduation with minimum 50% / 10+2",
+    placements: "TCS, Wipro, Tech Mahindra, HCL"
+  },
+  {
+    id: "sharda",
+    name: "Sharda University Online",
+    logo: "https://api.dicebear.com/7.x/initials/svg?seed=SU&backgroundColor=0369a1&textColor=ffffff",
+    location: "Greater Noida, Uttar Pradesh",
+    rating: "4.6",
+    reviewsCount: "610",
+    studentsCount: "6k+",
+    students: [
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop"
+    ],
+    naac: "A+ Grade",
+    nirf: "#87 (Overall)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,05,000",
+    emi: "₹4,375/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Sharda University Online offers global exposure with a diverse curriculum designed to help students master core business and computing concepts.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Pass in Graduation / 10+2 from recognized board",
+    placements: "Cognizant, Amazon, Paytm, Barclays"
+  },
+  {
+    id: "uttaranchal",
+    name: "Uttaranchal University Online",
+    logo: "https://api.dicebear.com/7.x/initials/svg?seed=UU&backgroundColor=c026d3&textColor=ffffff",
+    location: "Dehradun, Uttarakhand",
+    rating: "4.7",
+    reviewsCount: "480",
+    studentsCount: "4k+",
+    students: [
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop"
+    ],
+    naac: "A+ Grade",
+    nirf: "#90 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹98,000",
+    emi: "₹4,083/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Uttaranchal University Online provides budget-friendly distance degrees with comprehensive digital library access, recorded lectures, and placement guidance.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Bachelor's degree in relevant subject / 10+2",
+    placements: "Deloitte, Accenture, IBM, Genpact"
+  },
+  {
+    id: "snu",
+    name: "Shiv Nadar University Online",
+    logo: "https://api.dicebear.com/7.x/initials/svg?seed=SN&backgroundColor=0f766e&textColor=ffffff",
+    location: "Greater Noida, Uttar Pradesh",
+    rating: "4.9",
+    reviewsCount: "430",
+    studentsCount: "3k+",
+    students: [
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop"
+    ],
+    naac: "A Grade",
+    nirf: "#62 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹2,10,000",
+    emi: "₹8,750/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA"],
+    overview: "Shiv Nadar University Online focuses on premium research-backed programs in Data Science, Executive Management, and Business Analytics.",
+    duration: "2 Years (PG)",
+    eligibility: "50% in Graduation + Entrance / Interview",
+    placements: "McKinsey, BCG, Google, Microsoft"
+  },
+  {
+    id: "vignan",
+    name: "Vignan University Online",
+    logo: "https://api.dicebear.com/7.x/initials/svg?seed=VU&backgroundColor=4338ca&textColor=ffffff",
+    location: "Guntur, Andhra Pradesh",
+    rating: "4.5",
+    reviewsCount: "390",
+    studentsCount: "4k+",
+    students: [
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop"
+    ],
+    naac: "A+ Grade",
+    nirf: "#75 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹90,000",
+    emi: "₹3,750/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA"],
+    overview: "Vignan Online provides high-value technical and management degrees for southern and all-India students with affordable semester fees.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Graduation passed with 50% aggregate",
+    placements: "TCS, Mindtree, Infosys, Tech Mahindra"
+  },
+  {
+    id: "shoolini",
+    name: "Shoolini University Online",
+    logo: "https://api.dicebear.com/7.x/initials/svg?seed=SH&backgroundColor=e11d48&textColor=ffffff",
+    location: "Solan, Himachal Pradesh",
+    rating: "4.7",
+    reviewsCount: "510",
+    studentsCount: "5k+",
+    students: [
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop"
+    ],
+    naac: "A+ Grade",
+    nirf: "#70 (University)",
+    approvals: ["UGC-DEB", "AICTE", "QS Ranked"],
+    fee: "₹1,10,000",
+    emi: "₹4,583/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Shoolini University Online is renowned for its pay-after-placement assistance models, online research labs, and strong international faculty mentorship.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Graduate degree from recognized institution",
+    placements: "Biocon, Genpact, Reliance, Nestle"
   }
 ];
 
