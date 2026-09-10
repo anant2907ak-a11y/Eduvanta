@@ -27,8 +27,22 @@ header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid
 .btn{border:0;border-radius:10px;padding:12px 20px;font-weight:700;cursor:pointer;display:inline-block;text-align:center;transition:0.2s}
 .primary{background:var(--pista-btn);color:#fff}.primary:hover{background:var(--pista-dark)}.light{background:var(--pista-light);color:var(--pista-dark)}.outline{border:1px solid var(--pista-btn);color:var(--pista-dark);background:transparent}
 
-.hero{background:linear-gradient(135deg, var(--badami) 0%, var(--pista-light) 100%);padding:50px 20px}.hero-in{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:center}
+/* HERO & CAROUSEL STYLES */
+.hero{background:linear-gradient(135deg, var(--badami) 0%, var(--pista-light) 100%);padding:50px 20px;position:relative;overflow:hidden}
+.hero-in{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:center}
+
+.carousel-container{position:relative;width:100%;overflow:hidden}
+.carousel-slides{display:flex;transition:transform 0.5s ease-in-out;width:100%}
+.slide{min-width:100%;box-sizing:border-box;padding-right:10px}
+
+.carousel-dots{display:flex;gap:8px;margin-top:20px;align-items:center}
+.dot{width:12px;height:12px;border-radius:50%;background:#d6d3d1;cursor:pointer;transition:0.3s}
+.dot.active{background:var(--pista-btn);width:28px;border-radius:12px}
+.slider-btn{background:rgba(255,255,255,0.7);border:1px solid var(--line);border-radius:50%;width:32px;height:32px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-weight:bold;margin-left:5px}
+.slider-btn:hover{background:#fff}
+
 h1{font-size:42px;line-height:1.15;margin:15px 0;color:var(--navy)}.badge{background:var(--neon);color:var(--pista-dark);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.badge.scholarship{background:#f59e0b;color:#fff}
 
 .form-card{background:#fff;border-radius:20px;padding:25px;box-shadow:0 10px 30px rgba(96,108,56,0.1);border:1px solid var(--line)}
 .form-card h3{margin:0 0 5px;font-size:20px}.form-card p{color:var(--muted);font-size:13px;margin-bottom:18px}
@@ -108,12 +122,36 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
 <main id="view-home" class="page-view active">
   <section class="hero">
     <div class="hero-in">
-      <div>
-        <span class="badge">#1 Online Degree Guidance</span>
-        <h1>Find & Compare UGC Approved Universities</h1>
-        <p>Get authentic ratings, student reviews, verified NIRF ranks, NAAC accreditation, and direct syllabus links.</p>
+      <!-- SLIDER CONTAINER -->
+      <div class="carousel-container">
+        <div class="carousel-slides" id="carouselSlides">
+          
+          <!-- SLIDE 1 -->
+          <div class="slide">
+            <span class="badge">#1 Online Degree Guidance</span>
+            <h1>Find & Compare UGC Approved Universities</h1>
+            <p style="color:var(--muted);line-height:1.6;">Get authentic ratings, student reviews, verified NIRF ranks, NAAC accreditation, and direct syllabus links.</p>
+          </div>
+
+          <!-- SLIDE 2 (NEW SCHOLARSHIP BANNER) -->
+          <div class="slide">
+            <span class="badge scholarship">🎓 Exclusive Student Offer</span>
+            <h1>Student Scholarship Up To ₹15,000!</h1>
+            <p style="color:var(--muted);line-height:1.6;">Apply through DegreeChoice4U today and claim early-bird fee discounts & instant scholarship assistance on top online degrees.</p>
+          </div>
+
+        </div>
+
+        <!-- CAROUSEL CONTROLS -->
+        <div class="carousel-dots">
+          <span class="dot active" onclick="goToSlide(0)"></span>
+          <span class="dot" onclick="goToSlide(1)"></span>
+          <button class="slider-btn" onclick="prevSlide()">‹</button>
+          <button class="slider-btn" onclick="nextSlide()">›</button>
+        </div>
       </div>
       
+      <!-- FORM CARD -->
       <div class="form-card" id="lead-form">
         <h3>Get Free Career Guidance</h3>
         <p>Compare fees & receive syllabus directly in your inbox.</p>
@@ -768,6 +806,38 @@ const UNIVERSITIES = [
     placements: "Biocon, Genpact, Reliance, Nestle"
   }
 ];
+
+// CAROUSEL LOGIC
+let currentSlide = 0;
+const totalSlides = 2;
+
+function updateCarousel() {
+  const slides = document.getElementById('carouselSlides');
+  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentSlide);
+  });
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  updateCarousel();
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+}
+
+// Auto-play carousel every 5 seconds
+setInterval(nextSlide, 5000);
 
 window.onload = function(){
   renderUnis(UNIVERSITIES, 'home-uni-grid');
