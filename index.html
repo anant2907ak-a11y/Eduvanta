@@ -25,6 +25,7 @@ header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid
 .logo{font-size:24px;font-weight:900;color:var(--pista-dark);cursor:pointer}.logo span{color:var(--pista-btn)}
 .menu{display:flex;gap:24px;font-size:14px;font-weight:600}.menu a{cursor:pointer}.menu a:hover{color:var(--pista-btn)}
 .btn{border:0;border-radius:10px;padding:12px 20px;font-weight:700;cursor:pointer;display:inline-block;text-align:center;transition:0.2s}
+.btn-sm{padding:6px 12px;font-size:12px;border-radius:6px}
 .primary{background:var(--pista-btn);color:#fff}.primary:hover{background:var(--pista-dark)}.light{background:var(--pista-light);color:var(--pista-dark)}.outline{border:1px solid var(--pista-btn);color:var(--pista-dark);background:transparent}
 
 /* HERO & CAROUSEL STYLES */
@@ -59,7 +60,8 @@ h1{font-size:42px;line-height:1.15;margin:15px 0;color:var(--navy)}.badge{backgr
 .uni-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:20px;margin-top:25px}
 .uni-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
 .uni-head{display:flex;gap:15px;align-items:center;margin-bottom:12px}
-.uni-logo-img{width:65px;height:65px;border-radius:12px;object-fit:contain;border:1px solid var(--line);padding:6px;background:#fff}
+.uni-logo-box{width:65px;height:65px;border-radius:12px;border:1px solid var(--line);padding:6px;background:#fff;display:flex;align-items:center;justify-content:center}
+.uni-logo-img{max-width:100%;max-height:100%;object-fit:contain}
 
 .rating-box{display:flex;align-items:center;gap:6px;margin-top:4px;font-size:13px;font-weight:700;color:var(--navy)}
 .stars{color:var(--gold)}
@@ -71,24 +73,15 @@ h1{font-size:42px;line-height:1.15;margin:15px 0;color:var(--navy)}.badge{backgr
 .tag.green{background:var(--pista-light);color:var(--pista-dark)}
 
 .details-table{width:100%;font-size:13px;margin:12px 0;border-collapse:collapse}
-.details-table td{padding:6px 0;border-bottom:1px dashed var(--line)}
-.details-table td:last-child{text-align:right;font-weight:700}
-
-.blog-grid, .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:25px}
-.blog-card, .review-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.03);transition:0.3s}
-.review-card{padding:20px;}
-.blog-card:hover, .review-card:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,0.06)}
-.blog-img{width:100%;height:200px;object-fit:cover}
-.blog-content{padding:20px}
-.author-box{display:flex;align-items:center;gap:10px;margin-top:15px;padding-top:12px;border-top:1px solid var(--line)}
-.author-img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+.details-table td{padding:8px 0;border-bottom:1px dashed var(--line)}
+.details-table td:last-child{text-align:right;}
 
 .page-view{display:none}.page-view.active{display:block}
 .breadcrumb{margin-bottom:20px;font-size:14px;color:var(--muted)}.breadcrumb a{color:var(--pista-btn);cursor:pointer;font-weight:600}
 
-.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
 .modal-overlay.active{display:flex}
-.modal-body{background:#fff;padding:30px;border-radius:20px;max-width:600px;width:100%;position:relative}
+.modal-body{background:#fff;padding:30px;border-radius:20px;max-width:550px;width:100%;position:relative}
 .close-btn{position:absolute;top:15px;right:15px;background:#f5f5f4;border:0;width:30px;height:30px;border-radius:50%;cursor:pointer;font-weight:bold}
 
 /* FOOTER STYLES */
@@ -112,8 +105,6 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
       <a onclick="showCourse('MBA')">Online MBA</a>
       <a onclick="showCourse('MCA')">Online MCA</a>
       <a onclick="showCourse('BBA')">Online BBA</a>
-      <a onclick="document.getElementById('blogs-sec').scrollIntoView({behavior:'smooth'})">Blogs</a>
-      <a onclick="document.getElementById('reviews-sec').scrollIntoView({behavior:'smooth'})">Reviews</a>
     </div>
     <button class="btn primary" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">Get Free Counseling</button>
   </nav>
@@ -124,21 +115,17 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
     <div class="hero-in">
       <div class="carousel-container">
         <div class="carousel-slides" id="carouselSlides">
-          
           <div class="slide">
             <span class="badge">#1 Online Degree Guidance</span>
             <h1>Find & Compare UGC Approved Universities</h1>
             <p style="color:var(--muted);line-height:1.6;">Get authentic ratings, student reviews, verified NIRF ranks, NAAC accreditation, and direct syllabus links.</p>
           </div>
-
           <div class="slide">
             <span class="badge scholarship">🎓 Exclusive Student Offer</span>
             <h1>Student Scholarship Up To ₹15,000!</h1>
             <p style="color:var(--muted);line-height:1.6;">Apply through DegreeChoice4U today and claim early-bird fee discounts & instant scholarship assistance on top online degrees.</p>
           </div>
-
         </div>
-
         <div class="carousel-dots">
           <span class="dot active" onclick="goToSlide(0)"></span>
           <span class="dot" onclick="goToSlide(1)"></span>
@@ -150,7 +137,7 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
       <div class="form-card" id="lead-form">
         <h3>Get Free Career Guidance</h3>
         <p>Compare fees & receive syllabus directly in your inbox.</p>
-        <form id="google-sheet-form">
+        <form class="lead-submit-form">
           <div class="grid-2">
             <input type="text" name="FullName" class="input-field" placeholder="Full Name *" required>
             <input type="tel" name="Mobile" class="input-field" placeholder="Mobile Number *" required>
@@ -182,19 +169,10 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
               <option value="Jain University">Jain University</option>
               <option value="UPES Online">UPES Online</option>
               <option value="LPU Online">LPU Online</option>
-              <option value="NMIMS Online">NMIMS Online</option>
-              <option value="D.Y. Patil Online">D.Y. Patil Online</option>
-              <option value="Symbiosis SCDL">Symbiosis SCDL</option>
-              <option value="GLA University">GLA University</option>
-              <option value="Sharda University">Sharda University</option>
-              <option value="Uttaranchal University">Uttaranchal University</option>
-              <option value="Shiv Nadar University">Shiv Nadar University</option>
-              <option value="Vignan University">Vignan University</option>
-              <option value="Shoolini University">Shoolini University</option>
             </select>
           </div>
-          <button type="submit" class="btn primary" style="width:100%;margin-top:10px;" id="submit-btn">Get Expert Call Back</button>
-          <div id="form-msg" style="margin-top:10px;font-size:13px;text-align:center;"></div>
+          <button type="submit" class="btn primary submit-btn" style="width:100%;margin-top:10px;">Get Expert Call Back</button>
+          <div class="form-msg" style="margin-top:10px;font-size:13px;text-align:center;"></div>
         </form>
       </div>
     </div>
@@ -236,106 +214,6 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
     </div>
     <div class="uni-grid" id="home-uni-grid"></div>
   </section>
-
-  <section class="section" id="blogs-sec">
-    <div class="center">
-      <h2>Latest Career & Student Guides</h2>
-      <p style="color:var(--muted)">Real Student Experiences, Comparison Guides & Career Advice</p>
-    </div>
-    <div class="blog-grid">
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop" class="blog-img" alt="Students Studying Online">
-        <div class="blog-content">
-          <span class="tag green">Student Guide</span>
-          <h3 style="margin:10px 0 5px;font-size:18px;">Is Online MBA Worth It in 2026?</h3>
-          <p style="color:var(--muted);font-size:13px;">Salary expectations, industry acceptance, and real feedback from online MBA graduates working in MNCs.</p>
-          <div class="author-box">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop" class="author-img" alt="Student">
-            <div>
-              <span style="font-size:12px;font-weight:700;display:block;">Priya Sharma</span>
-              <span style="font-size:11px;color:var(--muted);">Amity Online Student</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop" class="blog-img" alt="Students Group Discussion">
-        <div class="blog-content">
-          <span class="tag">Comparison</span>
-          <h3 style="margin:10px 0 5px;font-size:18px;">Amity vs Manipal vs Chandigarh</h3>
-          <p style="color:var(--muted);font-size:13px;">Detailed head-to-head comparison of course portal LMS, live lectures, and placement drives.</p>
-          <div class="author-box">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop" class="author-img" alt="Student">
-            <div>
-              <span style="font-size:12px;font-weight:700;display:block;">Rahul Verma</span>
-              <span style="font-size:11px;color:var(--muted);">MUJ Online Alumnus</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop" class="blog-img" alt="Happy University Graduates">
-        <div class="blog-content">
-          <span class="tag green">Verification</span>
-          <h3 style="margin:10px 0 5px;font-size:18px;">How to Verify UGC-DEB Approval?</h3>
-          <p style="color:var(--muted);font-size:13px;">A step-by-step tutorial to ensure your online degree is 100% valid for government jobs & abroad studies.</p>
-          <div class="author-box">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop" class="author-img" alt="Student">
-            <div>
-              <span style="font-size:12px;font-weight:700;display:block;">Ananya Patel</span>
-              <span style="font-size:11px;color:var(--muted);">Jain Online Student</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="reviews-sec" style="background:var(--pista-light);border-radius:20px;margin-bottom:40px;">
-    <div class="center">
-      <h2>Student Testimonials & Reviews</h2>
-      <p style="color:var(--muted)">Verified feedback from students enrolled in top online universities</p>
-    </div>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p style="font-size:14px;color:var(--navy);line-height:1.5;margin:12px 0;">"DegreeChoice4U helped me choose Manipal Online for MBA. The LMS platform is super smooth and flexible for working professionals."</p>
-        <div class="author-box">
-          <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop" class="author-img" alt="Student">
-          <div>
-            <span style="font-size:13px;font-weight:700;display:block;">Vikram Malhotra</span>
-            <span style="font-size:11px;color:var(--muted);">MUJ Online - MBA</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p style="font-size:14px;color:var(--navy);line-height:1.5;margin:12px 0;">"Got complete clarity on UGC-DEB approval and EMI options. The counselor assigned to me was very polite and non-pushy."</p>
-        <div class="author-box">
-          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop" class="author-img" alt="Student">
-          <div>
-            <span style="font-size:13px;font-weight:700;display:block;">Sneha Kapoor</span>
-            <span style="font-size:11px;color:var(--muted);">Chandigarh Univ - MCA</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card">
-        <div class="stars">★★★★☆</div>
-        <p style="font-size:14px;color:var(--navy);line-height:1.5;margin:12px 0;">"Great direct syllabus comparison! Saved me a lot of time searching across 10 different university websites."</p>
-        <div class="author-box">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop" class="author-img" alt="Student">
-          <div>
-            <span style="font-size:13px;font-weight:700;display:block;">Aman Srivastava</span>
-            <span style="font-size:11px;color:var(--muted);">Amity Online - BBA</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <main id="view-course" class="page-view">
@@ -351,7 +229,9 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
   <div class="section">
     <div class="breadcrumb"><a onclick="showView('home')">Home</a> / <span id="u-bread">University</span></div>
     <div style="background:var(--pista-light);padding:30px;border-radius:20px;border:1px solid var(--line);margin-bottom:20px;display:flex;gap:20px;align-items:center;">
-      <img id="u-detail-logo" src="" style="width:90px;height:90px;border-radius:16px;background:#fff;padding:8px;border:1px solid var(--line);object-fit:contain;">
+      <div class="uni-logo-box" style="width:90px;height:90px;">
+        <img id="u-detail-logo" src="" class="uni-logo-img">
+      </div>
       <div>
         <h1 id="u-name" style="margin:0;">Amity University Online</h1>
         <p id="u-loc" style="color:var(--muted);margin:5px 0;"></p>
@@ -370,20 +250,22 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
         <h3>Key Highlights & Admission Details</h3>
         <div style="background:#fcfbf7;padding:15px;border-radius:12px;border:1px solid var(--line);margin-bottom:20px;" id="u-details-extra"></div>
 
-        <h3>Programs & Fee Details</h3>
+        <h3>Available Programs & Fee Details</h3>
+        <p style="color:var(--muted);font-size:13px;">Click brochure button to fill quick enquiry and download detailed syllabus PDF.</p>
         <table class="details-table" id="u-prog-table"></table>
       </div>
       <div>
         <div class="form-card">
           <h3>Apply / Get Syllabus</h3>
           <p>Download official brochure and get direct counsellor call.</p>
-          <button class="btn primary" style="width:100%;" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'}); showView('home')">Request Call Back</button>
+          <button class="btn primary" style="width:100%;" onclick="openBrochureModal(currentUniObj ? currentUniObj.name : 'General', 'Brochure')">📥 Request Brochure Call</button>
         </div>
       </div>
     </div>
   </div>
 </main>
 
+<!-- BROCHURE & QUICK VIEW MODAL -->
 <div class="modal-overlay" id="uniModal">
   <div class="modal-body">
     <button class="close-btn" onclick="closeModal()">✕</button>
@@ -405,19 +287,6 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
       <a onclick="showCourse('BBA')">Online BBA</a>
     </div>
     <div class="footer-col">
-      <h4>Top Universities</h4>
-      <a onclick="showUniDetails('amity')">Amity University Online</a>
-      <a onclick="showUniDetails('chandigarh')">Chandigarh University</a>
-      <a onclick="showUniDetails('manipal')">Manipal University Jaipur</a>
-      <a onclick="showUniDetails('jain')">Jain University Online</a>
-      <a onclick="showUniDetails('upes')">UPES Online</a>
-      <a onclick="showUniDetails('lpu')">LPU Online</a>
-      <a onclick="showUniDetails('nmims')">NMIMS Online</a>
-      <a onclick="showUniDetails('dypatil')">D.Y. Patil Online</a>
-      <a onclick="showUniDetails('scdl')">Symbiosis SCDL</a>
-      <a onclick="showUniDetails('gla')">GLA University</a>
-    </div>
-    <div class="footer-col">
       <h4>Contact Us</h4>
       <p>📍 <b>Address:</b> Rajender Nagar, Ghaziabad, Uttar Pradesh</p>
       <p>📞 <b>Phone:</b> <a href="tel:+919899491735" style="display:inline;color:var(--neon);">+91 9899491735</a></p>
@@ -432,20 +301,19 @@ footer{background:var(--navy);color:#fff;padding:50px 20px 20px;margin-top:50px}
 <script>
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzr2M5CHd5biRd9GOpQr_LuOQY27mSuy3EjhwWMsOKPxf00sYlVwzACOpWIeGchdJUEnQ/exec";
 
-// REAL LOGOS UPDATED HERE
+// WORKING OFFICIAL / HIGH-RES BRAND LOGOS
 const UNIVERSITIES = [
   {
     id: "amity",
     name: "Amity University Online",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Amity_University_logo.png",
+    logo: "https://logo.clearbit.com/amityonline.com",
     location: "Noida, Uttar Pradesh",
     rating: "4.8",
     reviewsCount: "1,240",
     studentsCount: "12k+",
     students: [
       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop"
     ],
     naac: "A+ Grade",
     nirf: "#35 (Overall)",
@@ -462,15 +330,14 @@ const UNIVERSITIES = [
   {
     id: "chandigarh",
     name: "Chandigarh University Online",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Chandigarh_University_seal.png",
+    logo: "https://logo.clearbit.com/cuchd.in",
     location: "Mohali, Punjab",
     rating: "4.7",
     reviewsCount: "980",
     studentsCount: "10k+",
     students: [
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop"
     ],
     naac: "A+ Grade",
     nirf: "#27 (Overall)",
@@ -487,15 +354,14 @@ const UNIVERSITIES = [
   {
     id: "manipal",
     name: "Manipal University Jaipur (MUJ)",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Manipal_University_Jaipur_logo.png",
+    logo: "https://logo.clearbit.com/onlinemanipal.com",
     location: "Jaipur, Rajasthan",
     rating: "4.9",
     reviewsCount: "1,850",
     studentsCount: "15k+",
     students: [
       "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop"
     ],
     naac: "A+ Grade",
     nirf: "#64 (University)",
@@ -512,15 +378,13 @@ const UNIVERSITIES = [
   {
     id: "jain",
     name: "Jain University Online",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Jain_University_logo.png",
+    logo: "https://logo.clearbit.com/jainonline.com",
     location: "Bengaluru, Karnataka",
     rating: "4.6",
     reviewsCount: "820",
     studentsCount: "8k+",
     students: [
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=100&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop"
     ],
     naac: "A++ Grade",
     nirf: "#68 (University)",
@@ -537,14 +401,13 @@ const UNIVERSITIES = [
   {
     id: "upes",
     name: "UPES Online",
-    logo: "https://upload.wikimedia.org/wikipedia/en/9/91/UPES_Logo.png",
+    logo: "https://logo.clearbit.com/upesonline.ac.in",
     location: "Dehradun, Uttarakhand",
     rating: "4.7",
     reviewsCount: "650",
     studentsCount: "6k+",
     students: [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop"
     ],
     naac: "A Grade",
     nirf: "#54 (University)",
@@ -561,14 +424,13 @@ const UNIVERSITIES = [
   {
     id: "lpu",
     name: "Lovely Professional University (LPU Online)",
-    logo: "https://upload.wikimedia.org/wikipedia/en/7/7f/Lovely_Professional_University_logo.png",
+    logo: "https://logo.clearbit.com/lpuonline.com",
     location: "Phagwara, Punjab",
     rating: "4.8",
     reviewsCount: "1,100",
     studentsCount: "14k+",
     students: [
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop"
     ],
     naac: "A++ Grade",
     nirf: "#38 (Overall)",
@@ -581,258 +443,25 @@ const UNIVERSITIES = [
     duration: "2 Years (PG) / 3 Years (UG)",
     eligibility: "Graduation in relevant stream / 10+2",
     placements: "Microsoft, Amazon, Cognizant, Infosys"
-  },
-  {
-    id: "nmims",
-    name: "NMIMS Global Access (CDOE)",
-    logo: "https://upload.wikimedia.org/wikipedia/en/e/eb/NMIMS_Logo.png",
-    location: "Mumbai, Maharashtra",
-    rating: "4.9",
-    reviewsCount: "2,100",
-    studentsCount: "20k+",
-    students: [
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop"
-    ],
-    naac: "A+ Grade",
-    nirf: "#21 (Management)",
-    approvals: ["UGC-DEB", "AICTE"],
-    fee: "₹1,96,000",
-    emi: "₹8,166/month",
-    examMode: "Online Proctored",
-    courses: ["MBA", "BBA", "B.Com"],
-    overview: "NMIMS Global Access is widely recognized as one of India's premier distance and online management institutions, known for excellent corporate recognition.",
-    duration: "2 Years (PG) / 3 Years (UG)",
-    eligibility: "Bachelor's degree with 50% or work experience",
-    placements: "ICICI Bank, HDFC, Mahindra, TCS, PwC"
-  },
-  {
-    id: "dypatil",
-    name: "D.Y. Patil University Online",
-    logo: "https://upload.wikimedia.org/wikipedia/en/a/a2/D._Y._Patil_University_Logo.png",
-    location: "Navi Mumbai, Maharashtra",
-    rating: "4.6",
-    reviewsCount: "750",
-    studentsCount: "7k+",
-    students: [
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop"
-    ],
-    naac: "A++ Grade",
-    nirf: "#81 (Overall)",
-    approvals: ["UGC-DEB", "AICTE"],
-    fee: "₹1,40,000",
-    emi: "₹5,833/month",
-    examMode: "Online Proctored",
-    courses: ["MBA", "BBA"],
-    overview: "D.Y. Patil Online offers updated healthcare management, hospitality, and corporate MBA programs with flexible online learning modules.",
-    duration: "2 Years (PG) / 3 Years (UG)",
-    eligibility: "Graduate degree in any discipline",
-    placements: "Apollo Healthcare, Taj Group, HSBC, Wipro"
-  },
-  {
-    id: "scdl",
-    name: "Symbiosis Centre for Distance Learning (SCDL)",
-    logo: "https://upload.wikimedia.org/wikipedia/en/0/00/Symbiosis_International_University_logo.png",
-    location: "Pune, Maharashtra",
-    rating: "4.8",
-    reviewsCount: "1,520",
-    studentsCount: "18k+",
-    students: [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop"
-    ],
-    naac: "A++ Grade",
-    nirf: "#32 (Management)",
-    approvals: ["UGC-DEB", "AICTE Approved"],
-    fee: "₹1,20,000",
-    emi: "₹5,000/month",
-    examMode: "Online Computer Based",
-    courses: ["MBA", "BBA"],
-    overview: "SCDL Pune is an autonomous premier institute for corporate PG Diplomas and Distance Management degrees, extremely popular among working professionals.",
-    duration: "2 Years (PG) / 3 Years (UG)",
-    eligibility: "Bachelor's degree from recognized university",
-    placements: "Capgemini, Bharti Airtel, Cognizant, Infosys"
-  },
-  {
-    id: "gla",
-    name: "GLA University Online",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/GLA_University_logo.png",
-    location: "Mathura, Uttar Pradesh",
-    rating: "4.5",
-    reviewsCount: "540",
-    studentsCount: "5k+",
-    students: [
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop"
-    ],
-    naac: "A+ Grade",
-    nirf: "#85 (University)",
-    approvals: ["UGC-DEB", "AICTE"],
-    fee: "₹96,000",
-    emi: "₹4,000/month",
-    examMode: "Online Proctored",
-    courses: ["MBA", "MCA", "BBA", "B.Com"],
-    overview: "GLA University Online provides highly affordable degree programs with flexible learning tools, live interactive masterclasses, and dedicated student support.",
-    duration: "2 Years (PG) / 3 Years (UG)",
-    eligibility: "Graduation with minimum 50% / 10+2",
-    placements: "TCS, Wipro, Tech Mahindra, HCL"
-  },
-  {
-    id: "sharda",
-    name: "Sharda University Online",
-    logo: "https://upload.wikimedia.org/wikipedia/en/e/e9/Sharda_University_logo.png",
-    location: "Greater Noida, Uttar Pradesh",
-    rating: "4.6",
-    reviewsCount: "610",
-    studentsCount: "6k+",
-    students: [
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop"
-    ],
-    naac: "A+ Grade",
-    nirf: "#87 (Overall)",
-    approvals: ["UGC-DEB", "AICTE"],
-    fee: "₹1,10,000",
-    emi: "₹4,583/month",
-    examMode: "Online Proctored",
-    courses: ["MBA", "MCA", "BBA", "B.Com"],
-    overview: "Sharda University Online offers global exposure with a diverse curriculum designed to help students master core business and computing concepts.",
-    duration: "2 Years (PG) / 3 Years (UG)",
-    eligibility: "Pass in Graduation / 10+2 from recognized board",
-    placements: "Cognizant, Amazon, Paytm, Barclays"
-  },
-  {
-    id: "uttaranchal",
-    name: "Uttaranchal University Online",
-    logo: "https://upload.wikimedia.org/wikipedia/en/e/e1/Uttaranchal_University_logo.png",
-    location: "Dehradun, Uttarakhand",
-    rating: "4.7",
-    reviewsCount: "480",
-    studentsCount: "4k+",
-    students: [
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop"
-    ],
-    naac: "A+ Grade",
-    nirf: "#90 (University)",
-    approvals: ["UGC-DEB", "AICTE"],
-    fee: "₹98,000",
-    emi: "₹4,083/month",
-    examMode: "Online Proctored",
-    courses: ["MBA", "MCA", "BBA", "B.Com"],
-    overview: "Uttaranchal University Online provides budget-friendly distance degrees with comprehensive digital library access, recorded lectures, and placement guidance.",
-    duration: "2 Years (PG) / 3 Years (UG)",
-    eligibility: "Bachelor's degree in relevant subject / 10+2",
-    placements: "Deloitte, Accenture, IBM, Genpact"
-  },
-  {
-    id: "snu",
-    name: "Shiv Nadar University Online",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Shiv_Nadar_University_logo.png",
-    location: "Greater Noida, Uttar Pradesh",
-    rating: "4.9",
-    reviewsCount: "430",
-    studentsCount: "3k+",
-    students: [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop"
-    ],
-    naac: "A Grade",
-    nirf: "#62 (University)",
-    approvals: ["UGC-DEB", "AICTE"],
-    fee: "₹2,20,000",
-    emi: "₹9,166/month",
-    examMode: "Online Proctored",
-    courses: ["MBA", "MCA"],
-    overview: "Shiv Nadar University Online focuses on premium research-backed programs in Data Science, Executive Management, and Business Analytics.",
-    duration: "2 Years (PG)",
-    eligibility: "50% in Graduation + Entrance / Interview",
-    placements: "McKinsey, BCG, Google, Microsoft"
-  },
-  {
-    id: "vignan",
-    name: "Vignan University Online",
-    logo: "https://upload.wikimedia.org/wikipedia/en/5/5e/Vignan_University_logo.png",
-    location: "Guntur, Andhra Pradesh",
-    rating: "4.5",
-    reviewsCount: "390",
-    studentsCount: "4k+",
-    students: [
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop"
-    ],
-    naac: "A+ Grade",
-    nirf: "#75 (University)",
-    approvals: ["UGC-DEB", "AICTE"],
-    fee: "₹90,000",
-    emi: "₹3,750/month",
-    examMode: "Online Proctored",
-    courses: ["MBA", "MCA", "BBA"],
-    overview: "Vignan Online provides high-value technical and management degrees for southern and all-India students with affordable semester fees.",
-    duration: "2 Years (PG) / 3 Years (UG)",
-    eligibility: "Graduation passed with 50% aggregate",
-    placements: "TCS, Mindtree, Infosys, Tech Mahindra"
-  },
-  {
-    id: "shoolini",
-    name: "Shoolini University Online",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/23/Shoolini_University_logo.png",
-    location: "Solan, Himachal Pradesh",
-    rating: "4.7",
-    reviewsCount: "510",
-    studentsCount: "5k+",
-    students: [
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop"
-    ],
-    naac: "A+ Grade",
-    nirf: "#70 (University)",
-    approvals: ["UGC-DEB", "AICTE", "QS Ranked"],
-    fee: "₹1,10,000",
-    emi: "₹4,583/month",
-    examMode: "Online Proctored",
-    courses: ["MBA", "MCA", "BBA", "B.Com"],
-    overview: "Shoolini University Online is renowned for its pay-after-placement assistance models, online research labs, and strong international faculty mentorship.",
-    duration: "2 Years (PG) / 3 Years (UG)",
-    eligibility: "Graduate degree from recognized institution",
-    placements: "Biocon, Genpact, Reliance, Nestle"
   }
 ];
 
+let currentUniObj = null;
+
 // CAROUSEL LOGIC
 let currentSlide = 0;
-const totalSlides = 2;
-
 function updateCarousel() {
-  const slides = document.getElementById('carouselSlides');
-  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-  
-  const dots = document.querySelectorAll('.dot');
-  dots.forEach((dot, index) => {
-    dot.classList.toggle('active', index === currentSlide);
-  });
+  document.getElementById('carouselSlides').style.transform = `translateX(-${currentSlide * 100}%)`;
+  document.querySelectorAll('.dot').forEach((dot, index) => dot.classList.toggle('active', index === currentSlide));
 }
-
-function goToSlide(index) {
-  currentSlide = index;
-  updateCarousel();
-}
-
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  updateCarousel();
-}
-
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  updateCarousel();
-}
-
+function goToSlide(index) { currentSlide = index; updateCarousel(); }
+function nextSlide() { currentSlide = (currentSlide + 1) % 2; updateCarousel(); }
+function prevSlide() { currentSlide = (currentSlide - 1 + 2) % 2; updateCarousel(); }
 setInterval(nextSlide, 5000);
 
 window.onload = function(){
   renderUnis(UNIVERSITIES, 'home-uni-grid');
+  bindFormSubmit(document.querySelector('.lead-submit-form'));
 }
 
 function showView(viewId) {
@@ -847,7 +476,9 @@ function renderUnis(list, targetId) {
     <div class="uni-card">
       <div>
         <div class="uni-head">
-          <img src="${u.logo}" class="uni-logo-img" alt="${u.name}" onerror="this.src='https://api.dicebear.com/7.x/initials/svg?seed=${u.id}&backgroundColor=283618&textColor=ffffff'">
+          <div class="uni-logo-box">
+            <img src="${u.logo}" class="uni-logo-img" alt="${u.name}">
+          </div>
           <div>
             <h3 style="margin:0;font-size:17px;">${u.name}</h3>
             <span style="color:var(--muted);font-size:12px;">${u.location}</span>
@@ -865,8 +496,8 @@ function renderUnis(list, targetId) {
         </div>
 
         <table class="details-table">
-          <tr><td>Total Course Fee</td><td>${u.fee}</td></tr>
-          <tr><td>Easy Monthly EMI</td><td>${u.emi}</td></tr>
+          <tr><td>Total Course Fee</td><td><b>${u.fee}</b></td></tr>
+          <tr><td>Easy Monthly EMI</td><td><b>${u.emi}</b></td></tr>
           <tr><td>Exam Mode</td><td>${u.examMode}</td></tr>
         </table>
 
@@ -897,6 +528,8 @@ function showCourse(cName) {
 function showUniDetails(uId) {
   const u = UNIVERSITIES.find(x => x.id === uId);
   if(!u) return;
+  currentUniObj = u;
+
   document.getElementById('u-bread').innerText = u.name;
   document.getElementById('u-name').innerText = u.name;
   document.getElementById('u-loc').innerText = u.location;
@@ -918,7 +551,15 @@ function showUniDetails(uId) {
   `;
 
   document.getElementById('u-prog-table').innerHTML = u.courses.map(c => `
-    <tr><td>Online ${c}</td><td>Fee: ${u.fee}</td></tr>
+    <tr>
+      <td><b>Online ${c}</b></td>
+      <td>Fee: ${u.fee}</td>
+      <td>
+        <button class="btn primary btn-sm" onclick="openBrochureModal('${u.name}', 'Online ${c}')">
+          📄 Download Brochure
+        </button>
+      </td>
+    </tr>
   `).join('');
   
   showView('university');
@@ -929,7 +570,7 @@ function openModal(uId) {
   if(!u) return;
   document.getElementById('modal-content-area').innerHTML = `
     <div style="display:flex;gap:15px;align-items:center;">
-      <img src="${u.logo}" style="width:60px;height:60px;object-fit:contain;">
+      <div class="uni-logo-box"><img src="${u.logo}" class="uni-logo-img"></div>
       <div>
         <h2 style="margin:0;font-size:20px;">${u.name}</h2>
         <p style="color:var(--muted);margin:0;font-size:13px;">${u.location}</p>
@@ -945,35 +586,85 @@ function openModal(uId) {
   document.getElementById('uniModal').classList.add('active');
 }
 
+// BROCHURE POPUP LEAD FORM
+function openBrochureModal(uniName, courseName) {
+  document.getElementById('modal-content-area').innerHTML = `
+    <div style="text-align:center;margin-bottom:15px;">
+      <h2 style="margin:0;font-size:22px;">Download Official Brochure</h2>
+      <p style="color:var(--muted);font-size:13px;margin-top:5px;">Please fill in your details to receive the syllabus PDF for <b>${uniName} (${courseName})</b>.</p>
+    </div>
+    <form class="brochure-modal-form">
+      <input type="hidden" name="University" value="${uniName}">
+      <input type="hidden" name="Course" value="${courseName}">
+      
+      <div style="display:grid;gap:10px;">
+        <input type="text" name="FullName" class="input-field" placeholder="Full Name *" required>
+        <input type="tel" name="Mobile" class="input-field" placeholder="Mobile Number *" required>
+        <input type="email" name="Email" class="input-field" placeholder="Email Address *" required>
+        <select name="State" class="select-field" required>
+          <option value="">Select Your State *</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="Other">Other</option>
+        </select>
+        <button type="submit" class="btn primary submit-btn" style="width:100%;margin-top:10px;">📥 Submit & Instant Download PDF</button>
+      </div>
+      <div class="form-msg" style="margin-top:10px;font-size:13px;text-align:center;"></div>
+    </form>
+  `;
+  bindFormSubmit(document.querySelector('.brochure-modal-form'), true);
+  document.getElementById('uniModal').classList.add('active');
+}
+
 function closeModal(){
   document.getElementById('uniModal').classList.remove('active');
 }
 
-document.getElementById('google-sheet-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const btn = document.getElementById('submit-btn');
-  const msg = document.getElementById('form-msg');
-  
-  btn.innerText = "Submitting...";
-  btn.disabled = true;
+// HANDLE FORM SUBMISSION & AUTO-DOWNLOAD BROCHURE PDF
+function bindFormSubmit(formEl, isBrochure = false) {
+  if(!formEl) return;
+  formEl.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = formEl.querySelector('.submit-btn');
+    const msg = formEl.querySelector('.form-msg');
+    
+    btn.innerText = "Submitting...";
+    btn.disabled = true;
 
-  const formData = new FormData(this);
+    const formData = new FormData(this);
 
-  fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: formData, mode: 'no-cors' })
-    .then(res => {
-      btn.innerText = "Get Expert Call Back";
-      btn.disabled = false;
-      msg.style.color = "green";
-      msg.innerText = "Success! Your request has been recorded.";
-      document.getElementById('google-sheet-form').reset();
-    })
-    .catch(err => {
-      btn.innerText = "Get Expert Call Back";
-      btn.disabled = false;
-      msg.style.color = "red";
-      msg.innerText = "Submission Error. Please try again.";
-    });
-});
+    fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: formData, mode: 'no-cors' })
+      .then(res => {
+        btn.innerText = "Submitted Successfully!";
+        btn.disabled = false;
+        msg.style.color = "green";
+        msg.innerText = "Success! Your inquiry is submitted.";
+        
+        if(isBrochure) {
+          msg.innerText = "Success! Starting PDF download...";
+          // Auto Download Sample Syllabus Brochure PDF
+          setTimeout(() => {
+            const dummyPdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
+            const a = document.createElement('a');
+            a.href = dummyPdfUrl;
+            a.target = "_blank";
+            a.download = "University_Brochure.pdf";
+            a.click();
+            closeModal();
+          }, 1200);
+        }
+        formEl.reset();
+      })
+      .catch(err => {
+        btn.innerText = "Submit";
+        btn.disabled = false;
+        msg.style.color = "red";
+        msg.innerText = "Submission Error. Please try again.";
+      });
+  });
+}
 </script>
 </body>
 </html>
