@@ -107,7 +107,7 @@ h1 { font-size: 40px; line-height: 1.15; margin: 15px 0; color: var(--brand-navy
 .review-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
 .blog-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; }
 
-/* FAQ ACCORDEON */
+/* FAQ ACCORDION */
 .faq-item { background: #fff; border: 1px solid var(--line); border-radius: 12px; margin-bottom: 12px; padding: 18px; cursor: pointer; transition: 0.2s; }
 .faq-title { font-weight: 700; font-size: 16px; display: flex; justify-content: space-between; align-items: center; color: var(--brand-navy); }
 .faq-desc { color: var(--muted); font-size: 14px; margin-top: 10px; display: none; line-height: 1.6; }
@@ -140,7 +140,6 @@ footer { background: var(--brand-navy); color: #fff; padding: 60px 20px 20px; ma
 <header>
   <nav class="nav">
     <div class="logo-container" onclick="showView('home')">
-      <!-- Direct Cap Icon + Brand SVG Logo -->
       <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M50 15L10 35L50 55L90 35L50 15Z" fill="#0b1e36"/>
         <path d="M25 45V65C25 72.5 36.2 78.5 50 78.5C63.8 78.5 75 72.5 75 65V45" stroke="#0b1e36" stroke-width="6" stroke-linecap="round"/>
@@ -208,14 +207,8 @@ footer { background: var(--brand-navy); color: #fff; padding: 60px 20px 20px; ma
               <option value="BBA">Online BBA</option>
               <option value="B.Com">Online B.Com</option>
             </select>
-            <select name="University" class="select-field">
+            <select name="University" id="form-uni-select" class="select-field">
               <option value="Any">Preferred University</option>
-              <option value="Amity University Online">Amity University</option>
-              <option value="Chandigarh University Online">Chandigarh University</option>
-              <option value="Manipal University Jaipur (MUJ)">Manipal University</option>
-              <option value="Jain University Online">Jain University</option>
-              <option value="UPES Online">UPES Online</option>
-              <option value="Lovely Professional University (LPU Online)">LPU Online</option>
             </select>
           </div>
           <button type="submit" class="btn primary submit-btn" style="width:100%; margin-top:10px;">Request Callback</button>
@@ -252,7 +245,7 @@ footer { background: var(--brand-navy); color: #fff; padding: 60px 20px 20px; ma
     <div class="review-grid">
       <div class="review-card">
         <div class="review-user">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop" class="review-avatar">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop" class="review-avatar" alt="Student">
           <div>
             <h4 style="margin:0;">Priya Sharma</h4>
             <span style="font-size:12px; color:var(--muted)">Online MBA — Amity University</span>
@@ -263,7 +256,7 @@ footer { background: var(--brand-navy); color: #fff; padding: 60px 20px 20px; ma
       </div>
       <div class="review-card">
         <div class="review-user">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop" class="review-avatar">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop" class="review-avatar" alt="Student">
           <div>
             <h4 style="margin:0;">Rohan Verma</h4>
             <span style="font-size:12px; color:var(--muted)">Online MCA — Chandigarh University</span>
@@ -274,7 +267,7 @@ footer { background: var(--brand-navy); color: #fff; padding: 60px 20px 20px; ma
       </div>
       <div class="review-card">
         <div class="review-user">
-          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop" class="review-avatar">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop" class="review-avatar" alt="Student">
           <div>
             <h4 style="margin:0;">Ananya Nair</h4>
             <span style="font-size:12px; color:var(--muted)">Online BBA — Manipal University</span>
@@ -331,7 +324,7 @@ footer { background: var(--brand-navy); color: #fff; padding: 60px 20px 20px; ma
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-title"><span>Can I pay course fees in easy monthly EMI installments?</span> <span>+</span></div>
-        <div class="faq-desc">Yes! Universities provide 0% interest EMI options starting at ₹5,000/month.</div>
+        <div class="faq-desc">Yes! Universities provide 0% interest EMI options starting at ₹3,500/month.</div>
       </div>
     </div>
   </section>
@@ -354,7 +347,7 @@ footer { background: var(--brand-navy); color: #fff; padding: 60px 20px 20px; ma
     
     <div style="background:#fff; padding:30px; border-radius:20px; border:1px solid var(--line); margin-bottom:25px; display:flex; gap:25px; align-items:center; flex-wrap:wrap; box-shadow:0 4px 20px rgba(0,0,0,0.03);">
       <div class="uni-logo-box" style="width:100px; height:100px;">
-        <img id="u-detail-logo" src="" class="uni-logo-img">
+        <img id="u-detail-logo" src="" class="uni-logo-img" alt="Logo">
       </div>
       <div style="flex:1;">
         <h1 id="u-name" style="margin:0; font-size:32px;">University Name</h1>
@@ -525,15 +518,489 @@ const UNIVERSITIES = [
     reviewsList: [
       { name: "Neha Roy", rating: 4, text: "Very modern curriculum with focus on practical case studies." }
     ]
+  },
+  {
+    id: "lpu",
+    name: "Lovely Professional University (LPU Online)",
+    logo: "https://logo.clearbit.com/lpu.in",
+    location: "Phagwara, Punjab",
+    rating: "4.6",
+    reviewsCount: "1,100",
+    naac: "A++ Grade",
+    nirf: "#38 (Overall)",
+    approvals: ["UGC-DEB", "AICTE", "AIU"],
+    fee: "₹1,16,000",
+    emi: "₹4,833/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "LPU Online provides flexible learning with live interactive sessions, personal mentorship, and job placement portal.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "10+2 for UG; Graduation for PG",
+    placements: "Cognizant, Tech Mahindra, Capgemini, Amazon",
+    reviewsList: [
+      { name: "Vikram Kumar", rating: 5, text: "High flexibility in exam scheduling and very affordable." }
+    ]
+  },
+  {
+    id: "upes",
+    name: "UPES Online",
+    logo: "https://logo.clearbit.com/upes.ac.in",
+    location: "Dehradun, Uttarakhand",
+    rating: "4.7",
+    reviewsCount: "650",
+    naac: "A Grade",
+    nirf: "#54 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,80,000",
+    emi: "₹7,500/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "BBA"],
+    overview: "UPES Online specializes in Energy, Logistics, Aviation, Petroleum, and Digital Business Management.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Graduate in any stream with 50% marks",
+    placements: "Adani, Shell, Reliance Industries, DHL",
+    reviewsList: [
+      { name: "Pooja Hegde", rating: 5, text: "Best specialized MBA programs for supply chain and oil/gas domains." }
+    ]
+  },
+  {
+    id: "shoolini",
+    name: "Shoolini University Online",
+    logo: "https://logo.clearbit.com/shooliniuniversity.com",
+    location: "Solan, Himachal Pradesh",
+    rating: "4.5",
+    reviewsCount: "430",
+    naac: "A+ Grade",
+    nirf: "#73 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,20,000",
+    emi: "₹5,000/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Shoolini Online focuses on research-driven teaching, pay-after-placement assistance, and top faculty.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Graduation with minimum 50% aggregate",
+    placements: "Genpact, Mercer, PayTM, ICICI Bank",
+    reviewsList: [
+      { name: "Sameer Joshi", rating: 4, text: "Good faculty support and prompt LMS query resolution." }
+    ]
+  },
+  {
+    id: "amrita",
+    name: "Amrita Vishwa Vidyapeetham Ahead",
+    logo: "https://logo.clearbit.com/amrita.edu",
+    location: "Coimbatore, Tamil Nadu",
+    rating: "4.8",
+    reviewsCount: "540",
+    naac: "A++ Grade",
+    nirf: "#7 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,60,000",
+    emi: "₹6,666/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Amrita Ahead offers world-class online programs guided by NIRF #7 ranked university academic standards.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Graduate with minimum 50% marks",
+    placements: "TCS, Mindtree, Wipro, Infosys",
+    reviewsList: [
+      { name: "Deepak Menon", rating: 5, text: "Very rigorous academic standard and top industry alignment." }
+    ]
+  },
+  {
+    id: "dypatil",
+    name: "DPU Center for Distance Learning (DY Patil)",
+    logo: "https://logo.clearbit.com/dpu.edu.in",
+    location: "Navi Mumbai, Maharashtra",
+    rating: "4.6",
+    reviewsCount: "780",
+    naac: "A++ Grade",
+    nirf: "#46 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,70,000",
+    emi: "₹7,083/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "BBA"],
+    overview: "DY Patil Online offers extensive Healthcare Management, Hospital Administration, and Hospital Management specializations.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Bachelor degree in relevant stream",
+    placements: "Apollo Hospitals, Fortis, Lupin, Sun Pharma",
+    reviewsList: [
+      { name: "Dr. Anjali", rating: 5, text: "Excellent for healthcare and hospital administration degrees." }
+    ]
+  },
+  {
+    id: "smu",
+    name: "Sikkim Manipal University (SMU Online)",
+    logo: "https://logo.clearbit.com/smu.edu.in",
+    location: "Gangtok, Sikkim",
+    rating: "4.5",
+    reviewsCount: "390",
+    naac: "A+ Grade",
+    nirf: "#101-150 Band",
+    approvals: ["UGC-DEB", "AIU"],
+    fee: "₹1,10,000",
+    emi: "₹4,583/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "SMU distance learning has guided millions of students with authentic curriculum and easy installment options.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "10+2 for UG; Graduation for PG",
+    placements: "Axis Bank, Airtel, JustDial, HDFC",
+    reviewsList: [
+      { name: "Rahul Das", rating: 4, text: "Reliable, decades of trust in distance learning." }
+    ]
+  },
+  {
+    id: "uttaranchal",
+    name: "Uttaranchal University Online",
+    logo: "https://logo.clearbit.com/uttaranchaluniversity.ac.in",
+    location: "Dehradun, Uttarakhand",
+    rating: "4.5",
+    reviewsCount: "310",
+    naac: "A+ Grade",
+    nirf: "#150-200 Band",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹98,000",
+    emi: "₹4,083/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Uttaranchal University offers affordable UGC-DEB online degrees with e-libraries and placement drives.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Graduation completed",
+    placements: "HCL, Tech Mahindra, Genpact",
+    reviewsList: [
+      { name: "Kavita S.", rating: 4, text: "Cost-effective fee structure with good online learning materials." }
+    ]
+  },
+  {
+    id: "vignan",
+    name: "Vignan's University Online",
+    logo: "https://logo.clearbit.com/vignan.ac.in",
+    location: "Guntur, Andhra Pradesh",
+    rating: "4.4",
+    reviewsCount: "260",
+    naac: "A+ Grade",
+    nirf: "#75 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,05,000",
+    emi: "₹4,375/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA"],
+    overview: "Vignan Online provides high-tech learning management platforms and industry skill certification programs.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Graduate degree with 50%",
+    placements: "TCS, Wipro, Accenture",
+    reviewsList: [
+      { name: "M. Nageshwar", rating: 4, text: "Very smooth exam portal experience." }
+    ]
+  },
+  {
+    id: "gla",
+    name: "GLA University Online",
+    logo: "https://logo.clearbit.com/gla.ac.in",
+    location: "Mathura, Uttar Pradesh",
+    rating: "4.5",
+    reviewsCount: "410",
+    naac: "A+ Grade",
+    nirf: "#86 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹90,000",
+    emi: "₹3,750/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "GLA Online offers affordable degree courses with specialized focus on IT, Management, and Commerce.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "10+2 / Graduation Pass",
+    placements: "Capgemini, Infosys, Honda",
+    reviewsList: [
+      { name: "Amit Tripathi", rating: 5, text: "Affordable fee with prompt support team." }
+    ]
+  },
+  {
+    id: "svu",
+    name: "Shri Venkateshwara University (SVU)",
+    logo: "https://logo.clearbit.com/svu.edu.in",
+    location: "Gajraula, Uttar Pradesh",
+    rating: "4.3",
+    reviewsCount: "190",
+    naac: "Approved",
+    nirf: "UGC Approved",
+    approvals: ["UGC-DEB"],
+    fee: "₹75,000",
+    emi: "₹3,125/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "SVU provides budget-friendly online learning pathways for rural and working professional students.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Pass in qualifying examination",
+    placements: "Regional & National Corporate Partners",
+    reviewsList: [
+      { name: "Vijay Singh", rating: 4, text: "Budget friendly and authentic degree." }
+    ]
+  },
+  {
+    id: "mgr",
+    name: "Dr. M.G.R. Educational & Research Institute",
+    logo: "https://logo.clearbit.com/drmgrdu.ac.in",
+    location: "Chennai, Tamil Nadu",
+    rating: "4.4",
+    reviewsCount: "220",
+    naac: "A+ Grade",
+    nirf: "#100-150 Band",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,15,000",
+    emi: "₹4,791/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Dr. M.G.R Online offers structured curriculum with south region employer networks.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Bachelor degree in relevant subject",
+    placements: "HCL, Polaris, TVS, Hyundai",
+    reviewsList: [
+      { name: "S. Karthik", rating: 4, text: "Good online study material and video support." }
+    ]
+  },
+  {
+    id: "iimc",
+    name: "IIM Calcutta (Executive Online)",
+    logo: "https://logo.clearbit.com/iimcal.ac.in",
+    location: "Kolkata, West Bengal",
+    rating: "4.9",
+    reviewsCount: "2,100",
+    naac: "National Importance",
+    nirf: "#4 (Management)",
+    approvals: ["AACSB", "EQUIS", "AMBA (Triple Crown)"],
+    fee: "₹4,50,000",
+    emi: "₹18,750/month",
+    examMode: "Online + Campus Immersion",
+    courses: ["MBA"],
+    overview: "IIM Calcutta Executive Online provides elite leadership credentials for mid to senior working professionals.",
+    duration: "1 Year / 2 Years Executive",
+    eligibility: "Graduation with minimum 50% + 3 Years Experience",
+    placements: "McKinsey, BCG, Goldman Sachs, Google",
+    reviewsList: [
+      { name: "Abhishek Bannerjee", rating: 5, text: "Top notch executive education in India. Peer learning is unmatched." }
+    ]
+  },
+  {
+    id: "iiml",
+    name: "IIM Lucknow (Executive Online)",
+    logo: "https://logo.clearbit.com/iiml.ac.in",
+    location: "Lucknow, Uttar Pradesh",
+    rating: "4.9",
+    reviewsCount: "1,750",
+    naac: "National Importance",
+    nirf: "#6 (Management)",
+    approvals: ["AMBA", "AACSB"],
+    fee: "₹3,80,000",
+    emi: "₹15,833/month",
+    examMode: "Online Proctored",
+    courses: ["MBA"],
+    overview: "IIM Lucknow Executive Distance & Online Learning equips executives with strategic leadership insights.",
+    duration: "1 Year / 2 Years Executive",
+    eligibility: "Bachelor degree with 3+ years work experience",
+    placements: "Deloitte, PwC, EY, Amazon, Microsoft",
+    reviewsList: [
+      { name: "Ritu Saxena", rating: 5, text: "Transformed my career trajectory into senior management." }
+    ]
+  },
+  {
+    id: "lingayas",
+    name: "Lingaya's Vidyapeeth Online",
+    logo: "https://logo.clearbit.com/lingayasuniversity.edu.in",
+    location: "Faridabad, Haryana",
+    rating: "4.2",
+    reviewsCount: "180",
+    naac: "Approved",
+    nirf: "UGC Approved",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹85,000",
+    emi: "₹3,541/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "Lingaya's Online provides career-ready flexible courses designed for NCR students and professionals.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Qualifying degree pass mark",
+    placements: "Eicher, Escorts, Maruti, Wipro",
+    reviewsList: [
+      { name: "Nitin Sharma", rating: 4, text: "Budget friendly and flexible assignment submissions." }
+    ]
+  },
+  {
+    id: "ignou",
+    name: "IGNOU (Indira Gandhi National Open University)",
+    logo: "https://logo.clearbit.com/ignou.ac.in",
+    location: "New Delhi",
+    rating: "4.5",
+    reviewsCount: "15,400",
+    naac: "A++ Grade",
+    nirf: "Central University",
+    approvals: ["UGC-DEB", "AICTE", "AIU"],
+    fee: "₹31,500",
+    emi: "N/A (Lumpsum per semester)",
+    examMode: "Offline Exam Centers",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "India's largest open central university offering government valid degrees at the lowest fees.",
+    duration: "2 to 4 Years",
+    eligibility: "Pass in Bachelor degree / 12th pass for UG",
+    placements: "Govt Job Eligibility, National Companies",
+    reviewsList: [
+      { name: "Gaurav Pandey", rating: 5, text: "Widely accepted degree for UPSC, SSC, and govt exams." }
+    ]
+  },
+  {
+    id: "nmims",
+    name: "NMIMS Global Access (NGASCE)",
+    logo: "https://logo.clearbit.com/nmims.edu",
+    location: "Mumbai, Maharashtra",
+    rating: "4.7",
+    reviewsCount: "3,200",
+    naac: "A+ Grade",
+    nirf: "#21 (Management)",
+    approvals: ["UGC-DEB", "Autonomy Category I"],
+    fee: "₹1,80,000",
+    emi: "₹7,500/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "BBA", "B.Com"],
+    overview: "NMIMS Global Distance learning is renowned for executive business management and corporate reputation.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Graduate with minimum 50% aggregate score",
+    placements: "Cognizant, ICICI, HDFC Bank, Infosys",
+    reviewsList: [
+      { name: "Swati Gupta", rating: 5, text: "Brand name of NMIMS is extremely strong in corporate hiring." }
+    ]
+  },
+  {
+    id: "kluniversity",
+    name: "KL University Online",
+    logo: "https://logo.clearbit.com/kluniversity.in",
+    location: "Vaddeswaram, Andhra Pradesh",
+    rating: "4.6",
+    reviewsCount: "350",
+    naac: "A++ Grade",
+    nirf: "#28 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,30,000",
+    emi: "₹5,416/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "KL Online offers top tech-integrated learning environments with international university tie-ups.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Pass marks in qualifying examination",
+    placements: "Tech Mahindra, IBM, Infosys",
+    reviewsList: [
+      { name: "P. Rajesh", rating: 4, text: "Excellent digital library and online labs." }
+    ]
+  },
+  {
+    id: "srm",
+    name: "SRM Institute of Science & Technology Online",
+    logo: "https://logo.clearbit.com/srmist.edu.in",
+    location: "Kattankulathur, Tamil Nadu",
+    rating: "4.7",
+    reviewsCount: "890",
+    naac: "A++ Grade",
+    nirf: "#18 (University)",
+    approvals: ["UGC-DEB", "AICTE"],
+    fee: "₹1,60,000",
+    emi: "₹6,666/month",
+    examMode: "Online Proctored",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "SRM Online brings world-class research and faculty into flexible online learning formats.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "50% marks in Graduation",
+    placements: "Amazon, TCS, Siemens, Wipro",
+    reviewsList: [
+      { name: "Anish Kumar", rating: 5, text: "High brand value and solid placement support." }
+    ]
+  },
+  {
+    id: "mdu",
+    name: "Maharshi Dayanand University (MDU Rohtak)",
+    logo: "https://logo.clearbit.com/mdu.ac.in",
+    location: "Rohtak, Haryana",
+    rating: "4.4",
+    reviewsCount: "620",
+    naac: "A+ Grade",
+    nirf: "#96 (University)",
+    approvals: ["State Govt", "UGC-DEB"],
+    fee: "₹45,000",
+    emi: "N/A",
+    examMode: "Offline Exam Centers",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "State government university providing valid distance degrees across Haryana and NCR region.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "12th / Graduation completion",
+    placements: "State Govt & Regional Enterprise Jobs",
+    reviewsList: [
+      { name: "Sandeep Malik", rating: 4, text: "Very affordable state government degree." }
+    ]
+  },
+  {
+    id: "kurukshetra",
+    name: "Kurukshetra University DDKUG",
+    logo: "https://logo.clearbit.com/kuk.ac.in",
+    location: "Kurukshetra, Haryana",
+    rating: "4.5",
+    reviewsCount: "710",
+    naac: "A++ Grade",
+    nirf: "#85 (University)",
+    approvals: ["State Govt", "UGC-DEB"],
+    fee: "₹50,000",
+    emi: "N/A",
+    examMode: "Offline Exam Centers",
+    courses: ["MBA", "MCA", "BBA", "B.Com"],
+    overview: "One of Haryana's premier state distance education universities with NAAC A++ accreditation.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Bachelor degree in relevant stream",
+    placements: "Public & Private Sector Organizations",
+    reviewsList: [
+      { name: "Ritu Sharma", rating: 4, text: "Traditional value with strong government recognition." }
+    ]
+  },
+  {
+    id: "du-sol",
+    name: "Delhi University SOL (School of Open Learning)",
+    logo: "https://logo.clearbit.com/du.ac.in",
+    location: "New Delhi",
+    rating: "4.6",
+    reviewsCount: "12,500",
+    naac: "A+ Grade (DU)",
+    nirf: "#11 (University)",
+    approvals: ["Central Govt", "UGC-DEB"],
+    fee: "₹25,000",
+    emi: "N/A",
+    examMode: "Offline Exam Centers (Delhi)",
+    courses: ["MBA", "BBA", "B.Com"],
+    overview: "Delhi University SOL provides highly sought-after DU brand online/distance degrees at minimal cost.",
+    duration: "2 Years (PG) / 3 Years (UG)",
+    eligibility: "Merit / Entrance criteria as per DU rules",
+    placements: "DU Placement Cell, Corporate Hiring",
+    reviewsList: [
+      { name: "Aman Gupta", rating: 5, text: "Delhi University degree at a very nominal fee structure." }
+    ]
   }
 ];
 
 let currentUniObj = null;
 
 window.onload = function() {
+  populateFormDropdown();
   renderHomeLogoGrid();
   renderUnis(UNIVERSITIES, 'home-uni-grid');
   bindFormSubmit(document.querySelector('.lead-submit-form'));
+}
+
+function populateFormDropdown() {
+  const select = document.getElementById('form-uni-select');
+  if(!select) return;
+  UNIVERSITIES.forEach(u => {
+    const opt = document.createElement('option');
+    opt.value = u.name;
+    opt.innerText = u.name;
+    select.appendChild(opt);
+  });
 }
 
 function showView(viewId) {
@@ -551,7 +1018,7 @@ function renderHomeLogoGrid() {
   const container = document.getElementById('home-logo-grid');
   container.innerHTML = UNIVERSITIES.map(u => `
     <div class="logo-box-item" onclick="showUniDetails('${u.id}')">
-      <img src="${u.logo}" alt="${u.name}">
+      <img src="${u.logo}" alt="${u.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/60?text=Logo';">
       <span>${u.name}</span>
     </div>
   `).join('');
@@ -559,12 +1026,17 @@ function renderHomeLogoGrid() {
 
 function renderUnis(list, targetId) {
   const container = document.getElementById(targetId);
+  if(!container) return;
+  if(list.length === 0) {
+    container.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color:var(--muted); padding:30px;">No universities found for this category.</p>';
+    return;
+  }
   container.innerHTML = list.map(u => `
     <div class="uni-card">
       <div>
         <div class="uni-head">
           <div class="uni-logo-box">
-            <img src="${u.logo}" class="uni-logo-img" alt="${u.name}">
+            <img src="${u.logo}" class="uni-logo-img" alt="${u.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/60?text=Logo';">
           </div>
           <div>
             <h3 style="margin:0; font-size:17px;">${u.name}</h3>
@@ -614,7 +1086,10 @@ function showUniDetails(uId) {
   document.getElementById('u-name').innerText = u.name;
   document.getElementById('u-loc').innerText = u.location;
   document.getElementById('u-overview').innerText = u.overview;
-  document.getElementById('u-detail-logo').src = u.logo;
+  
+  const detailImg = document.getElementById('u-detail-logo');
+  detailImg.src = u.logo;
+  detailImg.onerror = function() { this.src = 'https://via.placeholder.com/100?text=Logo'; };
   
   document.getElementById('u-tags').innerHTML = `
     <span class="tag green">NAAC ${u.naac}</span>
@@ -642,115 +1117,137 @@ function showUniDetails(uId) {
     </tr>
   `).join('');
 
-  document.getElementById('u-reviews-container').innerHTML = u.reviewsList.map(r => `
-    <div class="review-card">
-      <div class="stars">${'★'.repeat(r.rating)}</div>
-      <p style="font-size:14px; margin:10px 0;">"${r.text}"</p>
-      <b>- ${r.name}</b>
-    </div>
-  `).join('');
+  const revContainer = document.getElementById('u-reviews-container');
+  if(u.reviewsList && u.reviewsList.length > 0) {
+    revContainer.innerHTML = u.reviewsList.map(r => `
+      <div class="review-card">
+        <div class="review-user">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--brand-teal); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:bold;">
+            ${r.name.charAt(0)}
+          </div>
+          <div>
+            <h4 style="margin:0;">${r.name}</h4>
+            <div class="stars">★ ${r.rating}.0</div>
+          </div>
+        </div>
+        <p style="font-size:14px; color:var(--muted); margin-top:10px;">"${r.text}"</p>
+      </div>
+    `).join('');
+  } else {
+    revContainer.innerHTML = '<p style="color:var(--muted)">Verified student reviews loading...</p>';
+  }
 
-  switchTab('tab-overview', document.querySelector('.tab-btn'));
   showView('university');
 }
 
-function switchTab(tabId, btnEl) {
-  document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(tb => tb.classList.remove('active'));
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(tabId).classList.add('active');
-  if(btnEl) btnEl.classList.add('active');
+  btn.classList.add('active');
 }
 
 function toggleFaq(el) {
   el.classList.toggle('active');
+  const icon = el.querySelector('.faq-title span:last-child');
+  if(icon) icon.innerText = el.classList.contains('active') ? '-' : '+';
 }
 
 function openQuickView(uId) {
   const u = UNIVERSITIES.find(x => x.id === uId);
   if(!u) return;
-  document.getElementById('modal-content-area').innerHTML = `
-    <div style="display:flex; gap:15px; align-items:center;">
-      <div class="uni-logo-box"><img src="${u.logo}" class="uni-logo-img"></div>
-      <div>
-        <h3 style="margin:0;">${u.name}</h3>
-        <p style="color:var(--muted); margin:0; font-size:13px;">${u.location}</p>
-      </div>
+  const modalContent = document.getElementById('modal-content-area');
+  modalContent.innerHTML = `
+    <h2 style="margin-top:0; color:var(--brand-navy);">${u.name}</h2>
+    <p style="color:var(--muted); font-size:13px;">${u.location}</p>
+    <div class="tags" style="margin-bottom:15px;">
+      <span class="tag green">NAAC ${u.naac}</span>
+      <span class="tag">NIRF ${u.nirf}</span>
     </div>
-    <hr style="border:0; border-top:1px solid var(--line); margin:15px 0;">
-    <p><b>Accreditations:</b> ${u.approvals.join(', ')}</p>
-    <p><b>Total Fee:</b> ${u.fee} (EMI: ${u.emi})</p>
-    <p><b>Exam Mode:</b> ${u.examMode}</p>
-    <button class="btn primary" style="width:100%; margin-top:15px;" onclick="closeModal(); showUniDetails('${u.id}')">View Complete Profile →</button>
+    <p style="font-size:14px; color:var(--text);">${u.overview}</p>
+    <table class="details-table" style="margin:15px 0;">
+      <tr><td>Total Fee</td><td>${u.fee}</td></tr>
+      <tr><td>EMI Starting</td><td>${u.emi}</td></tr>
+      <tr><td>Exam Mode</td><td>${u.examMode}</td></tr>
+    </table>
+    <button class="btn primary" style="width:100%; margin-top:10px;" onclick="closeModal(); showUniDetails('${u.id}');">View Complete Profile</button>
   `;
   document.getElementById('uniModal').classList.add('active');
 }
 
 function openBrochureModal(uniName, courseName) {
-  document.getElementById('modal-content-area').innerHTML = `
-    <div style="text-align:center; margin-bottom:15px;">
-      <h3 style="margin:0; font-size:20px;">Download Official Brochure</h3>
-      <p style="color:var(--muted); font-size:13px; margin-top:5px;">Enter details to receive syllabus PDF for <b>${uniName} (${courseName})</b>.</p>
-    </div>
-    <form class="brochure-modal-form">
+  const modalContent = document.getElementById('modal-content-area');
+  modalContent.innerHTML = `
+    <h3 style="margin-top:0; color:var(--brand-navy);">Download Official Brochure</h3>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:15px;">
+      Enter details to receive <b>${uniName} (${courseName})</b> syllabus & fee brochure on WhatsApp.
+    </p>
+    <form class="lead-submit-form">
       <input type="hidden" name="University" value="${uniName}">
       <input type="hidden" name="Course" value="${courseName}">
-      
-      <div style="display:grid; gap:10px;">
+      <div style="margin-bottom:10px;">
         <input type="text" name="FullName" class="input-field" placeholder="Full Name *" required>
-        <input type="tel" name="Mobile" class="input-field" placeholder="Mobile Number *" required>
-        <input type="email" name="Email" class="input-field" placeholder="Email Address *" required>
-        <select name="State" class="select-field" required>
-          <option value="">Select Your State *</option>
-          <option value="Delhi">Delhi</option>
-          <option value="Maharashtra">Maharashtra</option>
-          <option value="Karnataka">Karnataka</option>
-          <option value="Uttar Pradesh">Uttar Pradesh</option>
-          <option value="Other">Other</option>
-        </select>
-        <button type="submit" class="btn primary submit-btn" style="width:100%; margin-top:10px;">📥 Send Brochure to Email</button>
       </div>
+      <div style="margin-bottom:10px;">
+        <input type="tel" name="Mobile" class="input-field" placeholder="WhatsApp Number *" required>
+      </div>
+      <div style="margin-bottom:10px;">
+        <input type="email" name="Email" class="input-field" placeholder="Email Address *" required>
+      </div>
+      <button type="submit" class="btn primary submit-btn" style="width:100%;">Get Instant PDF</button>
       <div class="form-msg" style="margin-top:10px; font-size:13px; text-align:center;"></div>
     </form>
   `;
-  bindFormSubmit(document.querySelector('.brochure-modal-form'));
+  bindFormSubmit(modalContent.querySelector('.lead-submit-form'));
   document.getElementById('uniModal').classList.add('active');
 }
 
-function closeModal(){
+function closeModal() {
   document.getElementById('uniModal').classList.remove('active');
 }
 
 function bindFormSubmit(formEl) {
   if(!formEl) return;
-  formEl.addEventListener('submit', function(e) {
+  formEl.onsubmit = function(e) {
     e.preventDefault();
     const btn = formEl.querySelector('.submit-btn');
     const msg = formEl.querySelector('.form-msg');
     
-    btn.innerText = "Submitting...";
     btn.disabled = true;
+    btn.innerText = "Submitting...";
 
-    const formData = new FormData(this);
-
-    fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: formData, mode: 'no-cors' })
-      .then(res => {
-        btn.innerText = "Submitted Successfully!";
+    const formData = new FormData(formEl);
+    
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      body: formData
+    })
+    .then(res => res.text())
+    .then(data => {
+      btn.innerText = "Success ✅";
+      if(msg) {
+        msg.style.color = "#047857";
+        msg.innerText = "Thank you! Our counselor will send the brochure shortly.";
+      }
+      setTimeout(() => {
+        formEl.reset();
         btn.disabled = false;
-        msg.style.color = "green";
-        msg.innerText = "✅ Success! Brochure link sent to your Email/Mobile.";
-        setTimeout(() => {
-          closeModal();
-          formEl.reset();
-        }, 2000);
-      })
-      .catch(err => {
-        btn.innerText = "Submit";
-        btn.disabled = false;
-        msg.style.color = "red";
-        msg.innerText = "Submission Error. Please try again.";
-      });
-  });
+        btn.innerText = "Request Callback";
+        closeModal();
+      }, 2500);
+    })
+    .catch(err => {
+      console.error(err);
+      btn.disabled = false;
+      btn.innerText = "Try Again";
+      if(msg) {
+        msg.style.color = "#dc2626";
+        msg.innerText = "Submission failed. Please try again.";
+      }
+    });
+  };
 }
 </script>
 </body>
 </html>
+  
