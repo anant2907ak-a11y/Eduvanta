@@ -3,98 +3,100 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Eduvanta — Compare Top Online & Distance Universities in India</title>
+<title>Degreechoice4u — Because Your Future Matters</title>
 <style>
 :root {
-  --navy: #1c1917;
-  --badami: #fefae0;
-  --badami-card: #faedcd;
-  --pista: #d4a373;
-  --pista-light: #e9edc9;
-  --pista-dark: #283618;
-  --pista-btn: #606c38;
-  --neon: #a3e635;
-  --text: #292524;
-  --muted: #78716c;
-  --line: #e7e5e4;
+  --brand-navy: #0b1e36;
+  --brand-teal: #00d294;
+  --brand-teal-hover: #00b37e;
+  --badami: #f8fafc;
+  --badami-card: #f1f5f9;
+  --text: #1e293b;
+  --muted: #64748b;
+  --line: #e2e8f0;
   --gold: #f59e0b;
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--text); background: #fcfbf7; line-height: 1.5; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--text); background: #f8fafc; line-height: 1.5; }
 a { text-decoration: none; color: inherit; }
 
 /* HEADER & NAV */
-header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
-.nav { max-width: 1200px; margin: auto; height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
-.logo { font-size: 26px; font-weight: 900; color: var(--pista-dark); cursor: pointer; letter-spacing: -0.5px; }
-.logo span { color: var(--pista-btn); }
+header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+.nav { max-width: 1200px; margin: auto; height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
+.logo-container { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+.brand-logo-img { height: 48px; width: auto; object-fit: contain; }
+.brand-text-wrap { display: flex; flex-direction: column; }
+.logo-text { font-size: 22px; font-weight: 900; color: var(--brand-navy); letter-spacing: -0.5px; line-height: 1; }
+.logo-text span { color: var(--brand-teal); }
+.tagline-text { font-size: 10px; color: var(--muted); font-weight: 600; letter-spacing: 0.5px; margin-top: 3px; }
+
 .menu { display: flex; gap: 24px; font-size: 14px; font-weight: 600; }
-.menu a { cursor: pointer; transition: 0.2s; }
-.menu a:hover { color: var(--pista-btn); }
+.menu a { cursor: pointer; transition: 0.2s; color: var(--brand-navy); }
+.menu a:hover { color: var(--brand-teal); }
 
 /* BUTTONS */
 .btn { border: 0; border-radius: 10px; padding: 12px 20px; font-weight: 700; cursor: pointer; display: inline-block; text-align: center; transition: 0.2s; font-size: 14px; }
 .btn-sm { padding: 7px 14px; font-size: 12px; border-radius: 6px; }
-.primary { background: var(--pista-btn); color: #fff; }
-.primary:hover { background: var(--pista-dark); }
-.outline { border: 1px solid var(--pista-btn); color: var(--pista-dark); background: transparent; }
-.outline:hover { background: var(--pista-light); }
+.primary { background: var(--brand-teal); color: #fff; }
+.primary:hover { background: var(--brand-teal-hover); }
+.outline { border: 1px solid var(--brand-teal); color: var(--brand-navy); background: transparent; }
+.outline:hover { background: #e6fffa; }
 
 /* HERO SECTION */
-.hero { background: linear-gradient(135deg, var(--badami) 0%, var(--pista-light) 100%); padding: 50px 20px; border-bottom: 1px solid var(--line); }
+.hero { background: linear-gradient(135deg, #ffffff 0%, #edfcf6 100%); padding: 50px 20px; border-bottom: 1px solid var(--line); }
 .hero-in { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
-.badge { background: var(--neon); color: var(--pista-dark); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-h1 { font-size: 40px; line-height: 1.15; margin: 15px 0; color: var(--navy); font-weight: 800; }
+.badge { background: var(--brand-teal); color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+h1 { font-size: 40px; line-height: 1.15; margin: 15px 0; color: var(--brand-navy); font-weight: 800; }
 
 /* LEAD FORM CARD */
-.form-card { background: #fff; border-radius: 20px; padding: 25px; box-shadow: 0 10px 30px rgba(96,108,56,0.12); border: 1px solid var(--line); }
-.form-card h3 { margin: 0 0 5px; font-size: 20px; }
+.form-card { background: #fff; border-radius: 20px; padding: 25px; box-shadow: 0 10px 30px rgba(0,210,148,0.1); border: 1px solid var(--line); }
+.form-card h3 { margin: 0 0 5px; font-size: 20px; color: var(--brand-navy); }
 .form-card p { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
-.input-field, .select-field { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 8px; outline: 0; font-size: 14px; background: #fcfbf7; }
-.input-field:focus, .select-field:focus { border-color: var(--pista-btn); }
+.input-field, .select-field { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 8px; outline: 0; font-size: 14px; background: #fafafa; }
+.input-field:focus, .select-field:focus { border-color: var(--brand-teal); background: #fff; }
 
 /* COMMON SECTIONS */
 .section { max-width: 1200px; margin: auto; padding: 60px 20px; }
 .center { text-align: center; }
-.section-title { font-size: 32px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.section-title { font-size: 32px; font-weight: 800; color: var(--brand-navy); margin-bottom: 10px; }
 .section-subtitle { color: var(--muted); font-size: 15px; margin-bottom: 30px; }
 
-/* LOGO STRIP / LOGO GRID */
+/* LOGO GRID */
 .logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-top: 20px; }
 .logo-box-item { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 15px; text-align: center; cursor: pointer; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.logo-box-item:hover { border-color: var(--pista-btn); transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
+.logo-box-item:hover { border-color: var(--brand-teal); transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.05); }
 .logo-box-item img { height: 50px; max-width: 100%; object-fit: contain; margin-bottom: 10px; }
-.logo-box-item span { font-size: 12px; font-weight: 700; color: var(--navy); }
+.logo-box-item span { font-size: 12px; font-weight: 700; color: var(--brand-navy); }
 
-/* CARDS & UNIVERSITY CARDS */
+/* CARDS */
 .uni-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-top: 25px; }
 .uni-card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: 0.3s; }
-.uni-card:hover { border-color: var(--pista-pista); box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
+.uni-card:hover { border-color: var(--brand-teal); box-shadow: 0 10px 25px rgba(0,210,148,0.1); }
 .uni-head { display: flex; gap: 15px; align-items: center; margin-bottom: 12px; }
 .uni-logo-box { width: 70px; height: 70px; border-radius: 12px; border: 1px solid var(--line); padding: 6px; background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .uni-logo-img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-.rating-box { display: flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 13px; font-weight: 700; color: var(--navy); }
+.rating-box { display: flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 13px; font-weight: 700; color: var(--brand-navy); }
 .stars { color: var(--gold); }
 .tags { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0; }
-.tag { background: #f5f5f4; color: var(--navy); font-size: 11px; padding: 4px 8px; border-radius: 6px; font-weight: 700; }
-.tag.green { background: var(--pista-light); color: var(--pista-dark); }
+.tag { background: #f1f5f9; color: var(--brand-navy); font-size: 11px; padding: 4px 8px; border-radius: 6px; font-weight: 700; }
+.tag.green { background: #e6fffa; color: #047857; }
 
 .details-table { width: 100%; font-size: 13px; margin: 12px 0; border-collapse: collapse; }
 .details-table td { padding: 8px 0; border-bottom: 1px dashed var(--line); }
 .details-table td:last-child { text-align: right; font-weight: 700; }
 
-/* UNIVERSITY DETAILS PAGE STYLES */
+/* PAGE VIEWS & TABS */
 .page-view { display: none; }
 .page-view.active { display: block; }
 .breadcrumb { margin-bottom: 20px; font-size: 14px; color: var(--muted); }
-.breadcrumb a { color: var(--pista-btn); cursor: pointer; font-weight: 600; }
+.breadcrumb a { color: var(--brand-teal); cursor: pointer; font-weight: 600; }
 
 .tabs { display: flex; gap: 10px; border-bottom: 2px solid var(--line); margin-bottom: 25px; overflow-x: auto; }
 .tab-btn { padding: 12px 20px; border: 0; background: transparent; font-size: 15px; font-weight: 700; color: var(--muted); cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; }
-.tab-btn.active { color: var(--pista-btn); border-bottom-color: var(--pista-btn); }
+.tab-btn.active { color: var(--brand-teal); border-bottom-color: var(--brand-teal); }
 .tab-content { display: none; }
 .tab-content.active { display: block; }
 
@@ -107,7 +109,7 @@ h1 { font-size: 40px; line-height: 1.15; margin: 15px 0; color: var(--navy); fon
 
 /* FAQ ACCORDEON */
 .faq-item { background: #fff; border: 1px solid var(--line); border-radius: 12px; margin-bottom: 12px; padding: 18px; cursor: pointer; transition: 0.2s; }
-.faq-title { font-weight: 700; font-size: 16px; display: flex; justify-content: space-between; align-items: center; }
+.faq-title { font-weight: 700; font-size: 16px; display: flex; justify-content: space-between; align-items: center; color: var(--brand-navy); }
 .faq-desc { color: var(--muted); font-size: 14px; margin-top: 10px; display: none; line-height: 1.6; }
 .faq-item.active .faq-desc { display: block; }
 
@@ -115,15 +117,15 @@ h1 { font-size: 40px; line-height: 1.15; margin: 15px 0; color: var(--navy); fon
 .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px; }
 .modal-overlay.active { display: flex; }
 .modal-body { background: #fff; padding: 30px; border-radius: 20px; max-width: 500px; width: 100%; position: relative; }
-.close-btn { position: absolute; top: 15px; right: 15px; background: #f5f5f4; border: 0; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-weight: bold; }
+.close-btn { position: absolute; top: 15px; right: 15px; background: #f1f5f9; border: 0; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-weight: bold; }
 
 /* FOOTER */
-footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-top: 60px; }
+footer { background: var(--brand-navy); color: #fff; padding: 60px 20px 20px; margin-top: 60px; }
 .footer-in { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-bottom: 40px; }
-.footer-col h4 { color: var(--pista-light); margin-top: 0; margin-bottom: 18px; font-size: 16px; }
-.footer-col p, .footer-col a { color: #a8a29e; font-size: 14px; line-height: 1.7; display: block; margin-bottom: 8px; }
+.footer-col h4 { color: var(--brand-teal); margin-top: 0; margin-bottom: 18px; font-size: 16px; }
+.footer-col p, .footer-col a { color: #94a3b8; font-size: 14px; line-height: 1.7; display: block; margin-bottom: 8px; }
 .footer-col a:hover { color: #fff; }
-.footer-bottom { max-width: 1200px; margin: auto; padding-top: 20px; border-top: 1px solid #44403c; text-align: center; color: #78716c; font-size: 13px; }
+.footer-bottom { max-width: 1200px; margin: auto; padding-top: 20px; border-top: 1px solid #1e293b; text-align: center; color: #64748b; font-size: 13px; }
 
 @media (max-width: 768px) {
   .hero-in { grid-template-columns: 1fr; }
@@ -137,7 +139,22 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
 
 <header>
   <nav class="nav">
-    <div class="logo" onclick="showView('home')">Edu<span>vanta</span></div>
+    <div class="logo-container" onclick="showView('home')">
+      <!-- Direct Cap Icon + Brand SVG Logo -->
+      <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 15L10 35L50 55L90 35L50 15Z" fill="#0b1e36"/>
+        <path d="M25 45V65C25 72.5 36.2 78.5 50 78.5C63.8 78.5 75 72.5 75 65V45" stroke="#0b1e36" stroke-width="6" stroke-linecap="round"/>
+        <path d="M85 38V68" stroke="#0b1e36" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="85" cy="72" r="4" fill="#0b1e36"/>
+        <path d="M20 70C35 85 65 85 85 50" stroke="#00d294" stroke-width="8" stroke-linecap="round"/>
+        <path d="M85 50L75 58M85 50L75 42" stroke="#00d294" stroke-width="8" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-text-wrap">
+        <div class="logo-text">Degreechoice<span>4u</span></div>
+        <div class="tagline-text">— Because Your Future Matters —</div>
+      </div>
+    </div>
+
     <div class="menu">
       <a onclick="showView('home')">Home</a>
       <a onclick="showCourse('MBA')">Online MBA</a>
@@ -155,17 +172,17 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
   <section class="hero">
     <div class="hero-in">
       <div>
-        <span class="badge">#1 Online Education Portal</span>
-        <h1>Compare UGC-DEB Approved Online Universities in India</h1>
-        <p style="color:var(--muted); font-size:16px;">Find authentic course fees, NAAC grades, placement stats, verified student reviews, and official brochure downloads in one place.</p>
+        <span class="badge">#1 Education Portal</span>
+        <h1>Compare Top UGC-DEB Approved Online Universities</h1>
+        <p style="color:var(--muted); font-size:16px;">Find authentic fees, NAAC grades, placement stats, student reviews, and official syllabus brochures at <b>Degreechoice4u</b>.</p>
         <div style="margin-top:20px; display:flex; gap:15px; flex-wrap:wrap;">
           <div style="background:#fff; padding:10px 18px; border-radius:12px; border:1px solid var(--line); font-size:13px;"><b>✅ 100% UGC-DEB</b> Approved</div>
-          <div style="background:#fff; padding:10px 18px; border-radius:12px; border:1px solid var(--line); font-size:13px;"><b>🎓 50+ Top</b> Online Degrees</div>
+          <div style="background:#fff; padding:10px 18px; border-radius:12px; border:1px solid var(--line); font-size:13px;"><b>🎓 50+ Top</b> Degrees</div>
         </div>
       </div>
       
       <div class="form-card" id="lead-form">
-        <h3>Get Expert Guidance</h3>
+        <h3>Get Free Career Counseling</h3>
         <p>Compare fees & receive syllabus directly on your WhatsApp/Email.</p>
         <form class="lead-submit-form">
           <div class="grid-2">
@@ -201,24 +218,24 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
               <option value="Lovely Professional University (LPU Online)">LPU Online</option>
             </select>
           </div>
-          <button type="submit" class="btn primary submit-btn" style="width:100%; margin-top:10px;">Request Free Call Back</button>
+          <button type="submit" class="btn primary submit-btn" style="width:100%; margin-top:10px;">Request Callback</button>
           <div class="form-msg" style="margin-top:10px; font-size:13px; text-align:center;"></div>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- TOP UNIVERSITIES LOGO GRID SECTION -->
+  <!-- LOGO GRID SECTION -->
   <section class="section">
     <div class="center">
-      <h2 class="section-title">Top UGC Approved Universities</h2>
-      <p class="section-subtitle">Click on any university logo to inspect detailed accreditations, fees, and syllabus.</p>
+      <h2 class="section-title">Top Approved Universities</h2>
+      <p class="section-subtitle">Click on any logo to view detailed accreditations, fees, and syllabus.</p>
     </div>
     <div class="logo-grid" id="home-logo-grid"></div>
   </section>
 
-  <!-- FEATURED UNIVERSITY CARDS -->
-  <section class="section" style="background:var(--badami)">
+  <!-- FEATURED CARDS -->
+  <section class="section" style="background:#f1f5f9">
     <div class="center">
       <h2 class="section-title">Verified University Fee & Ranking Comparison</h2>
       <p class="section-subtitle">Real Student Ratings & 2026 Updated Fee Structures</p>
@@ -226,11 +243,11 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
     <div class="uni-grid" id="home-uni-grid"></div>
   </section>
 
-  <!-- STUDENT REVIEWS & FEEDBACK -->
+  <!-- REVIEWS & FEEDBACK -->
   <section class="section">
     <div class="center">
-      <h2 class="section-title">Student Reviews & Success Stories</h2>
-      <p class="section-subtitle">Hear from students who enrolled through Eduvanta guidance.</p>
+      <h2 class="section-title">Student Reviews & Feedback</h2>
+      <p class="section-subtitle">Hear from students guided by Degreechoice4u.</p>
     </div>
     <div class="review-grid">
       <div class="review-card">
@@ -242,7 +259,7 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
           </div>
         </div>
         <div class="stars">★★★★★</div>
-        <p style="font-size:14px; color:var(--muted); margin-top:10px;">"Eduvanta helped me compare syllabus and EMI costs between Amity and Manipal. Got smooth admission and early-bird scholarship support!"</p>
+        <p style="font-size:14px; color:var(--muted); margin-top:10px;">"Degreechoice4u helped me compare syllabus and EMI costs between Amity and Manipal smoothly!"</p>
       </div>
       <div class="review-card">
         <div class="review-user">
@@ -253,7 +270,7 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
           </div>
         </div>
         <div class="stars">★★★★★</div>
-        <p style="font-size:14px; color:var(--muted); margin-top:10px;">"Exam mode details and UGC accreditation checks were accurate. Got my brochure and counselor call within 10 minutes."</p>
+        <p style="font-size:14px; color:var(--muted); margin-top:10px;">"Exam mode details and UGC accreditation checks were clear and authentic."</p>
       </div>
       <div class="review-card">
         <div class="review-user">
@@ -264,7 +281,7 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
           </div>
         </div>
         <div class="stars">★★★★☆</div>
-        <p style="font-size:14px; color:var(--muted); margin-top:10px;">"Clear breakdown of semester fees vs total fees. Great portal for working professionals looking for online degrees."</p>
+        <p style="font-size:14px; color:var(--muted); margin-top:10px;">"Great platform for working professionals seeking online degree guidance."</p>
       </div>
     </div>
   </section>
@@ -272,27 +289,27 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
   <!-- BLOGS SECTION -->
   <section class="section" id="blogs-section" style="background:#fff">
     <div class="center">
-      <h2 class="section-title">Latest Articles & Higher Education Guides</h2>
-      <p class="section-subtitle">Stay updated with UGC rules, online degree validity, and career advice.</p>
+      <h2 class="section-title">Latest Articles & Career Guides</h2>
+      <p class="section-subtitle">Stay updated with UGC rules and degree validity.</p>
     </div>
     <div class="blog-grid">
       <div class="blog-card">
         <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop" alt="Blog 1">
         <span class="badge" style="font-size:10px;">UGC Guidelines</span>
-        <h3 style="font-size:18px; margin:10px 0 5px;">Are Online Degrees Valid for Government Jobs in 2026?</h3>
-        <p style="font-size:13px; color:var(--muted);">Yes, as per UGC distance education notifications, UGC-DEB approved online degrees are treated on par with regular degrees...</p>
+        <h3 style="font-size:18px; margin:10px 0 5px;">Are Online Degrees Valid for Government Jobs?</h3>
+        <p style="font-size:13px; color:var(--muted);">Yes, as per UGC notifications, approved online degrees are treated on par with regular degrees...</p>
       </div>
       <div class="blog-card">
         <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop" alt="Blog 2">
         <span class="badge" style="font-size:10px;">Course Comparison</span>
-        <h3 style="font-size:18px; margin:10px 0 5px;">Online MBA vs Executive MBA: Which is Right for You?</h3>
-        <p style="font-size:13px; color:var(--muted);">Detailed breakdown of work experience requirements, flexibility, fees, and career growth potential for both formats...</p>
+        <h3 style="font-size:18px; margin:10px 0 5px;">Online MBA vs Executive MBA: Which is Right?</h3>
+        <p style="font-size:13px; color:var(--muted);">Detailed breakdown of work experience requirements, flexibility, and fees...</p>
       </div>
       <div class="blog-card">
         <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&auto=format&fit=crop" alt="Blog 3">
         <span class="badge" style="font-size:10px;">Scholarship Guide</span>
-        <h3 style="font-size:18px; margin:10px 0 5px;">How to Claim up to 25% Fee Discounts on Online Courses</h3>
-        <p style="font-size:13px; color:var(--muted);">Learn about early-bird scholarship criteria, defense personnel discounts, and merit-based fee concessions...</p>
+        <h3 style="font-size:18px; margin:10px 0 5px;">How to Claim up to 25% Fee Concessions</h3>
+        <p style="font-size:13px; color:var(--muted);">Learn about early-bird scholarship criteria and merit concessions...</p>
       </div>
     </div>
   </section>
@@ -300,25 +317,21 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
   <!-- FAQS SECTION -->
   <section class="section" id="faqs-section">
     <div class="center">
-      <h2 class="section-title">Frequently Asked Questions (FAQs)</h2>
+      <h2 class="section-title">Frequently Asked Questions</h2>
       <p class="section-subtitle">Got questions? We have answers.</p>
     </div>
     <div style="max-width:800px; margin:auto;">
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-title"><span>How do I verify if an online university is UGC-DEB approved?</span> <span>+</span></div>
-        <div class="faq-desc">You can check the official UGC-DEB web portal or review the accreditation badges on Eduvanta. All listed universities on our platform are verified with active UGC-DEB entitlements.</div>
+        <div class="faq-desc">You can check the official UGC-DEB portal or review accreditation badges on Degreechoice4u.</div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-title"><span>Is exam attendance required on-campus or online?</span> <span>+</span></div>
-        <div class="faq-desc">Most modern online degree programs conduct online proctored exams. You can take exams safely from your home using a web camera and laptop.</div>
+        <div class="faq-desc">Most online programs conduct online proctored exams from your home.</div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-title"><span>Can I pay course fees in easy monthly EMI installments?</span> <span>+</span></div>
-        <div class="faq-desc">Yes! Universities provide 0% interest EMI options through banking partners. Monthly EMI rates typically range between ₹5,000 to ₹9,000 per month.</div>
-      </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-title"><span>How do I receive the university brochure & syllabus PDF?</span> <span>+</span></div>
-        <div class="faq-desc">Click on "Full Profile" for any university, select your course, and click "Download Brochure". Fill out the short inquiry form to receive the PDF immediately.</div>
+        <div class="faq-desc">Yes! Universities provide 0% interest EMI options starting at ₹5,000/month.</div>
       </div>
     </div>
   </section>
@@ -329,17 +342,17 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
   <div class="section">
     <div class="breadcrumb"><a onclick="showView('home')">Home</a> / <span id="c-bread">Course</span></div>
     <h1 id="c-title">Online MBA Universities</h1>
-    <p id="c-desc" style="color:var(--muted)">Compare fees, NAAC grades, and eligibility criteria for all universities offering this program.</p>
+    <p id="c-desc" style="color:var(--muted)">Compare fees, NAAC grades, and eligibility criteria.</p>
     <div class="uni-grid" id="course-uni-grid"></div>
   </div>
 </main>
 
-<!-- DETAILED UNIVERSITY PROFILE PAGE VIEW -->
+<!-- UNIVERSITY PROFILE PAGE VIEW -->
 <main id="view-university" class="page-view">
   <div class="section">
     <div class="breadcrumb"><a onclick="showView('home')">Home</a> / <span id="u-bread">University</span></div>
     
-    <div style="background:var(--pista-light); padding:30px; border-radius:20px; border:1px solid var(--line); margin-bottom:25px; display:flex; gap:25px; align-items:center; flex-wrap:wrap;">
+    <div style="background:#fff; padding:30px; border-radius:20px; border:1px solid var(--line); margin-bottom:25px; display:flex; gap:25px; align-items:center; flex-wrap:wrap; box-shadow:0 4px 20px rgba(0,0,0,0.03);">
       <div class="uni-logo-box" style="width:100px; height:100px;">
         <img id="u-detail-logo" src="" class="uni-logo-img">
       </div>
@@ -353,7 +366,6 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
       </div>
     </div>
 
-    <!-- TABS NAVIGATION -->
     <div class="tabs">
       <button class="tab-btn active" onclick="switchTab('tab-overview', this)">Overview & About</button>
       <button class="tab-btn" onclick="switchTab('tab-courses', this)">Courses & Fee Structure</button>
@@ -361,7 +373,6 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
       <button class="tab-btn" onclick="switchTab('tab-reviews', this)">Reviews & Student Ratings</button>
     </div>
 
-    <!-- TAB 1: OVERVIEW -->
     <div id="tab-overview" class="tab-content active">
       <h3>About University</h3>
       <p id="u-overview" style="line-height:1.7; color:var(--muted); font-size:15px;"></p>
@@ -372,23 +383,18 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
       </div>
     </div>
 
-    <!-- TAB 2: COURSES & FEES -->
     <div id="tab-courses" class="tab-content">
-      <h3>Available Degree Programs & Updated Fee Table</h3>
-      <p style="color:var(--muted); font-size:14px;">Select a course to request syllabus brochure or speak with an academic counselor.</p>
+      <h3>Available Programs & Fee Table</h3>
       <table class="details-table" style="background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;" id="u-prog-table"></table>
     </div>
 
-    <!-- TAB 3: ACCREDITATIONS & RANKINGS -->
     <div id="tab-accreditation" class="tab-content">
       <h3>Government Approvals & Rankings</h3>
       <div id="u-acc-list" style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:20px;"></div>
-      <p style="color:var(--muted); font-size:14px; line-height:1.6;">This institution is recognized by University Grants Commission - Distance Education Bureau (UGC-DEB) to offer online undergraduate and postgraduate degree programs globally. Degrees are recognized worldwide and valid for government employment exam applications.</p>
     </div>
 
-    <!-- TAB 4: REVIEWS -->
     <div id="tab-reviews" class="tab-content">
-      <h3>Student Reviews & Ratings</h3>
+      <h3>Student Reviews</h3>
       <div id="u-reviews-container" class="review-grid"></div>
     </div>
   </div>
@@ -405,8 +411,9 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
 <footer>
   <div class="footer-in">
     <div class="footer-col">
-      <div class="logo" style="color:#fff; margin-bottom:12px;">Edu<span>vanta</span></div>
-      <p>India's leading online education portal helping students and working professionals find UGC-DEB approved degree programs with transparency.</p>
+      <div class="logo-text" style="color:#fff;">Degreechoice<span style="color:var(--brand-teal);">4u</span></div>
+      <p style="font-size:11px; color:var(--brand-teal); margin-bottom:12px;">Because Your Future Matters</p>
+      <p>Helping students find verified UGC-DEB approved online degrees with complete clarity.</p>
     </div>
     <div class="footer-col">
       <h4>Quick Links</h4>
@@ -417,20 +424,19 @@ footer { background: var(--navy); color: #fff; padding: 60px 20px 20px; margin-t
     </div>
     <div class="footer-col">
       <h4>Contact Us</h4>
-      <p>📍 <b>Address:</b> Rajender Nagar, Ghaziabad, Uttar Pradesh</p>
-      <p>📞 <b>Phone:</b> <a href="tel:+919899491735" style="display:inline; color:var(--neon);">+91 9899491735</a></p>
-      <p>✉️ <b>Email:</b> info@eduvanta.com</p>
+      <p>📍 <b>Address:</b> Rajender Nagar, Ghaziabad, UP</p>
+      <p>📞 <b>Phone:</b> <a href="tel:+919899491735" style="display:inline; color:var(--brand-teal);">+91 9899491735</a></p>
+      <p>✉️ <b>Email:</b> info@degreechoice4u.com</p>
     </div>
   </div>
   <div class="footer-bottom">
-    © 2026 Eduvanta Portal. All Rights Reserved.
+    © 2026 Degreechoice4u. All Rights Reserved.
   </div>
 </footer>
 
 <script>
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzr2M5CHd5biRd9GOpQr_LuOQY27mSuy3EjhwWMsOKPxf00sYlVwzACOpWIeGchdJUEnQ/exec";
 
-// HIGH RESOLUTION VERIFIED LOGOS & UNIVERSITIES DATABASE
 const UNIVERSITIES = [
   {
     id: "amity",
@@ -439,11 +445,6 @@ const UNIVERSITIES = [
     location: "Noida, Uttar Pradesh",
     rating: "4.8",
     reviewsCount: "1,240",
-    studentsCount: "12,000+",
-    students: [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop"
-    ],
     naac: "A+ Grade",
     nirf: "#35 (Overall)",
     approvals: ["UGC-DEB", "AICTE", "WSCUC (USA)", "QS Ranked"],
@@ -451,13 +452,12 @@ const UNIVERSITIES = [
     emi: "₹8,625/month",
     examMode: "Online Proctored",
     courses: ["MBA", "MCA", "BBA", "B.Com"],
-    overview: "Amity University Online is India's first online university approved by UGC-DEB. It offers industry-oriented degree programs with global WSCUC accreditation, global faculty, career placement assistance, and robust LMS portals.",
+    overview: "Amity University Online offers industry-oriented degree programs with global WSCUC accreditation, global faculty, career placement assistance, and robust LMS portals.",
     duration: "2 Years (PG) / 3 Years (UG)",
     eligibility: "50% aggregate in Graduation for PG; 10+2 for UG",
     placements: "Amazon, TCS, Accenture, Deloitte, Wipro",
     reviewsList: [
-      { name: "Siddharth Verma", rating: 5, text: "The LMS portal is extremely smooth. Recorded lectures and live doubt classes are well organized." },
-      { name: "Megha Gupta", rating: 4, text: "Good faculty support and flexible exam slots on weekends." }
+      { name: "Siddharth Verma", rating: 5, text: "The LMS portal is extremely smooth. Recorded lectures and live doubt classes are well organized." }
     ]
   },
   {
@@ -467,10 +467,6 @@ const UNIVERSITIES = [
     location: "Mohali, Punjab",
     rating: "4.7",
     reviewsCount: "980",
-    studentsCount: "10,000+",
-    students: [
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop"
-    ],
     naac: "A+ Grade",
     nirf: "#27 (Overall)",
     approvals: ["UGC-DEB", "AICTE", "AIU Member"],
@@ -478,7 +474,7 @@ const UNIVERSITIES = [
     emi: "₹6,583/month",
     examMode: "Online Proctored",
     courses: ["MBA", "MCA", "BBA", "B.Com"],
-    overview: "Chandigarh University Online delivers accessible, high-quality distance education with integrated Harvard Business Publishing study materials, live interactive sessions, and scholarship concessions.",
+    overview: "Chandigarh University Online delivers accessible, high-quality distance education with integrated Harvard Business Publishing study materials.",
     duration: "2 Years (PG) / 3 Years (UG)",
     eligibility: "Bachelor's degree in any discipline",
     placements: "Google, Microsoft, IBM, Cognizant, Infosys",
@@ -493,10 +489,6 @@ const UNIVERSITIES = [
     location: "Jaipur, Rajasthan",
     rating: "4.9",
     reviewsCount: "1,850",
-    studentsCount: "15,000+",
-    students: [
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop"
-    ],
     naac: "A+ Grade",
     nirf: "#64 (University)",
     approvals: ["UGC-DEB", "AICTE", "ACCA (UK)"],
@@ -504,12 +496,12 @@ const UNIVERSITIES = [
     emi: "₹7,291/month",
     examMode: "Online Proctored",
     courses: ["MBA", "MCA", "BBA", "B.Com"],
-    overview: "Manipal University Jaipur provides top-tier online degree programs backed by decades of academic trust. Students gain free Coursera access, virtual lab support, and placement assistance.",
+    overview: "Manipal University Jaipur provides top-tier online degree programs backed by decades of academic trust with Coursera access.",
     duration: "2 Years (PG) / 3 Years (UG)",
     eligibility: "Graduate with minimum 50% aggregate score",
     placements: "KPMG, EY, Capgemini, Tech Mahindra",
     reviewsList: [
-      { name: "Karan Malhotra", rating: 5, text: "Coursera integration is a huge benefit for learning extra certifications alongside Online MBA." }
+      { name: "Karan Malhotra", rating: 5, text: "Coursera integration is a huge benefit for learning extra certifications." }
     ]
   },
   {
@@ -519,10 +511,6 @@ const UNIVERSITIES = [
     location: "Bengaluru, Karnataka",
     rating: "4.6",
     reviewsCount: "820",
-    studentsCount: "8,000+",
-    students: [
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&auto=format&fit=crop"
-    ],
     naac: "A++ Grade",
     nirf: "#68 (University)",
     approvals: ["UGC-DEB", "AICTE"],
@@ -530,64 +518,12 @@ const UNIVERSITIES = [
     emi: "₹6,250/month",
     examMode: "Online Proctored",
     courses: ["MBA", "MCA", "BBA", "B.Com"],
-    overview: "Jain University Online offers modern specializations in Data Science, Digital Marketing, AI, and FinTech. Known for regular live masterclasses with industry executives.",
+    overview: "Jain University Online offers modern specializations in Data Science, Digital Marketing, AI, and FinTech.",
     duration: "2 Years (PG) / 3 Years (UG)",
     eligibility: "Graduation completed from recognized university",
     placements: "HDFC Bank, Flipkart, Amazon, Reliance",
     reviewsList: [
       { name: "Neha Roy", rating: 4, text: "Very modern curriculum with focus on practical case studies." }
-    ]
-  },
-  {
-    id: "upes",
-    name: "UPES Online",
-    logo: "https://logo.clearbit.com/upesonline.ac.in",
-    location: "Dehradun, Uttarakhand",
-    rating: "4.7",
-    reviewsCount: "650",
-    studentsCount: "6,000+",
-    students: [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop"
-    ],
-    naac: "A Grade",
-    nirf: "#54 (University)",
-    approvals: ["UGC-DEB", "AICTE"],
-    fee: "₹1,75,000",
-    emi: "₹7,291/month",
-    examMode: "Online Proctored",
-    courses: ["MBA", "MCA", "BBA"],
-    overview: "UPES Online specializes in energy, logistics, supply chain, and tech management programs tailored for industry professionals seeking fast-track career growth.",
-    duration: "2 Years (PG) / 3 Years (UG)",
-    eligibility: "50% marks in Graduation / 10+2",
-    placements: "Shell, L&T, Tata Power, Adani, Reliance",
-    reviewsList: [
-      { name: "Vikas Tyagi", rating: 5, text: "Best for Oil & Gas and Supply Chain domain specializations." }
-    ]
-  },
-  {
-    id: "lpu",
-    name: "Lovely Professional University (LPU Online)",
-    logo: "https://logo.clearbit.com/lpuonline.com",
-    location: "Phagwara, Punjab",
-    rating: "4.8",
-    reviewsCount: "1,100",
-    studentsCount: "14,000+",
-    students: [
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop"
-    ],
-    naac: "A++ Grade",
-    nirf: "#38 (Overall)",
-    approvals: ["UGC-DEB", "AICTE"],
-    fee: "₹2,00,000",
-    emi: "₹6,733/month",
-    examMode: "Online Proctored",
-    courses: ["MBA", "MCA", "BBA", "B.Com"],
-    overview: "LPU Online provides robust online learning platforms with flexible examination schedules, practical industry projects, and active career mentoring.",
-    duration: "2 Years (PG) / 3 Years (UG)",
-    eligibility: "Graduation in relevant stream / 10+2",
-    placements: "Microsoft, Amazon, Cognizant, Infosys",
-    reviewsList: [
-      { name: "Divya Joshi", rating: 5, text: "LPU e-connect portal is super user friendly." }
     ]
   }
 ];
@@ -647,7 +583,7 @@ function renderUnis(list, targetId) {
         </div>
 
         <table class="details-table">
-          <tr><td>Total Course Fee</td><td>${u.fee}</td></tr>
+          <tr><td>Total Fee</td><td>${u.fee}</td></tr>
           <tr><td>Easy Monthly EMI</td><td>${u.emi}</td></tr>
           <tr><td>Exam Mode</td><td>${u.examMode}</td></tr>
         </table>
